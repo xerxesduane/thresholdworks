@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-cream/8 bg-ink-deep/60 py-14">
       <div className="container-bl">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Wordmark />
             <p className="mt-4 max-w-xs font-display text-lg italic text-cream-dim">
