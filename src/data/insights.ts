@@ -22,6 +22,153 @@ export interface InsightPost {
 
 export const INSIGHTS: InsightPost[] = [
   {
+    slug: "crm-setup-mistakes-dubai",
+    title: "CRM setup mistakes that cost Dubai businesses leads",
+    description:
+      "The CRM mistakes we see most often in Dubai small businesses, how each one quietly loses you leads, and what a CRM that actually works looks like.",
+    date: "2026-06-01",
+    author: "Xerxes Magdaluyo",
+    readingMinutes: 6,
+    body: [
+      {
+        type: "p",
+        text: "A CRM is supposed to make sure no lead slips through the cracks. Set up badly, it does the opposite: it becomes a graveyard nobody updates. Here are the mistakes that cost Dubai businesses real revenue, and how to avoid them.",
+      },
+      { type: "h2", text: "1. Treating it as a contact list, not a process" },
+      {
+        type: "p",
+        text: "A CRM isn't a fancy address book. If it doesn't reflect your actual sales stages, new lead, contacted, quoted, won, your team has no shared definition of what to do next, and leads stall in limbo.",
+      },
+      { type: "h2", text: "2. Leads that never enter the system" },
+      {
+        type: "p",
+        text: "WhatsApp enquiries, website forms, walk-ins, and Instagram DMs that live in five inboxes never get followed up consistently. If capture isn't automatic, you're losing leads before the CRM even sees them.",
+      },
+      { type: "h2", text: "3. No follow-up automation" },
+      {
+        type: "p",
+        text: "Most sales happen after several touches, but manual follow-up is the first thing that drops when everyone's busy. Without automated reminders or sequences, your hottest leads go cold while you're heads-down on delivery.",
+      },
+      { type: "h2", text: "4. Nobody can see the pipeline" },
+      {
+        type: "p",
+        text: "If the owner can't glance at a dashboard and see what's in play and what's stuck, you're flying blind. Reporting that lives in someone's head isn't reporting.",
+      },
+      { type: "h2", text: "5. Too complex to actually use" },
+      {
+        type: "p",
+        text: "An over-engineered CRM with 40 required fields gets abandoned. The best CRM is the one your team will actually keep updated, which usually means fewer fields, clearer stages, and automation doing the boring parts.",
+      },
+      {
+        type: "quote",
+        text: "A CRM only works when capture is automatic, the pipeline is visible, and follow-up happens whether or not anyone remembers.",
+      },
+      {
+        type: "p",
+        text: "We set up CRM (often inside Odoo) so leads capture themselves, follow-ups send themselves, and you can see the whole pipeline at a glance. A free audit will show you exactly where leads are leaking today.",
+      },
+    ],
+    relatedServices: ["odoo-erp-dubai", "web-development-dubai"],
+  },
+  {
+    slug: "odoo-enterprise-vs-community",
+    title: "Do you need Odoo Enterprise, or is Community enough?",
+    description:
+      "A no-spin guide to choosing between Odoo Community and Enterprise for a small business: what you get, what you give up, and how to decide without overpaying.",
+    date: "2026-05-30",
+    author: "Xerxes Magdaluyo",
+    readingMinutes: 5,
+    body: [
+      {
+        type: "p",
+        text: "Odoo comes in two editions, and the choice trips up a lot of small businesses. Pick wrong and you either overpay for licenses you don't use, or fight Community to do something Enterprise handles out of the box. Here's the honest breakdown.",
+      },
+      { type: "h2", text: "What Community gives you (free)" },
+      {
+        type: "p",
+        text: "Odoo Community is open-source and genuinely capable: CRM, sales, invoicing, basic inventory, website, and more. For many small businesses starting out, it covers the essentials without a per-user license fee.",
+      },
+      { type: "h2", text: "What Enterprise adds (paid)" },
+      {
+        type: "ul",
+        items: [
+          "Polished, faster interfaces and mobile apps.",
+          "Studio (low-code customization) and more advanced accounting.",
+          "Official Odoo support and hosting options.",
+          "Features like full double-entry accounting, advanced reporting, and more integrations.",
+        ],
+      },
+      { type: "h2", text: "How to actually decide" },
+      {
+        type: "ul",
+        items: [
+          "Will you rely on advanced accounting or just basic invoicing?",
+          "Do you need official support, or a consultant who runs it for you?",
+          "How many users, and is the per-user cost justified by the time it saves?",
+          "Do the Enterprise-only modules map to things you'll genuinely use?",
+        ],
+      },
+      {
+        type: "quote",
+        text: "The right edition is the one that fits how you work today, with room to grow, not the one with the longest feature list.",
+      },
+      {
+        type: "p",
+        text: "We're not an official Odoo Partner, which means we have no incentive to push you toward Enterprise. In a free audit we'll tell you honestly which edition fits, and what it'll actually cost.",
+      },
+    ],
+    relatedServices: ["odoo-erp-dubai"],
+  },
+  {
+    slug: "choosing-a-web-developer-dubai",
+    title: "How to choose a web developer in Dubai (without getting burned)",
+    description:
+      "The questions to ask, the red flags to avoid, and what good looks like when hiring a web developer in Dubai, so you own your site and it actually performs.",
+    date: "2026-05-28",
+    author: "Xerxes Magdaluyo",
+    readingMinutes: 6,
+    body: [
+      {
+        type: "p",
+        text: "Plenty of Dubai businesses have been burned by a web project, locked out of their own site, ghosted after launch, or handed something pretty that brings in nothing. Here's how to choose well.",
+      },
+      { type: "h2", text: "Ask: do I own everything?" },
+      {
+        type: "p",
+        text: "Your domain, hosting, code, and accounts should all be in your name. If a developer keeps you locked out 'for convenience,' that's a red flag. Ownership is non-negotiable.",
+      },
+      { type: "h2", text: "Ask: what happens after launch?" },
+      {
+        type: "p",
+        text: "Launch is the start, not the finish. Ask who fixes things, who you call, and what support looks like in month six. A good partner is still reachable years later.",
+      },
+      { type: "h2", text: "Ask: is it built to be found?" },
+      {
+        type: "p",
+        text: "A site that isn't fast, mobile-first, and structured for search is a brochure nobody reads. Ask how they handle performance and SEO from day one, not as an afterthought.",
+      },
+      { type: "h2", text: "Red flags to watch for" },
+      {
+        type: "ul",
+        items: [
+          "No fixed quote, or pricing that keeps moving.",
+          "Vague answers about ownership and access.",
+          "All style, no questions about your business goals.",
+          "No examples of work that actually performs.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "A good web partner asks about your business before they talk about design, and hands you the keys when it's done.",
+      },
+      {
+        type: "p",
+        text: "We quote fixed, build fast, and set everything up in your name, start to finish. If you're weighing up a web project, a free audit will tell you what's worth keeping and what isn't.",
+      },
+    ],
+    relatedServices: ["web-development-dubai", "seo-dubai"],
+  },
+  {
     slug: "how-much-does-odoo-cost-dubai",
     title: "How much does Odoo cost for a small business in Dubai?",
     description:
