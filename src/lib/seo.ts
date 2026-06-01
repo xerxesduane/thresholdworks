@@ -9,9 +9,13 @@ export interface PageMeta {
   description: string;
   canonical: string;
   ogTitle: string;
+  /** Absolute URL of the social share image. Defaults to the site OG image. */
+  ogImage?: string;
   /** Extra JSON-LD nodes serialized into the head (e.g. Service, FAQPage). */
   jsonLd?: Record<string, unknown>[];
 }
+
+const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/brand/og-image.png`;
 
 /** FAQPage schema, derived from the FAQ content actually rendered on the home page. */
 const FAQ_SCHEMA = {
@@ -55,6 +59,7 @@ const CASE_STUDIES_META: PageMeta = {
     "Real client work from Threshold Works: Odoo ERP deployments, CRM and web builds, and ad campaigns across the UAE, the Philippines, and beyond.",
   canonical: `${SITE_ORIGIN}/case-studies`,
   ogTitle: "Case Studies | Threshold Works",
+  ogImage: `${SITE_ORIGIN}/brand/og/case-studies.png`,
 };
 
 const INSIGHTS_META: PageMeta = {
@@ -63,6 +68,7 @@ const INSIGHTS_META: PageMeta = {
     "Plain-English thinking on systems, Odoo, automation, and growth for small businesses in Dubai and beyond, from Threshold Works.",
   canonical: `${SITE_ORIGIN}/insights`,
   ogTitle: "Insights | Threshold Works",
+  ogImage: `${SITE_ORIGIN}/brand/og/insights.png`,
 };
 
 export function getPageMeta(path: string): PageMeta {
@@ -80,6 +86,7 @@ export function getPageMeta(path: string): PageMeta {
         description: post.description,
         canonical,
         ogTitle: post.title,
+        ogImage: `${SITE_ORIGIN}/brand/og/${post.slug}.png`,
         jsonLd: [
           {
             "@context": "https://schema.org",
@@ -107,6 +114,7 @@ export function getPageMeta(path: string): PageMeta {
     description: page.metaDescription,
     canonical,
     ogTitle: page.ogTitle,
+    ogImage: `${SITE_ORIGIN}/brand/og/${page.slug}.png`,
     jsonLd: [
       {
         "@context": "https://schema.org",
@@ -149,8 +157,13 @@ export function buildHeadTags(path: string): string {
     `<meta property="og:url" content="${esc(m.canonical)}" />`,
     `<meta property="og:title" content="${esc(m.ogTitle)}" />`,
     `<meta property="og:description" content="${esc(m.description)}" />`,
+    `<meta property="og:image" content="${esc(m.ogImage ?? DEFAULT_OG_IMAGE)}" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
+    `<meta property="og:image:alt" content="${esc(m.ogTitle)}" />`,
     `<meta name="twitter:title" content="${esc(m.ogTitle)}" />`,
     `<meta name="twitter:description" content="${esc(m.description)}" />`,
+    `<meta name="twitter:image" content="${esc(m.ogImage ?? DEFAULT_OG_IMAGE)}" />`,
   ];
   for (const node of m.jsonLd ?? []) {
     tags.push(
