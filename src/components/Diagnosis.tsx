@@ -2,17 +2,17 @@ import Reveal from "./ui/Reveal";
 
 export default function Diagnosis() {
   return (
-    <section className="py-24 sm:py-32" aria-label="The problem we solve">
+    <section className="py-24 sm:py-32" aria-label="The opportunity">
       <div className="container-bl">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow justify-center">The diagnosis</span>
+          <span className="eyebrow justify-center">The opportunity</span>
           <p className="mt-6 font-display text-3xl leading-snug text-cream sm:text-4xl md:text-[2.75rem]">
-            Most small businesses in Dubai don't fail from{" "}
-            <span className="text-muted-dark line-through decoration-gold/40">
-              bad marketing
-            </span>
-            . They fail from{" "}
-            <span className="text-gradient-gold">broken systems.</span>
+            Most small businesses in Dubai are one connected system away from{" "}
+            <span className="text-gradient-gold">real growth.</span>
+          </p>
+          <p className="mx-auto mt-5 max-w-xl text-lg text-muted">
+            Great marketing brings you leads. Systems that actually work together
+            turn those leads into paying customers, and hand you back your time.
           </p>
         </Reveal>
 

@@ -55,8 +55,8 @@ export default function Contact() {
               <span className="text-gradient-gold">we'd say?</span>
             </h2>
             <p className="mt-4 max-w-md text-muted">
-              60 minutes. No sales pitch. No commitment. Just clarity about what's
-              working, what's wasted, and what to fix first.
+              60 minutes, zero pressure. You walk away with a clear map of your
+              systems and three quick wins you can use right away.
             </p>
 
             <ol className="mt-8 space-y-4">
