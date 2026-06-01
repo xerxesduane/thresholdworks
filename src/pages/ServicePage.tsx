@@ -125,14 +125,26 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
                   {proof.location} · {proof.category}
                 </span>
                 <p className="mt-3 text-base text-cream-dim">{proof.challenge}</p>
-                <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
-                  {proof.stats.map((s) => (
-                    <div key={s.label}>
-                      <div className="font-display text-2xl text-gold">{s.value}</div>
-                      <div className="mt-1 text-xs text-muted">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
+                {proof.stats && (
+                  <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                    {proof.stats.map((s) => (
+                      <div key={s.label}>
+                        <div className="font-display text-2xl text-gold">{s.value}</div>
+                        <div className="mt-1 text-xs text-muted">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {proof.scope && (
+                  <ul className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {proof.scope.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm text-cream-dim">
+                        <Check size={15} className="shrink-0 text-gold" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <p className="mt-5 font-display text-base italic text-cream">
                   {proof.takeaway}
                 </p>

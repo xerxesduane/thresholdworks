@@ -32,7 +32,7 @@ export default function Founder() {
                     Xerxes Magdaluyo
                   </h3>
                   <p className="font-mono text-xs uppercase tracking-wider text-gold/80">
-                    Founder · Threshold Works
+                    Founder & Lead Consultant
                   </p>
                 </div>
               </div>
@@ -58,13 +58,21 @@ export default function Founder() {
                   once.
                 </p>
                 <p>
-                  As an{" "}
+                  These days I work as a hands-on{" "}
                   <span className="font-medium text-cream-dim">
-                    Odoo Systems Administrator
-                  </span>
-                  , I set up and support ERP and CRM systems for businesses across
-                  the UAE and the Philippines, wiring inventory, sales, invoicing,
-                  and customer data into one source of truth.
+                    Odoo consultant
+                  </span>{" "}
+                  (not an official Odoo Partner, and I'll always say so), implementing,
+                  customizing, and automating Odoo around how a business actually
+                  runs, connecting sales, CRM, inventory, purchasing, accounting,
+                  and websites into one platform, without the expensive enterprise
+                  consulting layers.
+                </p>
+                <p className="text-cream-dim">
+                  Recent work spans construction and manufacturing workflows,
+                  e-commerce and lead management, inventory operations, website
+                  integrations, and marketing automation, turning fragmented
+                  operations into structured, measurable systems.
                 </p>
                 <p className="text-cream-dim">
                   I once saved a client real money just by suggesting they buy

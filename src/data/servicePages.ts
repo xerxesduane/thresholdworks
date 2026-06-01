@@ -75,6 +75,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       "Teams that need inventory, invoicing, and CRM in one place",
       "Owners who want Odoo run for them, not dumped on them",
     ],
+    caseStudyClient: "Blocktec Philippines",
   },
   {
     slug: "web-development-dubai",

@@ -214,11 +214,50 @@ export interface CaseStudy {
   location: string;
   category: string;
   challenge: string;
-  stats: { value: string; label: string }[];
+  /** Metric-based proof (ad campaigns). Mutually exclusive with `scope`. */
+  stats?: { value: string; label: string }[];
+  /** Scope-based proof (implementations) when there aren't vanity metrics. */
+  scope?: string[];
   takeaway: string;
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
+  {
+    client: "Blocktec Philippines",
+    location: "Philippines · Construction Materials",
+    category: "Odoo ERP",
+    challenge:
+      "A construction materials and AAC wall-systems company ran on disconnected spreadsheets, manual tracking, and fragmented communication between departments. The goal: one platform for the whole operation.",
+    scope: [
+      "CRM & lead management",
+      "Sales & quotation workflows",
+      "Inventory management",
+      "Purchasing operations",
+      "Accounting integration",
+      "Project management",
+      "Website & e-commerce",
+      "Marketing automation",
+    ],
+    takeaway:
+      "Customer inquiries, quotations, inventory, purchasing, and online operations, run from one unified Odoo platform.",
+  },
+  {
+    client: "Saladmaster UAE",
+    location: "UAE · Premium Cookware",
+    category: "CRM & Web",
+    challenge:
+      "A premium cookware and direct-sales brand needed a smoother customer journey, from first inquiry through cooking demo to sale, with real visibility into follow-ups.",
+    scope: [
+      "Lead capture & inquiries",
+      "Booking for cooking demos",
+      "Customer relationship management",
+      "Website management",
+      "Sales process organization",
+      "Marketing & engagement",
+    ],
+    takeaway:
+      "Centralized lead management and a clearer path from inquiry to demo to conversion across sales and engagement.",
+  },
   {
     client: "AYA Home Spa",
     location: "Dubai · Wellness",

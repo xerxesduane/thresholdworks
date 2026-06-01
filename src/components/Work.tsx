@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { CASE_STUDIES } from "../data/content";
 import { fadeUp, stagger, VIEWPORT } from "../lib/motion";
 import SectionHeading from "./ui/SectionHeading";
@@ -15,7 +15,7 @@ export default function Work() {
               Real businesses. <span className="text-gradient-gold">Quiet wins.</span>
             </>
           }
-          subtitle="Two campaigns, one local, one international. Both managed from Dubai, both built to pay for themselves."
+          subtitle="From full Odoo deployments to ad campaigns that pay for themselves, a sample of recent work across the UAE, the Philippines, and beyond."
         />
 
         <motion.div
@@ -45,21 +45,37 @@ export default function Work() {
               </h3>
               <p className="mt-3 text-sm text-muted">{c.challenge}</p>
 
-              <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {c.stats.map((s) => (
-                  <div
-                    key={s.label}
-                    className="rounded-xl border border-cream/8 bg-ink-deep/40 p-3 text-center"
-                  >
-                    <div className="font-mono text-xl font-semibold text-gold sm:text-2xl">
-                      {s.value}
+              {c.stats && (
+                <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {c.stats.map((s) => (
+                    <div
+                      key={s.label}
+                      className="rounded-xl border border-cream/8 bg-ink-deep/40 p-3 text-center"
+                    >
+                      <div className="font-mono text-xl font-semibold text-gold sm:text-2xl">
+                        {s.value}
+                      </div>
+                      <div className="mt-1 text-[11px] leading-tight text-muted">
+                        {s.label}
+                      </div>
                     </div>
-                    <div className="mt-1 text-[11px] leading-tight text-muted">
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
+
+              {c.scope && (
+                <ul className="mt-7 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {c.scope.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-sm text-cream-dim"
+                    >
+                      <Check size={15} className="shrink-0 text-gold" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               <p className="mt-6 flex items-center gap-2 border-t border-cream/8 pt-5 font-display text-base italic text-cream-dim">
                 <ArrowUpRight size={16} className="text-gold" />

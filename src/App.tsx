@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import ServicePage from "./pages/ServicePage";
+import NotFound from "./pages/NotFound";
 import { getServicePage } from "./data/servicePages";
 import { pathToSlug } from "./lib/seo";
 
@@ -14,8 +15,8 @@ function Route({ path }: { path: string }) {
   const page = getServicePage(slug);
   if (page) return <ServicePage page={page} />;
 
-  // Unknown path: fall back to home content.
-  return <Home />;
+  // Unknown path: render a real 404 (Vercel serves this as 404.html).
+  return <NotFound />;
 }
 
 export default function App({ path = "/" }: { path?: string }) {

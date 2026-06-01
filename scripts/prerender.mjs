@@ -1,9 +1,12 @@
 // Prerenders every route to a static HTML file in dist/ so crawlers and
 // social scrapers receive the full, rendered page instead of an empty shell.
+// Also emits a 404.html and a freshly-dated sitemap.xml.
 // Runs after `vite build` (client) and `vite build --ssr` (server bundle).
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+
+const SITE_ORIGIN = "https://www.xerxesduane.com";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "..");
@@ -35,4 +38,28 @@ for (const route of routes) {
   console.log(`  prerendered  ${route}  ->  ${outPath.replace(root, ".")}`);
 }
 
-console.log(`\nPrerendered ${routes.length} route(s).`);
+// 404 page (Vercel serves /404.html for unmatched routes, with a 404 status).
+const notFound = render("/__not-found__");
+const notFoundHead =
+  "<title>Page not found | Threshold Works</title>\n" +
+  '    <meta name="robots" content="noindex" />';
+const notFoundPage = template
+  .replace("<!--app-head-->", notFoundHead)
+  .replace("<!--app-html-->", notFound.html);
+await writeFile(join(distDir, "404.html"), notFoundPage, "utf-8");
+console.log("  prerendered  404  ->  ./dist/404.html");
+
+// Sitemap, freshly dated each build.
+const today = new Date().toISOString().slice(0, 10);
+const urls = routes
+  .map((route) => {
+    const loc = route === "/" ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${route}`;
+    const priority = route === "/" ? "1.0" : "0.8";
+    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+  })
+  .join("\n");
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+await writeFile(join(distDir, "sitemap.xml"), sitemap, "utf-8");
+console.log(`  generated    sitemap.xml (${routes.length} urls, ${today})`);
+
+console.log(`\nPrerendered ${routes.length} route(s) + 404.`);
