@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail, MapPin, MessageCircle } from "lucide-react";
 import { CONTACT } from "../data/content";
+import { track } from "../lib/analytics";
 import Reveal from "./ui/Reveal";
 
 const STEPS = [
@@ -28,6 +29,7 @@ export default function Contact() {
     ]
       .filter(Boolean)
       .join("\n");
+    track("generate_lead", { method: "whatsapp_form", location: window.location.pathname });
     window.open(
       `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(msg)}`,
       "_blank",

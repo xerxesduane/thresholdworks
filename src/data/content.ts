@@ -344,6 +344,37 @@ export const PACKAGES = [
   },
 ];
 
+export interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  context: string;
+}
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote:
+      "Xerxes doesn't just design, he solves communication problems. His work is clean, strategic, and always built around what the audience needs to understand. Whether it's branding, social media, or digital campaigns, he consistently delivers work that creates impact.",
+    name: "Paul R.",
+    role: "Marketing Manager",
+    context: "Brand Strategy & Digital Marketing",
+  },
+  {
+    quote:
+      "Working with Xerxes brought clarity and consistency to our brand. He has a strong ability to transform rough ideas into polished visuals that feel professional, modern, and purposeful. His attention to detail and understanding of marketing make him a valuable creative partner.",
+    name: "Sarah M.",
+    role: "Communications Lead",
+    context: "Content & Brand Development",
+  },
+  {
+    quote:
+      "Xerxes is creative, reliable, and highly skilled in both design and digital execution. He understands how visual design supports business goals, which makes his work practical, effective, and results-driven. Every project was delivered with professionalism and care.",
+    name: "David L.",
+    role: "Project Director",
+    context: "Web Design & Creative Services",
+  },
+];
+
 export const FAQS: { q: string; a: string }[] = [
   {
     q: "Is the audit really free?",

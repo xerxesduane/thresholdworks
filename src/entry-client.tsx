@@ -3,6 +3,9 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./index.css";
 import App from "./App";
+import { initCtaTracking } from "./lib/analytics";
+
+initCtaTracking();
 
 const container = document.getElementById("root")!;
 const tree = (

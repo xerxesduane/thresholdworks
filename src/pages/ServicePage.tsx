@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowLeft, Check } from "lucide-react";
-import type { ServicePageData } from "../data/servicePages";
+import { SERVICE_PAGES, type ServicePageData } from "../data/servicePages";
 import { CASE_STUDIES } from "../data/content";
 import { fadeUp, stagger, VIEWPORT } from "../lib/motion";
 import Reveal from "../components/ui/Reveal";
@@ -144,6 +144,41 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
 
       <Process />
       <Promise />
+
+      {/* Cross-links to the other services */}
+      <section className="py-16 sm:py-20" aria-label="Other services">
+        <div className="container-bl">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 className="text-2xl sm:text-3xl">
+              Need more than {page.navLabel}?{" "}
+              <span className="text-gradient-gold">It all connects.</span>
+            </h2>
+          </Reveal>
+          <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3">
+            {SERVICE_PAGES.filter((p) => p.slug !== page.slug).map((p) => {
+              const PIcon = p.icon;
+              return (
+                <a
+                  key={p.slug}
+                  href={`/${p.slug}`}
+                  className="glass glass-hover group flex items-center gap-3 rounded-2xl p-5"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold ring-1 ring-gold/20">
+                    <PIcon size={18} strokeWidth={1.8} />
+                  </span>
+                  <span className="text-sm font-medium text-cream transition-colors group-hover:text-gold">
+                    {p.navLabel}
+                    <span className="mt-0.5 block font-mono text-[11px] uppercase tracking-wider text-muted">
+                      in Dubai
+                    </span>
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <Contact />
     </>
   );
