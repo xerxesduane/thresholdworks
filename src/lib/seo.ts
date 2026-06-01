@@ -39,12 +39,25 @@ export function pathToSlug(path: string): string {
 
 /** All routes that should be prerendered, as absolute paths. */
 export function allRoutes(): string[] {
-  return ["/", ...SERVICE_PAGES.map((p) => `/${p.slug}`)];
+  return [
+    "/",
+    "/case-studies",
+    ...SERVICE_PAGES.map((p) => `/${p.slug}`),
+  ];
 }
+
+const CASE_STUDIES_META: PageMeta = {
+  title: "Case Studies | Threshold Works",
+  description:
+    "Real client work from Threshold Works: Odoo ERP deployments, CRM and web builds, and ad campaigns across the UAE, the Philippines, and beyond.",
+  canonical: `${SITE_ORIGIN}/case-studies`,
+  ogTitle: "Case Studies | Threshold Works",
+};
 
 export function getPageMeta(path: string): PageMeta {
   const slug = pathToSlug(path);
   if (slug === "") return HOME_META;
+  if (slug === "case-studies") return CASE_STUDIES_META;
 
   const page = getServicePage(slug);
   if (!page) return HOME_META;
@@ -65,6 +78,15 @@ export function getPageMeta(path: string): PageMeta {
         areaServed: { "@type": "City", name: "Dubai" },
         url: canonical,
         description: page.metaDescription,
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: page.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
       },
     ],
   };

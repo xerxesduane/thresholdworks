@@ -33,6 +33,8 @@ export interface ServicePageData {
   forWho: string[];
   /** Matches a CASE_STUDIES client name to show as proof, if any. */
   caseStudyClient?: string;
+  /** Service-specific FAQs (rendered on the page + FAQPage JSON-LD). */
+  faqs: { q: string; a: string }[];
 }
 
 export const SERVICE_PAGES: ServicePageData[] = [
@@ -76,6 +78,24 @@ export const SERVICE_PAGES: ServicePageData[] = [
       "Owners who want Odoo run for them, not dumped on them",
     ],
     caseStudyClient: "Blocktec Philippines",
+    faqs: [
+      {
+        q: "How long does an Odoo implementation take?",
+        a: "A focused rollout of the core modules usually takes a few weeks. We phase it so your team keeps working while we build, and you see value before everything is switched on.",
+      },
+      {
+        q: "Do I need Odoo Enterprise, or is Community enough?",
+        a: "It depends on the modules you actually need. We'll tell you honestly which edition fits, so you're not paying for licenses you won't use.",
+      },
+      {
+        q: "Can you connect Odoo to tools I already use?",
+        a: "Yes. We integrate Odoo with your website, payment, and accounting tools so data flows automatically instead of being re-keyed by hand.",
+      },
+      {
+        q: "I already started with Odoo and it's a mess. Can you help?",
+        a: "Very common. We audit what's there, fix the configuration, and clean up the data rather than forcing you to start from scratch.",
+      },
+    ],
   },
   {
     slug: "web-development-dubai",
@@ -116,6 +136,24 @@ export const SERVICE_PAGES: ServicePageData[] = [
       "Teams that need a web app or portal, not just a brochure site",
       "Anyone tired of agencies who lock them out of their own site",
     ],
+    faqs: [
+      {
+        q: "How much does a website cost?",
+        a: "Every project gets a fixed quote up front after a short scope call, no hourly surprises. Most small-business sites start from a defined package.",
+      },
+      {
+        q: "Will I own the site and the code?",
+        a: "Yes, always. Everything is set up in your name and you keep full access to the site, hosting, and accounts, start to finish.",
+      },
+      {
+        q: "Can you work with my existing website?",
+        a: "Often, yes. We keep what's worth keeping and rebuild what isn't, rather than forcing a full restart.",
+      },
+      {
+        q: "Is the site mobile-first and built to be found?",
+        a: "Yes. Fast, mobile-first, and structured for search from day one, the site you're reading is built the same way.",
+      },
+    ],
   },
   {
     slug: "ai-automation-dubai",
@@ -155,6 +193,24 @@ export const SERVICE_PAGES: ServicePageData[] = [
       "Teams losing leads because nobody replies fast enough",
       "Businesses curious about AI but unsure where it's worth it",
       "Anyone who wants automation that's actually maintained",
+    ],
+    faqs: [
+      {
+        q: "Is AI automation actually worth it for a small business?",
+        a: "When it removes repetitive work or catches leads you'd otherwise miss, yes. We'll tell you where it pays off and where it's just hype.",
+      },
+      {
+        q: "Will AI replace my team?",
+        a: "No. It handles the repetitive parts so your team spends time on the work that genuinely needs a human.",
+      },
+      {
+        q: "Is my data safe with AI tools?",
+        a: "We design around tools and configurations that keep your data private and in your control, and we explain exactly what gets sent where.",
+      },
+      {
+        q: "How do we start with automation?",
+        a: "We map your current workflows in the free audit, then automate the highest-impact, lowest-risk steps first.",
+      },
     ],
   },
   {
@@ -197,6 +253,24 @@ export const SERVICE_PAGES: ServicePageData[] = [
       "Anyone burned by SEO agencies that promised page one",
     ],
     caseStudyClient: "Wellington Cash for Cars",
+    faqs: [
+      {
+        q: "How long until SEO shows results?",
+        a: "Technical fixes can help within weeks; competitive rankings typically build over a few months. We focus on keywords that convert, not vanity traffic.",
+      },
+      {
+        q: "Do you guarantee page-one rankings?",
+        a: "No one credible can guarantee rankings. We guarantee the right work, transparent reporting, and a focus on terms that actually bring customers.",
+      },
+      {
+        q: "What's included in your SEO work?",
+        a: "Technical foundations, local search (Google Business Profile), on-page optimization, and content, all reported in plain numbers you can act on.",
+      },
+      {
+        q: "Can you run Google Ads alongside SEO?",
+        a: "Yes. We run Google and Meta ads alongside SEO so you get traffic now and compounding organic growth over time.",
+      },
+    ],
   },
 ];
 

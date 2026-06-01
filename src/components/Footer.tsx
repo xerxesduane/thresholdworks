@@ -65,6 +65,14 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/case-studies"
+                  className="text-cream-dim transition-colors hover:text-gold"
+                >
+                  Case studies
+                </a>
+              </li>
             </ul>
           </div>
 

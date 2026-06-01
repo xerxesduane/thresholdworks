@@ -6,6 +6,7 @@ import { fadeUp, stagger, VIEWPORT } from "../lib/motion";
 import Reveal from "../components/ui/Reveal";
 import Process from "../components/Process";
 import Promise from "../components/Promise";
+import FaqList from "../components/FaqList";
 import Contact from "../components/Contact";
 
 export default function ServicePage({ page }: { page: ServicePageData }) {
@@ -156,6 +157,8 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
 
       <Process />
       <Promise />
+
+      <FaqList heading={`${page.navLabel} questions, answered`} items={page.faqs} />
 
       {/* Cross-links to the other services */}
       <section className="py-16 sm:py-20" aria-label="Other services">
