@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Languages } from "lucide-react";
 import { AnimatePresence, m } from "framer-motion";
 import Wordmark from "./ui/Wordmark";
 import { NAV_LINKS } from "../data/content";
 import { EASE } from "../lib/motion";
 
-export default function Nav() {
+export default function Nav({ langHref, langLabel }: { langHref: string; langLabel: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -49,6 +49,15 @@ export default function Nav() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <a
+              href={langHref}
+              lang={langLabel === "عربي" ? "ar" : "en"}
+              aria-label={`Switch language to ${langLabel}`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-cream/15 px-3 py-2 text-sm text-cream-dim transition-colors hover:border-gold/50 hover:text-gold"
+            >
+              <Languages size={15} />
+              {langLabel}
+            </a>
             <a
               href="#contact"
               className="hidden items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink-deep transition-colors duration-300 hover:bg-gold-soft sm:inline-flex"

@@ -29,7 +29,7 @@ for (const route of routes) {
     .replace("<!--app-html-->", html);
 
   // Arabic routes render right-to-left in Arabic.
-  if (route.startsWith("/ar/")) {
+  if (route === "/ar" || route.startsWith("/ar/")) {
     page = page.replace('<html lang="en">', '<html lang="ar" dir="rtl">');
   }
 

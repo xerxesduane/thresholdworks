@@ -64,6 +64,11 @@ const HOME_META: PageMeta = {
     "Dubai tech studio for small businesses: websites, apps, Odoo/ERP & CRM, automation, AI and ads. Founded by Xerxes Duane. Book a free 60-minute systems audit.",
   canonical: `${SITE_ORIGIN}/`,
   ogTitle: "Threshold Works | Web, Apps, Odoo/ERP & AI Studio in Dubai",
+  alternates: [
+    { hreflang: "en", href: `${SITE_ORIGIN}/` },
+    { hreflang: "ar", href: `${SITE_ORIGIN}/ar` },
+    { hreflang: "x-default", href: `${SITE_ORIGIN}/` },
+  ],
   // Note: the global #org + #website graph lives in index.html (applies to all routes).
   jsonLd: [FAQ_SCHEMA],
 };
@@ -92,9 +97,25 @@ export function allRoutes(): string[] {
     "/insights",
     ...INSIGHTS.map((p) => `/insights/${p.slug}`),
     ...SERVICE_PAGES.map((p) => `/${p.slug}`),
+    "/ar",
     ...SERVICE_PAGES_AR.map((p) => `/ar/${p.slug}`),
   ];
 }
+
+const HOME_ALTERNATES = [
+  { hreflang: "en", href: `${SITE_ORIGIN}/` },
+  { hreflang: "ar", href: `${SITE_ORIGIN}/ar` },
+  { hreflang: "x-default", href: `${SITE_ORIGIN}/` },
+];
+
+const AR_HOME_META: PageMeta = {
+  title: "Threshold Works | استوديو تقني للأعمال الصغيرة في دبي",
+  description:
+    "استوديو تقني متكامل في دبي للأعمال الصغيرة: مواقع وتطبيقات وأنظمة أودو ERP وأتمتة وذكاء اصطناعي وتحسين محركات البحث. احجز تدقيقًا مجانيًا لأنظمتك.",
+  canonical: `${SITE_ORIGIN}/ar`,
+  ogTitle: "Threshold Works | استوديو تقني للأعمال الصغيرة في دبي",
+  alternates: HOME_ALTERNATES,
+};
 
 const ABOUT_META: PageMeta = {
   title: "About Xerxes Duane | Threshold Works",
@@ -156,8 +177,9 @@ export function getPageMeta(path: string): PageMeta {
   if (slug === "about") return ABOUT_META;
   if (slug === "case-studies") return CASE_STUDIES_META;
   if (slug === "insights") return INSIGHTS_META;
+  if (slug === "ar") return AR_HOME_META;
 
-  // Arabic service pages (draft): noindex until reviewed; no hreflang yet.
+  // Arabic service pages.
   if (slug.startsWith("ar/")) {
     const ar = getServicePageAr(slug.slice("ar/".length));
     if (ar) {

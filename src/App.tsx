@@ -10,11 +10,21 @@ import About from "./pages/About";
 import Insights from "./pages/Insights";
 import InsightPost from "./pages/InsightPost";
 import ServicePageAr from "./pages/ServicePageAr";
+import HomeAr from "./pages/HomeAr";
 import NotFound from "./pages/NotFound";
 import { getServicePage } from "./data/servicePages";
 import { getServicePageAr } from "./data/servicePagesAr";
 import { getInsight } from "./data/insights";
 import { pathToSlug } from "./lib/seo";
+
+/** The matching page in the other language, for the Nav toggle. */
+function altLanguage(path: string): { href: string; label: string } {
+  const slug = pathToSlug(path);
+  if (slug === "ar") return { href: "/", label: "English" };
+  if (slug.startsWith("ar/")) return { href: `/${slug.slice(3)}`, label: "English" };
+  if (getServicePage(slug)) return { href: `/ar/${slug}`, label: "عربي" };
+  return { href: "/ar", label: "عربي" };
+}
 
 function Route({ path }: { path: string }) {
   const slug = pathToSlug(path);
@@ -22,8 +32,9 @@ function Route({ path }: { path: string }) {
   if (slug === "case-studies") return <CaseStudies />;
   if (slug === "about") return <About />;
   if (slug === "insights") return <Insights />;
+  if (slug === "ar") return <HomeAr />;
 
-  // Arabic service pages (draft, noindex): /ar/<service-slug>
+  // Arabic service pages: /ar/<service-slug>
   if (slug.startsWith("ar/")) {
     const arPage = getServicePageAr(slug.slice("ar/".length));
     if (arPage) return <ServicePageAr page={arPage} />;
@@ -42,7 +53,9 @@ function Route({ path }: { path: string }) {
 }
 
 export default function App({ path = "/" }: { path?: string }) {
-  const isArabic = pathToSlug(path).startsWith("ar/");
+  const slug = pathToSlug(path);
+  const isArabic = slug === "ar" || slug.startsWith("ar/");
+  const lang = altLanguage(path);
   return (
     <LazyMotion features={domAnimation} strict>
       <div className="grain relative min-h-dvh" dir={isArabic ? "rtl" : "ltr"} lang={isArabic ? "ar" : "en"}>
@@ -54,7 +67,7 @@ export default function App({ path = "/" }: { path?: string }) {
         </a>
 
         <Background />
-        <Nav />
+        <Nav langHref={lang.href} langLabel={lang.label} />
 
         <main className="relative z-10">
           <Route path={path} />
