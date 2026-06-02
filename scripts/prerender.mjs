@@ -54,9 +54,9 @@ const notFoundPage = template
 await writeFile(join(distDir, "404.html"), notFoundPage, "utf-8");
 console.log("  prerendered  404  ->  ./dist/404.html");
 
-// Sitemap, freshly dated each build. Exclude noindex draft routes (/ar/*).
+// Sitemap, freshly dated each build.
 const today = new Date().toISOString().slice(0, 10);
-const indexableRoutes = routes.filter((r) => !r.startsWith("/ar/"));
+const indexableRoutes = routes;
 const urls = indexableRoutes
   .map((route) => {
     const loc = route === "/" ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${route}`;

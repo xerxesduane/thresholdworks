@@ -14,8 +14,19 @@ export interface PageMeta {
   ogImage?: string;
   /** Extra JSON-LD nodes serialized into the head (e.g. Service, FAQPage). */
   jsonLd?: Record<string, unknown>[];
-  /** When true, emits robots noindex (e.g. draft Arabic pages, 404). */
+  /** When true, emits robots noindex (e.g. 404). */
   noindex?: boolean;
+  /** hreflang alternates (en/ar/x-default) for bilingual pages. */
+  alternates?: { hreflang: string; href: string }[];
+}
+
+/** Reciprocal hreflang set for a service page that has an Arabic version. */
+function serviceAlternates(slug: string): { hreflang: string; href: string }[] {
+  return [
+    { hreflang: "en", href: `${SITE_ORIGIN}/${slug}` },
+    { hreflang: "ar", href: `${SITE_ORIGIN}/ar/${slug}` },
+    { hreflang: "x-default", href: `${SITE_ORIGIN}/${slug}` },
+  ];
 }
 
 const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/brand/og-image.png`;
@@ -155,7 +166,8 @@ export function getPageMeta(path: string): PageMeta {
         description: ar.metaDescription,
         canonical: `${SITE_ORIGIN}/ar/${ar.slug}`,
         ogTitle: ar.metaTitle,
-        noindex: true,
+        ogImage: `${SITE_ORIGIN}/brand/og/${ar.slug}.png`,
+        alternates: serviceAlternates(ar.slug),
       };
     }
   }
@@ -203,6 +215,7 @@ export function getPageMeta(path: string): PageMeta {
     canonical,
     ogTitle: page.ogTitle,
     ogImage: `${SITE_ORIGIN}/brand/og/${page.slug}.png`,
+    alternates: serviceAlternates(page.slug),
     jsonLd: [
       {
         "@context": "https://schema.org",
@@ -256,6 +269,9 @@ export function buildHeadTags(path: string): string {
   ];
   if (m.noindex) {
     tags.push(`<meta name="robots" content="noindex, follow" />`);
+  }
+  for (const a of m.alternates ?? []) {
+    tags.push(`<link rel="alternate" hreflang="${esc(a.hreflang)}" href="${esc(a.href)}" />`);
   }
   for (const node of m.jsonLd ?? []) {
     tags.push(

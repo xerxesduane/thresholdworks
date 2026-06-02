@@ -14,13 +14,17 @@ const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
 export default function ServicePageAr({ page }: { page: ArPage }) {
   return (
     <>
-      <p className="bg-gold/10 py-2 text-center font-mono text-[11px] text-gold/90">
-        {AR_UI.draftNotice}
-      </p>
-
       {/* Header */}
       <section id="top" className="relative overflow-hidden pt-32 pb-14 sm:pt-40 sm:pb-20">
         <div className="container-bl">
+          <div className="mx-auto mb-6 flex max-w-3xl justify-center">
+            <a
+              href={`/${page.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-cream/10 bg-cream/5 px-3 py-1.5 font-mono text-xs text-cream-dim transition-colors hover:border-gold/50 hover:text-gold"
+            >
+              {AR_UI.english}
+            </a>
+          </div>
           <m.div
             variants={stagger}
             initial="hidden"

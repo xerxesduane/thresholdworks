@@ -24,6 +24,15 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
       {/* Header */}
       <section id="top" className="relative overflow-hidden pt-36 pb-16 sm:pt-44 sm:pb-20">
         <div className="container-bl">
+          <div className="mx-auto mb-6 flex max-w-3xl justify-center">
+            <a
+              href={`/ar/${page.slug}`}
+              lang="ar"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cream/10 bg-cream/5 px-3 py-1.5 font-mono text-xs text-cream-dim transition-colors hover:border-gold/50 hover:text-gold"
+            >
+              العربية
+            </a>
+          </div>
           <m.div
             variants={stagger}
             initial="hidden"
