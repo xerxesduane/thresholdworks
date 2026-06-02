@@ -1,6 +1,7 @@
 import Wordmark from "./ui/Wordmark";
 import { CONTACT, NAV_LINKS } from "../data/content";
 import { SERVICE_PAGES } from "../data/servicePages";
+import { SERVICE_PAGES_AR, AR_CHROME } from "../data/servicePagesAr";
 
 function LinkedinIcon() {
   return (
@@ -18,28 +19,44 @@ function InstagramIcon() {
   );
 }
 
-export default function Footer() {
+export default function Footer({ locale = "en" }: { locale?: "en" | "ar" }) {
+  const ar = locale === "ar";
+  const tagline = ar
+    ? AR_CHROME.footerTagline
+    : "Smart systems. Honest work. Real results.";
+  const serviceItems = ar
+    ? SERVICE_PAGES_AR.map((p) => ({ href: `/ar/${p.slug}`, label: p.navLabel }))
+    : SERVICE_PAGES.map((p) => ({ href: `/${p.slug}`, label: p.navLabel }));
+  const gridCols = ar
+    ? "sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]"
+    : "sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]";
+  const linkCls = "text-cream-dim transition-colors hover:text-gold";
+
   return (
     <footer className="border-t border-cream/8 bg-ink-deep/60 py-14">
       <div className="container-bl">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className={`grid gap-10 ${gridCols}`}>
           <div>
             <Wordmark endorsed />
             <p className="mt-4 max-w-xs font-display text-lg italic text-cream-dim">
-              Smart systems. Honest work. Real results.
+              {tagline}
             </p>
-            <p className="mt-3 text-sm text-muted">
-              Threshold Works by Xerxes Duane · Dubai, UAE
-            </p>
-            <p className="mt-1 text-xs text-muted-dark">
-              Serving Dubai &amp; the wider UAE.
-            </p>
+            {!ar && (
+              <>
+                <p className="mt-3 text-sm text-muted">
+                  Threshold Works by Xerxes Duane · Dubai, UAE
+                </p>
+                <p className="mt-1 text-xs text-muted-dark">
+                  Serving Dubai &amp; the wider UAE.
+                </p>
+              </>
+            )}
             <div className="mt-5 flex gap-3">
               <a
                 href="https://www.linkedin.com/in/xerxesduane"
                 target="_blank"
                 rel="noopener"
-                aria-label="Xerxes Duane on LinkedIn"
+                aria-label={ar ? AR_CHROME.linkedinAria : "Xerxes Duane on LinkedIn"}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/10 text-cream-dim transition-colors hover:border-gold/50 hover:text-gold"
               >
                 <LinkedinIcon />
@@ -48,7 +65,7 @@ export default function Footer() {
                 href="https://www.instagram.com/xerxes.duane"
                 target="_blank"
                 rel="noopener"
-                aria-label="Threshold Works on Instagram"
+                aria-label={ar ? AR_CHROME.instagramAria : "Threshold Works on Instagram"}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-cream/10 text-cream-dim transition-colors hover:border-gold/50 hover:text-gold"
               >
                 <InstagramIcon />
@@ -56,44 +73,38 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="font-mono text-xs uppercase tracking-wider text-muted-dark">
-              Studio
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              {NAV_LINKS.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-cream-dim transition-colors hover:text-gold"
-                  >
-                    {l.label}
+          {/* Studio column (English only — no Arabic equivalents yet) */}
+          {!ar && (
+            <div>
+              <h3 className="font-mono text-xs uppercase tracking-wider text-muted-dark">
+                Studio
+              </h3>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {NAV_LINKS.map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href} className={linkCls}>
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <a href="/case-studies" className={linkCls}>
+                    Case studies
                   </a>
                 </li>
-              ))}
-              <li>
-                <a
-                  href="/case-studies"
-                  className="text-cream-dim transition-colors hover:text-gold"
-                >
-                  Case studies
-                </a>
-              </li>
-            </ul>
-          </div>
+              </ul>
+            </div>
+          )}
 
           <div>
             <h3 className="font-mono text-xs uppercase tracking-wider text-muted-dark">
-              Services in Dubai
+              {ar ? AR_CHROME.footerServicesHeading : "Services in Dubai"}
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {SERVICE_PAGES.map((p) => (
-                <li key={p.slug}>
-                  <a
-                    href={`/${p.slug}`}
-                    className="text-cream-dim transition-colors hover:text-gold"
-                  >
-                    {p.navLabel}
+              {serviceItems.map((s) => (
+                <li key={s.href}>
+                  <a href={s.href} className={linkCls}>
+                    {s.label}
                   </a>
                 </li>
               ))}
@@ -102,7 +113,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-mono text-xs uppercase tracking-wider text-muted-dark">
-              Get in touch
+              {ar ? AR_CHROME.footerContactHeading : "Get in touch"}
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
@@ -110,27 +121,33 @@ export default function Footer() {
                   href={`https://wa.me/${CONTACT.whatsapp}`}
                   target="_blank"
                   rel="noopener"
-                  className="text-cream-dim transition-colors hover:text-gold"
+                  className={linkCls}
                 >
                   {CONTACT.whatsappDisplay}
                 </a>
               </li>
               <li>
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="text-cream-dim transition-colors hover:text-gold"
-                >
+                <a href={`mailto:${CONTACT.email}`} className={linkCls}>
                   {CONTACT.email}
                 </a>
               </li>
-              <li className="text-muted">{CONTACT.location}</li>
+              <li className="text-muted">{ar ? "دبي، الإمارات" : CONTACT.location}</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-cream/8 pt-6 text-xs text-muted-dark sm:flex-row">
-          <span>© {new Date().getFullYear()} Threshold Works. Built with care in Dubai.</span>
-          <span>Quietly trusted since 2019.</span>
+          {ar ? (
+            <>
+              <span>© {new Date().getFullYear()} {AR_CHROME.footerRights}</span>
+              <span>{AR_CHROME.footerSince}</span>
+            </>
+          ) : (
+            <>
+              <span>© {new Date().getFullYear()} Threshold Works. Built with care in Dubai.</span>
+              <span>Quietly trusted since 2019.</span>
+            </>
+          )}
         </div>
       </div>
     </footer>

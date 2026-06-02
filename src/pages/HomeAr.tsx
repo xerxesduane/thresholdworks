@@ -62,7 +62,7 @@ export default function HomeAr() {
       </section>
 
       {/* Services */}
-      <section className="py-14 sm:py-20">
+      <section id="services" className="scroll-mt-24 py-14 sm:py-20">
         <div className="container-bl">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl">

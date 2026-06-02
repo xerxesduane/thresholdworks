@@ -3,11 +3,26 @@ import { Menu, X, ArrowUpRight, Languages } from "lucide-react";
 import { AnimatePresence, m } from "framer-motion";
 import Wordmark from "./ui/Wordmark";
 import { NAV_LINKS } from "../data/content";
+import { AR_NAV_LINKS, AR_CHROME } from "../data/servicePagesAr";
 import { EASE } from "../lib/motion";
 
-export default function Nav({ langHref, langLabel }: { langHref: string; langLabel: string }) {
+export default function Nav({
+  langHref,
+  langLabel,
+  locale = "en",
+}: {
+  langHref: string;
+  langLabel: string;
+  locale?: "en" | "ar";
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const ar = locale === "ar";
+  const links = ar ? AR_NAV_LINKS : NAV_LINKS;
+  const homeHref = ar ? "/ar" : "/";
+  const homeAria = ar ? AR_CHROME.homeAria : "Threshold Works by Xerxes Duane, home";
+  const bookLabel = ar ? AR_CHROME.bookAudit : "Book a free audit";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,12 +46,12 @@ export default function Nav({ langHref, langLabel }: { langHref: string; langLab
             scrolled ? "glass" : "border border-transparent"
           }`}
         >
-          <a href="/" aria-label="Threshold Works by Xerxes Duane, home" className="py-1">
+          <a href={homeHref} aria-label={homeAria} className="py-1">
             <Wordmark endorsed />
           </a>
 
           <ul className="hidden items-center gap-7 md:flex">
-            {NAV_LINKS.map((l) => (
+            {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
@@ -62,13 +77,13 @@ export default function Nav({ langHref, langLabel }: { langHref: string; langLab
               href="#contact"
               className="hidden items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink-deep transition-colors duration-300 hover:bg-gold-soft sm:inline-flex"
             >
-              Book a free audit
+              {bookLabel}
               <ArrowUpRight size={16} strokeWidth={2.5} />
             </a>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? (ar ? AR_CHROME.closeMenu : "Close menu") : (ar ? AR_CHROME.openMenu : "Open menu")}
               aria-expanded={open}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/15 text-cream transition-colors hover:border-gold/50 hover:text-gold md:hidden"
             >
@@ -89,7 +104,7 @@ export default function Nav({ langHref, langLabel }: { langHref: string; langLab
           >
             <div className="glass mt-2 rounded-2xl p-4">
               <ul className="flex flex-col">
-                {NAV_LINKS.map((l) => (
+                {links.map((l) => (
                   <li key={l.href}>
                     <a
                       href={l.href}
@@ -106,7 +121,7 @@ export default function Nav({ langHref, langLabel }: { langHref: string; langLab
                 onClick={() => setOpen(false)}
                 className="mt-2 flex items-center justify-center gap-1.5 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink-deep"
               >
-                Book a free audit
+                {bookLabel}
                 <ArrowUpRight size={16} strokeWidth={2.5} />
               </a>
             </div>

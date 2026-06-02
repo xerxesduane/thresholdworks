@@ -1,9 +1,11 @@
 import { CONTACT } from "../data/content";
+import { AR_CHROME } from "../data/servicePagesAr";
 
 /** Floating WhatsApp button, essential for UAE conversion. */
-export default function WhatsAppButton() {
+export default function WhatsAppButton({ locale = "en" }: { locale?: "en" | "ar" }) {
+  const ar = locale === "ar";
   const href = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
-    "Hi Threshold Works, I'd like to learn more.",
+    ar ? "مرحبًا Threshold Works، أودّ معرفة المزيد." : "Hi Threshold Works, I'd like to learn more.",
   )}`;
 
   return (
@@ -11,7 +13,7 @@ export default function WhatsAppButton() {
       href={href}
       target="_blank"
       rel="noopener"
-      aria-label="Chat with Threshold Works on WhatsApp"
+      aria-label={ar ? AR_CHROME.whatsappAria : "Chat with Threshold Works on WhatsApp"}
       className="group fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-olive text-cream shadow-[0_12px_40px_-8px_rgba(0,0,0,0.6)] ring-1 ring-gold/30 transition-transform duration-300 ease-smooth hover:scale-105 sm:bottom-7 sm:right-7"
     >
       <span

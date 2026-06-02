@@ -67,14 +67,14 @@ export default function App({ path = "/" }: { path?: string }) {
         </a>
 
         <Background />
-        <Nav langHref={lang.href} langLabel={lang.label} />
+        <Nav langHref={lang.href} langLabel={lang.label} locale={isArabic ? "ar" : "en"} />
 
         <main className="relative z-10">
           <Route path={path} />
         </main>
 
-        <Footer />
-        <WhatsAppButton />
+        <Footer locale={isArabic ? "ar" : "en"} />
+        <WhatsAppButton locale={isArabic ? "ar" : "en"} />
       </div>
     </LazyMotion>
   );

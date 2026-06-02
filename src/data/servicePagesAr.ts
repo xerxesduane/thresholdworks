@@ -152,3 +152,24 @@ export const AR_UI = {
   whatsapp: "تواصل عبر واتساب",
   draftNotice: "هذه نسخة عربية مبدئية قيد المراجعة.",
 };
+
+// Arabic site chrome (Nav / Footer / WhatsApp) for /ar pages.
+export const AR_NAV_LINKS = [
+  { label: "الخدمات", href: "/ar#services" },
+  { label: "تواصل", href: "/ar#contact" },
+];
+
+export const AR_CHROME = {
+  homeAria: "Threshold Works، الصفحة الرئيسية",
+  bookAudit: "احجز تدقيقًا مجانيًا",
+  openMenu: "افتح القائمة",
+  closeMenu: "أغلق القائمة",
+  whatsappAria: "تواصل مع Threshold Works عبر واتساب",
+  footerTagline: "أنظمة ذكية. عمل صادق. نتائج حقيقية.",
+  footerServicesHeading: "خدماتنا في دبي",
+  footerContactHeading: "تواصل معنا",
+  footerRights: "Threshold Works · دبي، الإمارات.",
+  footerSince: "موثوق بهدوء منذ ٢٠١٩.",
+  linkedinAria: "Xerxes Duane على LinkedIn",
+  instagramAria: "Threshold Works على Instagram",
+};
