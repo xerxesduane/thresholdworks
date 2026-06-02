@@ -62,6 +62,19 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
               {page.lede}
             </m.p>
 
+            {page.price && (
+              <m.p
+                variants={fadeUp}
+                className="mt-6 font-mono text-sm text-gold"
+              >
+                {page.price}
+                <span className="text-muted-dark">
+                  {" "}
+                  · fixed quote after your free audit
+                </span>
+              </m.p>
+            )}
+
             <m.div
               variants={fadeUp}
               className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"

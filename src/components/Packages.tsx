@@ -61,6 +61,11 @@ export default function Packages() {
             </m.div>
           ))}
         </m.div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-dark">
+          All prices are indicative starting points. You get one fixed quote
+          after your free audit, no surprises and no lock-in.
+        </p>
       </div>
     </section>
   );

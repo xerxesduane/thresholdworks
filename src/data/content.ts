@@ -17,6 +17,7 @@ import {
   Church,
   HeartHandshake,
   Store,
+  ScanSearch,
   type LucideIcon,
 } from "lucide-react";
 
@@ -43,6 +44,8 @@ export interface Service {
   title: string;
   tagline: string;
   description: string;
+  /** Indicative starting price, e.g. "from AED 4,500". */
+  price?: string;
   featured?: boolean;
 }
 
@@ -53,6 +56,7 @@ export const SERVICES: Service[] = [
     tagline: "The new advantage.",
     description:
       "AI workflows, chatbots, and custom assistants that quietly run your business in the background, answering questions, qualifying leads, and giving you back the hours you've been losing.",
+    price: "from AED 6,000",
     featured: true,
   },
   {
@@ -61,6 +65,7 @@ export const SERVICES: Service[] = [
     tagline: "The foundation, built for you.",
     description:
       "Software tailored to how your business actually works, client portals, internal tools, and systems built around the way you run. No templates, no limitations.",
+    price: "from AED 9,000",
   },
   {
     icon: Boxes,
@@ -68,6 +73,7 @@ export const SERVICES: Service[] = [
     tagline: "One system to run on.",
     description:
       "Odoo ERP setup, administration, and support, wiring inventory, sales, purchasing, and accounting into a single source of truth. Configured and run for real businesses in the UAE and the Philippines.",
+    price: "from AED 12,000",
   },
   {
     icon: LayoutDashboard,
@@ -75,6 +81,7 @@ export const SERVICES: Service[] = [
     tagline: "See your business clearly.",
     description:
       "Real-time dashboards, customer databases, and integrations that finally talk: HubSpot, QuickBooks, Zoho, all in one place.",
+    price: "from AED 4,000",
   },
   {
     icon: Smartphone,
@@ -82,6 +89,7 @@ export const SERVICES: Service[] = [
     tagline: "Sleek, scalable, built to grow.",
     description:
       "Custom iOS, Android, and web apps, booking platforms, member portals, internal tools, fast and ready for what's next.",
+    price: "from AED 25,000",
   },
   {
     icon: ShoppingBag,
@@ -89,6 +97,7 @@ export const SERVICES: Service[] = [
     tagline: "Sell online without the headaches.",
     description:
       "Secure checkout, payment gateways, order tracking, and upsell flows, tailored to your products and your customers.",
+    price: "from AED 9,000",
   },
   {
     icon: Target,
@@ -96,6 +105,23 @@ export const SERVICES: Service[] = [
     tagline: "Turn clicks into customers.",
     description:
       "Conversion-optimized pages and complete sales funnels, integrated with analytics, lead capture, and your CRM.",
+    price: "from AED 2,500",
+  },
+  {
+    icon: ScanSearch,
+    title: "AEO — Answer Engine Optimization",
+    tagline: "Be the answer, not a blue link.",
+    description:
+      "Optimize your content so voice assistants and Google's AI Overviews quote you directly, with structured data, concise answers, and FAQ schema that win featured snippets and 'position zero'.",
+    price: "from AED 2,500/month",
+  },
+  {
+    icon: Sparkles,
+    title: "GEO — Generative Engine Optimization",
+    tagline: "Get cited by ChatGPT & Perplexity.",
+    description:
+      "Make your business the source AI engines recommend. We shape your content, entities, and citations so ChatGPT, Gemini, and Perplexity surface and recommend you when buyers ask.",
+    price: "from AED 3,000/month",
   },
   {
     icon: Video,
@@ -103,6 +129,7 @@ export const SERVICES: Service[] = [
     tagline: "Stories that sell.",
     description:
       "Professional video, product photography, reels, and brand films, created with the storytelling instincts of someone who's run real ad campaigns.",
+    price: "from AED 1,500/day",
   },
   {
     icon: Palette,
@@ -110,6 +137,7 @@ export const SERVICES: Service[] = [
     tagline: "Look like the brand you are.",
     description:
       "Logos, brand identity, social graphics, and marketing collateral, designed to match the quality of the work behind it.",
+    price: "from AED 1,500",
   },
 ];
 

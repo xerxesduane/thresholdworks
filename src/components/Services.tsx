@@ -62,6 +62,12 @@ export default function Services() {
                   {s.description}
                 </p>
 
+                {s.price && (
+                  <p className="mt-4 font-mono text-sm font-medium text-gold">
+                    {s.price}
+                  </p>
+                )}
+
                 {s.featured && (
                   <span className="mt-auto inline-flex items-center gap-2 pt-6 font-mono text-xs uppercase tracking-widest text-gold">
                     <span className="h-px w-8 bg-gold/50" />
@@ -72,6 +78,12 @@ export default function Services() {
             );
           })}
         </m.div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-dark">
+          Indicative starting prices. You get one fixed quote after your free
+          audit, no surprises and no lock-in. Ad spend and software licences are
+          billed separately.
+        </p>
       </div>
     </section>
   );
