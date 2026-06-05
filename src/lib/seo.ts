@@ -31,6 +31,18 @@ function serviceAlternates(slug: string): { hreflang: string; href: string }[] {
 
 const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/brand/og-image.png`;
 
+/**
+ * Bump this when a share image changes. Facebook/WhatsApp/LinkedIn cache the
+ * OG image by URL for weeks, so a versioned query string forces them to fetch
+ * the current image instead of serving a stale (or wrong) cached one.
+ */
+const OG_IMAGE_VERSION = "2";
+
+/** Absolute, cache-busted share-image URL for a page. */
+function ogImageUrl(image?: string): string {
+  return `${image ?? DEFAULT_OG_IMAGE}?v=${OG_IMAGE_VERSION}`;
+}
+
 /** BreadcrumbList JSON-LD from a trail of { name, url } items. */
 function breadcrumb(trail: { name: string; url: string }[]): Record<string, unknown> {
   return {
@@ -318,6 +330,7 @@ function esc(s: string): string {
 /** Build the per-route <head> markup injected into the prerendered HTML. */
 export function buildHeadTags(path: string): string {
   const m = getPageMeta(path);
+  const ogImage = ogImageUrl(m.ogImage);
   const tags = [
     `<title>${esc(m.title)}</title>`,
     `<meta name="description" content="${esc(m.description)}" />`,
@@ -325,13 +338,16 @@ export function buildHeadTags(path: string): string {
     `<meta property="og:url" content="${esc(m.canonical)}" />`,
     `<meta property="og:title" content="${esc(m.ogTitle)}" />`,
     `<meta property="og:description" content="${esc(m.description)}" />`,
-    `<meta property="og:image" content="${esc(m.ogImage ?? DEFAULT_OG_IMAGE)}" />`,
+    `<meta property="og:image" content="${esc(ogImage)}" />`,
+    `<meta property="og:image:secure_url" content="${esc(ogImage)}" />`,
+    `<meta property="og:image:type" content="image/png" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
     `<meta property="og:image:alt" content="${esc(m.ogTitle)}" />`,
     `<meta name="twitter:title" content="${esc(m.ogTitle)}" />`,
     `<meta name="twitter:description" content="${esc(m.description)}" />`,
-    `<meta name="twitter:image" content="${esc(m.ogImage ?? DEFAULT_OG_IMAGE)}" />`,
+    `<meta name="twitter:image" content="${esc(ogImage)}" />`,
+    `<meta name="twitter:image:alt" content="${esc(m.ogTitle)}" />`,
   ];
   if (m.noindex) {
     tags.push(`<meta name="robots" content="noindex, follow" />`);
