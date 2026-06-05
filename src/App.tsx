@@ -3,6 +3,7 @@ import Background from "./components/Background";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import MobileCTA from "./components/MobileCTA";
 import Home from "./pages/Home";
 import ServicePage from "./pages/ServicePage";
 import CaseStudies from "./pages/CaseStudies";
@@ -83,7 +84,10 @@ export default function App({ path = "/" }: { path?: string }) {
         </main>
 
         <Footer locale={isArabic ? "ar" : "en"} />
+        {/* mobile bar height, so the footer is never hidden behind it */}
+        <div className="h-16 md:hidden" aria-hidden />
         <WhatsAppButton locale={isArabic ? "ar" : "en"} />
+        <MobileCTA locale={isArabic ? "ar" : "en"} />
         <ConsentBanner />
       </div>
       </MotionConfig>

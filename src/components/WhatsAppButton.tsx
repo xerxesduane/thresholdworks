@@ -14,7 +14,7 @@ export default function WhatsAppButton({ locale = "en" }: { locale?: "en" | "ar"
       target="_blank"
       rel="noopener"
       aria-label={ar ? AR_CHROME.whatsappAria : "Chat with Threshold Works on WhatsApp"}
-      className="group fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-olive text-cream shadow-[0_12px_40px_-8px_rgba(0,0,0,0.6)] ring-1 ring-gold/30 transition-transform duration-300 ease-smooth hover:scale-105 sm:bottom-7 sm:right-7"
+      className="group fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-olive text-cream shadow-[0_12px_40px_-8px_rgba(0,0,0,0.6)] ring-1 ring-gold/30 transition-transform duration-300 ease-smooth hover:scale-105 md:bottom-7 md:right-7"
     >
       <span
         aria-hidden
