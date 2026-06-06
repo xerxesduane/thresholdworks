@@ -70,7 +70,7 @@ export default function Hero() {
                 <Star key={i} size={13} fill="currentColor" strokeWidth={0} />
               ))}
             </span>
-            <span>Quietly trusted since 2019</span>
+            <span>50+ businesses since 2019</span>
             <span className="text-muted-dark">·</span>
             <span>Dubai → New Zealand</span>
             <span className="text-muted-dark">·</span>

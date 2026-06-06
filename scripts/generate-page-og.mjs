@@ -60,6 +60,12 @@ const cards = [
     line2: "&amp; motion.",
     subtitle: "Events, documentaries, social reels &amp; brand work — Dubai.",
   },
+  {
+    slug: "website-cost-dubai",
+    line1: "What a website",
+    line2: "really costs.",
+    subtitle: "An honest 2026 breakdown for Dubai — Threshold Works.",
+  },
 ];
 
 for (const c of cards) {

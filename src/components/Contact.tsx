@@ -179,12 +179,11 @@ export default function Contact() {
               </div>
               <div>
                 <label htmlFor="business" className="mb-1.5 block text-xs text-muted">
-                  Your business and what you do
+                  Your business and what you do <span className="text-muted-dark">(optional)</span>
                 </label>
                 <input
                   id="business"
                   name="business"
-                  required
                   value={form.business}
                   onChange={update("business")}
                   className={field}

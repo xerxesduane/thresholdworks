@@ -21,7 +21,7 @@ export default function Marquee() {
 
   return (
     <section
-      className={`border-y py-7 ${useLogos ? "border-ink/10 bg-cream" : "border-cream/5 bg-ink-deep/40"}`}
+      className={`border-y ${useLogos ? "border-ink/10 bg-[#E8E1D2] py-6" : "border-cream/5 bg-ink-deep/40 py-7"}`}
       aria-label="Trusted by"
     >
       <p

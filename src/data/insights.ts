@@ -22,6 +22,82 @@ export interface InsightPost {
 
 export const INSIGHTS: InsightPost[] = [
   {
+    slug: "website-cost-dubai",
+    title: "How much does a website really cost in Dubai? (2026)",
+    description:
+      "An honest, no-spin breakdown of what a website actually costs in Dubai in 2026: real AED ranges by type, what drives the price, the costs people forget, and how to avoid overpaying.",
+    date: "2026-06-06",
+    author: "Xerxes Duane",
+    readingMinutes: 7,
+    body: [
+      {
+        type: "p",
+        text: "Short answer: a professional website in Dubai usually costs anywhere from around AED 1,500 for a simple landing page to AED 50,000+ for a complex custom build, with most small-business sites landing in the AED 5,000–15,000 range. The honest longer answer, what you are actually paying for and where people quietly overpay, is below.",
+      },
+      { type: "h2", text: "What you are actually paying for" },
+      {
+        type: "p",
+        text: "A website is not just a design file. The price covers strategy (what the site is for), copywriting, the design itself, the build, making it fast and mobile-friendly, basic SEO so it can be found, and testing. When one quote is a tenth of another, it is almost always because one of these is missing, usually the strategy, the copy, or the SEO.",
+      },
+      { type: "h2", text: "Website cost in Dubai by type (2026)" },
+      {
+        type: "ul",
+        items: [
+          "Landing page / one-pager — AED 1,500–5,000. One focused page to capture leads or launch a campaign.",
+          "Standard business website — AED 5,000–15,000. Five to ten pages, mobile-friendly, an editor you can update yourself, basic SEO. Where most Dubai SMEs sit.",
+          "E-commerce store — AED 12,000–40,000+. Product catalogue, online payments, shipping, and VAT-ready invoicing.",
+          "Custom site or web app — AED 25,000–80,000+. Bespoke design plus integrations (CRM, ERP, bookings) and custom functionality.",
+        ],
+      },
+      { type: "h2", text: "The costs people forget" },
+      {
+        type: "ul",
+        items: [
+          "Domain — roughly AED 40–120 per year.",
+          "Hosting — roughly AED 100–1,000 per month, depending on traffic and stack.",
+          "Content — professional photos, copywriting, and Arabic translation often cost more than the build if you outsource them.",
+          "Maintenance — updates, security, and backups; budget around 10–20% of the build cost per year.",
+          "Getting found — a site nobody visits does not pay for itself, so SEO or ads are part of the real cost.",
+        ],
+      },
+      { type: "h2", text: "Why two quotes for 'a website' can differ 10×" },
+      {
+        type: "p",
+        text: "A cheap template filled in over a weekend and a strategic build designed to bring in leads are both called 'a website', but they do very different jobs. The cheap option often costs more in the end: it does not rank, it does not convert, and you end up paying again to rebuild it properly a year later.",
+      },
+      {
+        type: "quote",
+        text: "A website is either a salesperson that works 24/7 or a brochure nobody reads. The price difference is usually the difference between the two.",
+      },
+      { type: "h2", text: "How to avoid overpaying" },
+      {
+        type: "ul",
+        items: [
+          "Get clear on the goal first, leads, sales, or credibility, before you ask anyone for a quote.",
+          "Always own your domain, hosting, and accounts yourself. Never get locked in to an agency.",
+          "Ask exactly what is included: copy, SEO, revisions, training, and who owns the code at the end.",
+          "Match the build to your stage. Do not buy a custom web app to test an idea a landing page could validate.",
+        ],
+      },
+      { type: "h2", text: "How long does a website take in Dubai?" },
+      {
+        type: "p",
+        text: "A landing page can be live in a few days. A standard business website is typically two to six weeks, depending on how quickly content and feedback come back, that part is usually the bottleneck, not the build.",
+      },
+      { type: "h2", text: "Do I have to pay monthly?" },
+      {
+        type: "p",
+        text: "The build itself is usually a one-off cost. Hosting and maintenance are ongoing but small. Be wary of anyone who only offers an open-ended monthly fee with no clear deliverable, and make sure you are never locked out of your own site.",
+      },
+      { type: "h2", text: "What it costs with Threshold Works" },
+      {
+        type: "p",
+        text: "We give you a fixed quote after a free 60-minute audit, so you only pay for what actually moves your business, and you own the domain, hosting, and code. No surprise invoices, no lock-in. If a simple page is all you need, we will tell you that. Book a free audit and we will map exactly what your site should do, and what it should cost.",
+      },
+    ],
+    relatedServices: ["web-development-dubai", "seo-dubai"],
+  },
+  {
     slug: "crm-setup-mistakes-dubai",
     title: "CRM setup mistakes that cost Dubai businesses leads",
     description:
