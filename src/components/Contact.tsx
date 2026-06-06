@@ -5,6 +5,7 @@ import { ArrowUpRight, CalendarCheck, Mail, MapPin, MessageCircle } from "lucide
 import { CONTACT } from "../data/content";
 import { track } from "../lib/analytics";
 import Reveal from "./ui/Reveal";
+import GoogleRating from "./GoogleRating";
 
 const STEPS = [
   "We confirm your audit time on WhatsApp within a few hours.",
@@ -14,14 +15,25 @@ const STEPS = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", business: "", phone: "", note: "" });
+  const [source, setSource] = useState({ page: "", referrer: "" });
   const [state, handleSubmit] = useForm(CONTACT.formspreeId);
 
   const update = (k: keyof typeof form) => (e: { target: { value: string } }) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
+  // Capture where the lead came from, so every enquiry is attributable.
   useEffect(() => {
-    if (state.succeeded) track("generate_lead", { method: "formspree" });
-  }, [state.succeeded]);
+    setSource({
+      page: window.location.pathname + window.location.search,
+      referrer: document.referrer || "direct",
+    });
+  }, []);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      track("generate_lead", { method: "formspree", page: source.page });
+    }
+  }, [state.succeeded, source.page]);
 
   const whatsappMessage = [
     `Hi Threshold Works, I'd like to book a free audit.`,
@@ -100,6 +112,8 @@ export default function Contact() {
                 {CONTACT.location}
               </span>
             </div>
+
+            <GoogleRating className="mt-8" />
           </Reveal>
 
           {/* Right: form, or success state */}
@@ -137,6 +151,18 @@ export default function Contact() {
               className="flex flex-col gap-4"
             >
               <input type="hidden" name="_subject" value="New audit request from xerxesduane.com" />
+              {/* Lead attribution: which page + referrer the enquiry came from */}
+              <input type="hidden" name="page" value={source.page} />
+              <input type="hidden" name="referrer" value={source.referrer} />
+              {/* Honeypot: bots fill this; Formspree drops the submission. Hidden from humans + a11y tree. */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+              />
               <div>
                 <label htmlFor="name" className="mb-1.5 block text-xs text-muted">
                   Your name

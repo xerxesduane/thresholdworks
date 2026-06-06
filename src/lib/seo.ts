@@ -130,6 +130,7 @@ const AR_HOME_META: PageMeta = {
     "استوديو تقني متكامل في دبي للأعمال الصغيرة: مواقع وتطبيقات وأنظمة أودو ERP وأتمتة وذكاء اصطناعي وتحسين محركات البحث. احجز تدقيقًا مجانيًا لأنظمتك.",
   canonical: `${SITE_ORIGIN}/ar`,
   ogTitle: "Threshold Works | استوديو تقني للأعمال الصغيرة في دبي",
+  ogImage: `${SITE_ORIGIN}/brand/og/ar-home.png`,
   alternates: HOME_ALTERNATES,
 };
 
