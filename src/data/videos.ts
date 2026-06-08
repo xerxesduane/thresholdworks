@@ -7,6 +7,7 @@ export interface VideoItem {
 
 /** Showreel videos (YouTube). Loaded click-to-play (no cookies until played). */
 export const VIDEOS: VideoItem[] = [
+  { id: "aPlbvbjwWYA", title: "Marketing Video", tag: "Marketing" },
   { id: "OBvAXE45BVg", title: "Color Grading", tag: "Technique" },
   { id: "CXqVhRm5x7w", title: "Animation", tag: "Motion" },
   { id: "QEAfldK0FEk", title: "Social Media Reel", tag: "Reel" },
