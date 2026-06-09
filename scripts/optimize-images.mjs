@@ -20,6 +20,7 @@ const META = {
   "01-we-aspire": { title: "We Aspire — E-learning platform, Dubai", href: "https://www.weaspire.ae/" },
   "02-gilani-mobility": { title: "Gilani Mobility — E-commerce, Dubai", href: "https://www.gilanimobility.ae/" },
   "03-aya-home-spa": { title: "AYA Home Spa — Dubai", href: "https://www.ayahomespa.ae/" },
+  "04-fellowship-dubai": { title: "Fellowship Dubai — Church website, Dubai", href: "https://fellowshipdubai.com/" },
 };
 
 const items = [];
