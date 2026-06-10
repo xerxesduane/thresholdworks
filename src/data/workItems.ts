@@ -48,12 +48,11 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     "category": "web",
     "label": "Web Design",
-    "title": "Fellowship Dubai — Church website, Dubai",
-    "href": "https://fellowshipdubai.com/",
+    "title": "Web Design 4",
     "src": "/work/web/web-04.webp",
     "thumb": "/work/web/web-04-thumb.webp",
-    "w": 1440,
-    "h": 1850,
+    "w": 600,
+    "h": 2419,
     "featured": true
   },
   {
@@ -62,8 +61,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 5",
     "src": "/work/web/web-05.webp",
     "thumb": "/work/web/web-05-thumb.webp",
-    "w": 600,
-    "h": 2419,
+    "w": 1400,
+    "h": 1050,
     "featured": false
   },
   {
@@ -82,8 +81,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 7",
     "src": "/work/web/web-07.webp",
     "thumb": "/work/web/web-07-thumb.webp",
-    "w": 1400,
-    "h": 1050,
+    "w": 400,
+    "h": 1856,
     "featured": false
   },
   {
@@ -92,8 +91,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 8",
     "src": "/work/web/web-08.webp",
     "thumb": "/work/web/web-08-thumb.webp",
-    "w": 400,
-    "h": 1856,
+    "w": 500,
+    "h": 1622,
     "featured": false
   },
   {
@@ -102,8 +101,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 9",
     "src": "/work/web/web-09.webp",
     "thumb": "/work/web/web-09-thumb.webp",
-    "w": 500,
-    "h": 1622,
+    "w": 1400,
+    "h": 1050,
     "featured": false
   },
   {
@@ -122,8 +121,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 11",
     "src": "/work/web/web-11.webp",
     "thumb": "/work/web/web-11-thumb.webp",
-    "w": 1400,
-    "h": 1050,
+    "w": 1600,
+    "h": 1067,
     "featured": false
   },
   {
@@ -132,8 +131,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 12",
     "src": "/work/web/web-12.webp",
     "thumb": "/work/web/web-12-thumb.webp",
-    "w": 1600,
-    "h": 1067,
+    "w": 500,
+    "h": 1516,
     "featured": false
   },
   {
@@ -143,7 +142,7 @@ export const WORK_ITEMS: WorkItem[] = [
     "src": "/work/web/web-13.webp",
     "thumb": "/work/web/web-13-thumb.webp",
     "w": 500,
-    "h": 1516,
+    "h": 1558,
     "featured": false
   },
   {
@@ -152,8 +151,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 14",
     "src": "/work/web/web-14.webp",
     "thumb": "/work/web/web-14-thumb.webp",
-    "w": 500,
-    "h": 1558,
+    "w": 600,
+    "h": 2044,
     "featured": false
   },
   {
@@ -162,8 +161,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 15",
     "src": "/work/web/web-15.webp",
     "thumb": "/work/web/web-15-thumb.webp",
-    "w": 600,
-    "h": 2044,
+    "w": 1400,
+    "h": 800,
     "featured": false
   },
   {
@@ -172,8 +171,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 16",
     "src": "/work/web/web-16.webp",
     "thumb": "/work/web/web-16-thumb.webp",
-    "w": 1400,
-    "h": 800,
+    "w": 300,
+    "h": 1843,
     "featured": false
   },
   {
@@ -182,8 +181,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 17",
     "src": "/work/web/web-17.webp",
     "thumb": "/work/web/web-17-thumb.webp",
-    "w": 300,
-    "h": 1843,
+    "w": 1600,
+    "h": 1200,
     "featured": false
   },
   {
@@ -192,8 +191,8 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 18",
     "src": "/work/web/web-18.webp",
     "thumb": "/work/web/web-18-thumb.webp",
-    "w": 1600,
-    "h": 1200,
+    "w": 1400,
+    "h": 933,
     "featured": false
   },
   {
@@ -202,16 +201,6 @@ export const WORK_ITEMS: WorkItem[] = [
     "title": "Web Design 19",
     "src": "/work/web/web-19.webp",
     "thumb": "/work/web/web-19-thumb.webp",
-    "w": 1400,
-    "h": 933,
-    "featured": false
-  },
-  {
-    "category": "web",
-    "label": "Web Design",
-    "title": "Web Design 20",
-    "src": "/work/web/web-20.webp",
-    "thumb": "/work/web/web-20-thumb.webp",
     "w": 1200,
     "h": 621,
     "featured": false

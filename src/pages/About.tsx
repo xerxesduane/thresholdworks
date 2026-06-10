@@ -111,6 +111,7 @@ export default function About() {
                 </li>
               ))}
             </ul>
+            {/* HIDDEN (re-add later): Fellowship Dubai engagement paragraph
             <p className="mt-8 text-[17px] leading-relaxed text-muted">
               Alongside client work, I lead digital for{" "}
               <a
@@ -125,6 +126,7 @@ export default function About() {
               and development, their Google Business Profile and local search,
               and the content and digital marketing across Facebook and Instagram.
             </p>
+            */}
             <p className="mt-6 font-display text-xl italic text-gold">
               Whatever the project, the standard stays the same: smart systems,
               honest work, and results you can measure. I do this through my

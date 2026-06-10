@@ -236,7 +236,7 @@ export const INDUSTRIES: Industry[] = [
     icon: PartyPopper,
     name: "Events & Hospitality",
     blurb: "Event-ready websites, social media, and professional video that turn attendees into repeat clients.",
-    worked: "Keystone Events Dubai",
+    // HIDDEN (re-add later): worked: "Keystone Events Dubai",
   },
   {
     icon: Store,
@@ -248,8 +248,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Church,
     name: "Churches & Faith-Based",
     blurb: "Websites, Google Business Profile and local search, digital marketing, and social content, built with care for the mission.",
-    worked: "Fellowship Dubai",
-    workedUrl: "https://fellowshipdubai.com/",
+    // HIDDEN (re-add later): worked: "Fellowship Dubai", workedUrl: "https://fellowshipdubai.com/",
     mission: true,
   },
   {
@@ -311,6 +310,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     takeaway:
       "Centralized lead management and a clearer path from inquiry to demo to conversion across sales and engagement.",
   },
+  /* HIDDEN (re-add later): Fellowship Dubai case study
   {
     client: "Fellowship Dubai",
     location: "Dubai · Church & Non-Profit",
@@ -326,6 +326,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     takeaway: "A growing, easy-to-find digital presence, run end to end across web, search, and social.",
     url: "https://fellowshipdubai.com/",
   },
+  */
   {
     client: "AYA Home Spa",
     location: "Dubai · Wellness",
@@ -493,6 +494,7 @@ export interface Client {
 }
 
 export const CLIENTS: Client[] = [
+  /* HIDDEN (re-add later): Fellowship Dubai client card
   {
     name: "Fellowship Dubai",
     sector: "Church & Non-Profit · Dubai",
@@ -500,6 +502,7 @@ export const CLIENTS: Client[] = [
     facebook: "https://www.facebook.com/fellowshipdubai",
     instagram: "https://www.instagram.com/fellowshipdubai",
   },
+  */
   {
     name: "AYA Home Spa",
     sector: "Wellness & Spa · Dubai",
