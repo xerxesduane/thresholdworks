@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight, Languages } from "lucide-react";
 import { AnimatePresence, m } from "framer-motion";
 import Wordmark from "./ui/Wordmark";
+import Magnetic from "./fx/Magnetic";
 import { getLenis } from "../lib/lenisStore";
 import { NAV_LINKS } from "../data/content";
 import { AR_NAV_LINKS, AR_CHROME } from "../data/servicePagesAr";
@@ -81,12 +82,14 @@ export default function Nav({
           <ul className="hidden items-center gap-7 md:flex">
             {links.map((l) => (
               <li key={l.href}>
-                <a
-                  href={l.href}
-                  className="nav-link text-sm text-cream-dim/80 transition-colors duration-200 hover:text-gold"
-                >
-                  {l.label}
-                </a>
+                <Magnetic strength={0.25}>
+                  <a
+                    href={l.href}
+                    className="nav-link text-sm text-cream-dim/80 transition-colors duration-200 hover:text-gold"
+                  >
+                    {l.label}
+                  </a>
+                </Magnetic>
               </li>
             ))}
           </ul>
@@ -104,20 +107,22 @@ export default function Nav({
               <Languages size={15} />
               {langLabel}
             </m.a>
-            <m.a
-              href="#contact"
-              className="group hidden items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink-deep shadow-[0_8px_24px_-10px_rgba(218,164,66,0.7)] transition-colors duration-300 hover:bg-gold-soft sm:inline-flex"
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.2, ease: EASE }}
-            >
-              {bookLabel}
-              <ArrowUpRight
-                size={16}
-                strokeWidth={2.5}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </m.a>
+            <Magnetic strength={0.35} className="hidden sm:inline-block">
+              <m.a
+                href="#contact"
+                className="group inline-flex items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink-deep shadow-[0_8px_24px_-10px_rgba(218,164,66,0.7)] transition-colors duration-300 hover:bg-gold-soft"
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2, ease: EASE }}
+              >
+                {bookLabel}
+                <ArrowUpRight
+                  size={16}
+                  strokeWidth={2.5}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </m.a>
+            </Magnetic>
             <m.button
               type="button"
               onClick={() => setOpen((v) => !v)}

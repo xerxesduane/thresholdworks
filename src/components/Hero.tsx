@@ -2,6 +2,7 @@ import { m } from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
 import { fadeUp, stagger, EASE } from "../lib/motion";
 import Button from "./ui/Button";
+import Magnetic from "./fx/Magnetic";
 
 export default function Hero() {
   return (
@@ -48,10 +49,12 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
-            <Button href="#contact" className="w-full px-7 py-3.5 sm:w-auto">
-              Book your free audit
-              <ArrowUpRight size={17} strokeWidth={2.5} />
-            </Button>
+            <Magnetic strength={0.3} className="w-full sm:w-auto">
+              <Button href="#contact" className="w-full px-7 py-3.5 sm:w-auto">
+                Book your free audit
+                <ArrowUpRight size={17} strokeWidth={2.5} />
+              </Button>
+            </Magnetic>
             <Button
               variant="ghost"
               href="#services"

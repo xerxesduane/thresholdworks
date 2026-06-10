@@ -105,6 +105,13 @@
   .lenis.lenis-stopped {
     overflow: hidden;
   }
+
+  /* Custom cursor active (fine pointer, motion-safe): hide the native cursor
+     except over text fields, where the I-beam affordance matters. */
+  .tw-cursor,
+  .tw-cursor *:not(input):not(textarea):not(select) {
+    cursor: none;
+  }
 }
 
 @layer components {

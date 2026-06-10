@@ -7,6 +7,7 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import MobileCTA from "./components/MobileCTA";
 import ConsentBanner from "./components/ConsentBanner";
 import SmoothScroll from "./components/fx/SmoothScroll";
+import Cursor from "./components/fx/Cursor";
 
 // Route-level code splitting: each page ships as its own chunk, so a visitor
 // only downloads the JS for the route they're on. The streaming prerender
@@ -89,6 +90,7 @@ export default function App({ path = "/" }: { path?: string }) {
         </a>
 
         <SmoothScroll />
+        <Cursor />
 
         <Background />
         <Nav langHref={lang.href} langLabel={lang.label} locale={isArabic ? "ar" : "en"} />

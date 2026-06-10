@@ -35,6 +35,7 @@ export default function SelectedWork() {
               href="/portfolio"
               variants={scaleIn}
               aria-label={`See ${it.title}`}
+              data-cursor="view"
               className="glass glass-hover group block aspect-[4/5] overflow-hidden rounded-xl"
             >
               <img

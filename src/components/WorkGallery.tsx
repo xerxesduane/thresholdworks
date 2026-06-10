@@ -40,6 +40,7 @@ export default function WorkGallery({ items }: { items: WorkItem[] }) {
               type="button"
               onClick={() => setActive(i)}
               aria-label={`View ${it.title}`}
+              data-cursor="view"
               className="glass glass-hover block w-full overflow-hidden rounded-xl"
             >
               <img
