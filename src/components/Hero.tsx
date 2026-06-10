@@ -3,6 +3,7 @@ import { ArrowUpRight, Star } from "lucide-react";
 import { fadeUp, stagger, EASE } from "../lib/motion";
 import Button from "./ui/Button";
 import Magnetic from "./fx/Magnetic";
+import Kinetic from "./fx/Kinetic";
 
 export default function Hero() {
   return (
@@ -25,14 +26,14 @@ export default function Hero() {
             All-in-one tech studio · Dubai
           </m.span>
 
-          <m.h1
-            variants={fadeUp}
+          <Kinetic
+            as="h1"
             className="mt-7 text-4xl leading-[1.04] sm:text-6xl md:text-7xl"
           >
             Big-company systems for{" "}
             <span className="text-gradient-gold italic">small businesses</span>
             <br className="hidden sm:block" /> that can't afford a tech team.
-          </m.h1>
+          </Kinetic>
 
           <m.p
             variants={fadeUp}
