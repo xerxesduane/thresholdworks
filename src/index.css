@@ -92,6 +92,19 @@
   ::-webkit-scrollbar-thumb:hover {
     background: theme("colors.olive.light");
   }
+
+  /* Lenis inertia scrolling (mounted client-only on fine pointers).
+     When active it must own easing — neutralize native smooth scroll. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
 }
 
 @layer components {

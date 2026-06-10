@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight, Languages } from "lucide-react";
 import { AnimatePresence, m } from "framer-motion";
 import Wordmark from "./ui/Wordmark";
+import { getLenis } from "../lib/lenisStore";
 import { NAV_LINKS } from "../data/content";
 import { AR_NAV_LINKS, AR_CHROME } from "../data/servicePagesAr";
 import { EASE } from "../lib/motion";
@@ -44,9 +45,14 @@ export default function Nav({
   }, []);
 
   useEffect(() => {
+    // body overflow alone doesn't halt Lenis's rAF scrolling — stop it too.
     document.body.style.overflow = open ? "hidden" : "";
+    const lenis = getLenis();
+    if (open) lenis?.stop();
+    else lenis?.start();
     return () => {
       document.body.style.overflow = "";
+      getLenis()?.start();
     };
   }, [open]);
 
