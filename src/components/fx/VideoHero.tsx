@@ -1,32 +1,37 @@
 import { useEffect, useRef, useState } from "react";
-import { useFinePointer, useReducedMotionPref } from "../../lib/usePrefs";
+import { useReducedMotionPref } from "../../lib/usePrefs";
 
 /**
  * Full-bleed hero footage layer (Verteal-style). The poster + ink scrims are
- * prerendered (decorative, aria-hidden); the looping video mounts client-side
- * only on motion-safe fine pointers without Save-Data — touch/mobile and
- * reduced-motion users get the cinematic still. Pauses when off-screen.
+ * prerendered (decorative, aria-hidden); the looping muted/inline video mounts
+ * client-side on desktop AND mobile, fading in once it plays. Skipped only
+ * under reduced-motion or Save-Data — those get the cinematic still. Pauses
+ * when off-screen. Some mobiles block autoplay (e.g. iOS Low Power Mode); the
+ * poster remains visible underneath in that case.
  */
 export default function VideoHero() {
   const reduced = useReducedMotionPref();
-  const fine = useFinePointer();
   const [showVideo, setShowVideo] = useState(false);
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (reduced || !fine) return;
+    if (reduced) return;
     type NetInfo = { saveData?: boolean };
     const conn = (navigator as Navigator & { connection?: NetInfo }).connection;
     if (conn?.saveData) return;
     // eslint-disable-next-line react-hooks/set-state-in-effect -- one-shot client-only init; intentional SSR-safe pattern
     setShowVideo(true);
-  }, [reduced, fine]);
+  }, [reduced]);
 
   useEffect(() => {
     if (!showVideo) return;
     const v = videoRef.current;
     if (!v) return;
+    // Some mobile browsers require muted as a property (not just the attribute)
+    // before they'll honor autoplay.
+    v.muted = true;
+    v.play().catch(() => {});
     const io = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) v.play().catch(() => {});
       else v.pause();

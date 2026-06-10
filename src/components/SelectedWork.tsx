@@ -1,7 +1,7 @@
 import { m } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { FEATURED_WORK } from "../data/workItems";
-import { stagger, VIEWPORT, wipeReveal } from "../lib/motion";
+import { scaleIn, stagger, VIEWPORT } from "../lib/motion";
 import SectionHeading from "./ui/SectionHeading";
 import Button from "./ui/Button";
 import Parallax from "./fx/Parallax";
@@ -34,7 +34,7 @@ export default function SelectedWork() {
             <m.a
               key={it.src}
               href="/portfolio"
-              variants={wipeReveal}
+              variants={scaleIn}
               aria-label={`See ${it.title}`}
               data-cursor="view"
               className="glass glass-hover group block aspect-[4/5] overflow-hidden rounded-xl"
