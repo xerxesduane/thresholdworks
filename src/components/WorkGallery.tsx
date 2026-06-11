@@ -47,7 +47,9 @@ export default function WorkGallery({ items }: { items: WorkItem[] }) {
                 src={it.thumb}
                 width={it.w}
                 height={it.h}
-                loading="lazy"
+              loading={i < 6 ? "eager" : "lazy"}
+              decoding="async"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 alt={it.title}
                 className="w-full"
               />

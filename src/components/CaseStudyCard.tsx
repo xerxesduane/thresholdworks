@@ -1,5 +1,5 @@
 import { m } from "framer-motion";
-import { ArrowUpRight, Check, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { fadeUp } from "../lib/motion";
 import type { CaseStudy } from "../data/content";
 
@@ -16,25 +16,9 @@ export default function CaseStudyCard({ c }: { c: CaseStudy }) {
         <span className="font-mono text-xs text-muted-dark">{c.location}</span>
       </div>
 
-      {c.url ? (
-        <a
-          href={c.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group/link mt-5 inline-flex items-center gap-2 font-display text-2xl text-cream transition-colors hover:text-gold sm:text-3xl"
-        >
+      <h3 className="mt-5 font-display text-2xl text-cream sm:text-3xl">
           {c.client}
-          <ExternalLink
-            size={16}
-            className="text-muted-dark transition-colors group-hover/link:text-gold"
-            aria-hidden
-          />
-        </a>
-      ) : (
-        <h3 className="mt-5 font-display text-2xl text-cream sm:text-3xl">
-          {c.client}
-        </h3>
-      )}
+      </h3>
       <p className="mt-3 text-sm text-muted">{c.challenge}</p>
 
       {c.stats && (
@@ -66,10 +50,19 @@ export default function CaseStudyCard({ c }: { c: CaseStudy }) {
         </ul>
       )}
 
-      <p className="mt-6 flex items-center gap-2 border-t border-cream/8 pt-5 font-display text-base italic text-cream-dim">
-        <ArrowUpRight size={16} className="text-gold" />
-        {c.takeaway}
-      </p>
+      <div className="mt-auto pt-6">
+        <p className="flex items-center gap-2 border-t border-cream/8 pt-5 font-display text-base italic text-cream-dim">
+          <ArrowUpRight size={16} className="text-gold" />
+          {c.takeaway}
+        </p>
+        <a
+          href={`/case-studies/${c.slug}`}
+          className="mt-5 inline-flex items-center gap-2 rounded-full border border-cream/15 px-4 py-2.5 font-mono text-[11px] uppercase tracking-wider text-gold transition-colors hover:border-gold hover:bg-gold hover:text-ink"
+        >
+          Read case study
+          <ArrowUpRight size={13} />
+        </a>
+      </div>
     </m.article>
   );
 }

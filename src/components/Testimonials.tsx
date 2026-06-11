@@ -40,11 +40,16 @@ export default function Testimonials() {
               <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-cream-dim">
                 {t.quote}
               </blockquote>
-              <figcaption className="mt-6 border-t border-cream/10 pt-4">
-                <div className="font-display text-base text-cream">{t.name}</div>
-                <div className="text-sm text-muted">{t.role}</div>
-                <div className="mt-0.5 font-mono text-xs uppercase tracking-wider text-gold/70">
-                  {t.context}
+              <figcaption className="mt-6 flex items-start gap-3 border-t border-cream/10 pt-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 font-mono text-xs font-semibold text-gold ring-1 ring-gold/20">
+                  {t.name.split(" ").map((part) => part[0]).join("")}
+                </span>
+                <div>
+                  <div className="font-display text-base text-cream">{t.name}</div>
+                  <div className="text-sm text-muted">{t.role}</div>
+                  <div className="mt-1 font-mono text-[10px] uppercase tracking-wider text-gold/70">
+                    {t.context}
+                  </div>
                 </div>
               </figcaption>
             </m.figure>

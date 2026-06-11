@@ -10,6 +10,8 @@ import Process from "../components/Process";
 import Promise from "../components/Promise";
 import FaqList from "../components/FaqList";
 import Contact from "../components/Contact";
+import ServiceVisual from "../components/ServiceVisual";
+import ServicePackages from "../components/ServicePackages";
 
 export default function ServicePage({ page }: { page: ServicePageData }) {
   const Icon = page.icon;
@@ -100,6 +102,8 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
         </div>
       </section>
 
+      <ServiceVisual page={page} />
+
       {/* What you get */}
       <section className="py-16 sm:py-24">
         <div className="container-bl">
@@ -177,13 +181,35 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
                 <p className="mt-5 font-display text-base italic text-cream">
                   {proof.takeaway}
                 </p>
+                <a
+                  href={`/case-studies/${proof.slug}`}
+                  className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-gold transition-colors hover:text-gold-soft"
+                >
+                  Read the full case study
+                  <ArrowUpRight size={13} />
+                </a>
               </div>
             </Reveal>
           )}
         </div>
       </section>
 
+      <section className="py-12 sm:py-16">
+        <div className="container-bl">
+          <Reveal className="mx-auto max-w-4xl rounded-3xl border border-gold/25 bg-gold p-7 text-ink shadow-[0_24px_90px_-45px_rgba(218,164,66,0.95)] sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-9">
+            <div>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-ink/55">Before you spend</span>
+              <h2 className="mt-3 max-w-2xl text-2xl !text-ink sm:text-3xl">Let’s find the smallest build that creates the biggest useful change.</h2>
+            </div>
+            <a href="#contact" className="mt-6 inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-cream sm:mt-0">
+              Scope it honestly <ArrowUpRight size={15} />
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
       <Process />
+      <ServicePackages page={page} />
       <Promise />
 
       <FaqList heading={`${page.navLabel} questions, answered`} items={page.faqs} />

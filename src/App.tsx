@@ -17,6 +17,7 @@ import PageTransition from "./components/fx/PageTransition";
 const Home = lazy(() => import("./pages/Home"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage"));
 const About = lazy(() => import("./pages/About"));
 const Insights = lazy(() => import("./pages/Insights"));
 const InsightPost = lazy(() => import("./pages/InsightPost"));
@@ -34,6 +35,7 @@ const Portfolio = lazy(() => import("./pages/Portfolio"));
 import { getServicePage } from "./data/servicePages";
 import { getServicePageAr } from "./data/servicePagesAr";
 import { getInsight } from "./data/insights";
+import { CASE_STUDIES } from "./data/content";
 import { pathToSlug } from "./lib/seo";
 
 /** The matching page in the other language, for the Nav toggle. */
@@ -51,6 +53,10 @@ function Route({ path }: { path: string }) {
   const slug = pathToSlug(path);
   if (slug === "") return <Home />;
   if (slug === "case-studies") return <CaseStudies />;
+  if (slug.startsWith("case-studies/")) {
+    const study = CASE_STUDIES.find((item) => item.slug === slug.slice("case-studies/".length));
+    if (study) return <CaseStudyPage study={study} />;
+  }
   if (slug === "about") return <About />;
   if (slug === "insights") return <Insights />;
   if (slug === "privacy") return <Privacy />;

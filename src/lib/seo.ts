@@ -1,5 +1,5 @@
 import { SERVICE_PAGES, getServicePage } from "../data/servicePages";
-import { FAQS } from "../data/content";
+import { CASE_STUDIES, FAQS } from "../data/content";
 import { INSIGHTS, getInsight } from "../data/insights";
 import { SERVICE_PAGES_AR, getServicePageAr } from "../data/servicePagesAr";
 
@@ -126,6 +126,7 @@ export function allRoutes(): string[] {
     "/",
     "/about",
     "/case-studies",
+    ...CASE_STUDIES.map((study) => `/case-studies/${study.slug}`),
     "/portfolio",
     "/showreel",
     "/insights",
@@ -252,6 +253,34 @@ export function getPageMeta(path: string): PageMeta {
   if (slug === "") return HOME_META;
   if (slug === "about") return ABOUT_META;
   if (slug === "case-studies") return CASE_STUDIES_META;
+  if (slug.startsWith("case-studies/")) {
+    const study = CASE_STUDIES.find((item) => item.slug === slug.slice("case-studies/".length));
+    if (study) {
+      const canonical = `${SITE_ORIGIN}/case-studies/${study.slug}`;
+      return {
+        title: `${study.client} Case Study | Threshold Works`,
+        description: study.summary,
+        canonical,
+        ogTitle: `${study.client} | ${study.category} Case Study`,
+        jsonLd: [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: `${study.client} case study`,
+            description: study.summary,
+            author: { "@id": `${SITE_ORIGIN}/#xerxes` },
+            publisher: { "@id": `${SITE_ORIGIN}/#org` },
+            mainEntityOfPage: canonical,
+          },
+          breadcrumb([
+            HOME_CRUMB,
+            { name: "Case Studies", url: `${SITE_ORIGIN}/case-studies` },
+            { name: study.client, url: canonical },
+          ]),
+        ],
+      };
+    }
+  }
   if (slug === "insights") return INSIGHTS_META;
   if (slug === "privacy") return PRIVACY_META;
   if (slug === "terms") return TERMS_META;

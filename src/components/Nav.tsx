@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight, Languages } from "lucide-react";
+import { Menu, X, ArrowUpRight, Languages, ChevronDown } from "lucide-react";
 import { AnimatePresence, m } from "framer-motion";
 import Wordmark from "./ui/Wordmark";
 import Magnetic from "./fx/Magnetic";
@@ -7,6 +7,7 @@ import { getLenis } from "../lib/lenisStore";
 import { NAV_LINKS } from "../data/content";
 import { AR_NAV_LINKS, AR_CHROME } from "../data/servicePagesAr";
 import { EASE } from "../lib/motion";
+import { SERVICE_PAGES } from "../data/servicePages";
 
 const menuVariants = {
   hidden: {},
@@ -81,15 +82,33 @@ export default function Nav({
 
           <ul className="hidden items-center gap-7 md:flex">
             {links.map((l) => (
-              <li key={l.href}>
+              <li key={l.href} className="group/nav relative">
                 <Magnetic strength={0.25}>
                   <a
                     href={l.href}
-                    className="nav-link text-sm text-cream-dim/80 transition-colors duration-200 hover:text-gold"
+                    className="nav-link inline-flex items-center gap-1 text-sm text-cream-dim/80 transition-colors duration-200 hover:text-gold"
                   >
                     {l.label}
+                    {!ar && l.label === "Services" && <ChevronDown size={13} className="transition-transform group-hover/nav:rotate-180 group-focus-within/nav:rotate-180" />}
                   </a>
                 </Magnetic>
+                {!ar && l.label === "Services" && (
+                  <div className="invisible absolute left-1/2 top-full w-[34rem] -translate-x-1/2 pt-5 opacity-0 transition duration-200 group-hover/nav:visible group-hover/nav:opacity-100 group-focus-within/nav:visible group-focus-within/nav:opacity-100">
+                    <div className="nav-surface grid grid-cols-2 gap-1 rounded-2xl p-3 shadow-2xl">
+                      {SERVICE_PAGES.map((service) => {
+                        const Icon = service.icon;
+                        return (
+                          <a key={service.slug} href={`/${service.slug}`} className="group/service flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-gold/10 focus:bg-gold/10">
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold">
+                              <Icon size={15} />
+                            </span>
+                            <span className="text-xs text-cream-dim transition-colors group-hover/service:text-gold">{service.navLabel}</span>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -168,7 +187,7 @@ export default function Nav({
               transition={{ duration: 0.3, ease: EASE }}
               className="container-bl md:hidden"
             >
-              <div className="nav-surface mt-2 rounded-2xl p-4">
+              <div className="nav-surface mt-2 max-h-[calc(100dvh-6.5rem)] overflow-y-auto rounded-2xl p-4">
                 <m.ul
                   className="flex flex-col"
                   variants={menuVariants}
@@ -188,6 +207,23 @@ export default function Nav({
                     </m.li>
                   ))}
                 </m.ul>
+                {!ar && (
+                  <div className="mt-3 border-t border-cream/10 pt-3">
+                    <p className="px-3 pb-2 font-mono text-[10px] uppercase tracking-wider text-gold">Service directory</p>
+                    <div className="grid grid-cols-2 gap-1">
+                      {SERVICE_PAGES.map((service) => (
+                        <a
+                          key={service.slug}
+                          href={`/${service.slug}`}
+                          onClick={() => setOpen(false)}
+                          className="rounded-lg px-3 py-2 text-xs leading-tight text-cream-dim transition-colors hover:bg-gold/10 hover:text-gold"
+                        >
+                          {service.navLabel}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <m.a
                   href="#contact"
                   onClick={() => setOpen(false)}

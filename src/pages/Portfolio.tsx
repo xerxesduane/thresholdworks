@@ -8,6 +8,7 @@ import { fadeUp, stagger } from "../lib/motion";
 import { WORK_ITEMS } from "../data/workItems";
 
 type PortfolioFilter = "all" | "web" | "graphic" | "featured";
+const INITIAL_ITEMS = 12;
 
 const FILTERS: {
   id: PortfolioFilter;
@@ -15,18 +16,20 @@ const FILTERS: {
   icon: typeof Grid2X2;
 }[] = [
   { id: "all", label: "All work", icon: Grid2X2 },
-  { id: "web", label: "Websites", icon: LayoutTemplate },
-  { id: "graphic", label: "Graphic design", icon: Palette },
-  { id: "featured", label: "Featured", icon: Star },
+  { id: "web", label: "Websites & commerce", icon: LayoutTemplate },
+  { id: "graphic", label: "Brand & content", icon: Palette },
+  { id: "featured", label: "Launch & growth", icon: Star },
 ];
 
 export default function Portfolio() {
   const [filter, setFilter] = useState<PortfolioFilter>("all");
+  const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS);
   const filteredItems = WORK_ITEMS.filter((item) => {
     if (filter === "all") return true;
     if (filter === "featured") return item.featured;
     return item.category === filter;
   });
+  const visibleItems = filteredItems.slice(0, visibleCount);
 
   return (
     <>
@@ -62,6 +65,18 @@ export default function Portfolio() {
       </section>
 
       <section id="work" className="container-bl scroll-mt-24 py-12 sm:py-16">
+        <a
+          href="/case-studies"
+          className="group mb-6 flex flex-col justify-between gap-4 rounded-2xl border border-gold/20 bg-gold/[0.08] p-5 transition-colors hover:border-gold/45 sm:flex-row sm:items-center"
+        >
+          <div>
+            <span className="font-mono text-[10px] uppercase tracking-wider text-gold">Looking for outcomes, not only visuals?</span>
+            <p className="mt-2 text-sm text-cream-dim">Read the challenge, approach, delivery scope, and results behind selected projects.</p>
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-gold">
+            View case studies <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </span>
+        </a>
         <div className="sticky top-24 z-20 mb-9 rounded-2xl border border-cream/10 bg-ink/95 p-2 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.9)] backdrop-blur-sm">
           <div
             className="grid grid-cols-2 gap-2 sm:grid-cols-4"
@@ -82,7 +97,10 @@ export default function Portfolio() {
                   key={option.id}
                   type="button"
                   aria-pressed={active}
-                  onClick={() => setFilter(option.id)}
+                  onClick={() => {
+                    setFilter(option.id);
+                    setVisibleCount(INITIAL_ITEMS);
+                  }}
                   className={`flex min-h-12 items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition duration-300 ${
                     active
                       ? "bg-gold text-ink shadow-[0_10px_30px_-12px_rgba(218,164,66,0.8)]"
@@ -107,7 +125,7 @@ export default function Portfolio() {
         <div className="mb-7 flex items-end justify-between gap-4" aria-live="polite">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-gold">
-              Showing {filteredItems.length} pieces
+              Showing {visibleItems.length} of {filteredItems.length} pieces
             </p>
             <h2 className="mt-2 text-2xl text-cream sm:text-3xl">
               {FILTERS.find((option) => option.id === filter)?.label}
@@ -116,7 +134,10 @@ export default function Portfolio() {
           {filter !== "all" && (
             <button
               type="button"
-              onClick={() => setFilter("all")}
+              onClick={() => {
+                setFilter("all");
+                setVisibleCount(INITIAL_ITEMS);
+              }}
               className="font-mono text-xs uppercase tracking-wider text-muted transition-colors hover:text-gold"
             >
               Clear filter
@@ -124,7 +145,18 @@ export default function Portfolio() {
           )}
         </div>
 
-        <WorkGallery key={filter} items={filteredItems} />
+        <WorkGallery key={filter} items={visibleItems} />
+        {visibleCount < filteredItems.length && (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setVisibleCount((count) => count + INITIAL_ITEMS)}
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-gold/30 px-6 py-3 font-mono text-xs uppercase tracking-wider text-gold transition-colors hover:border-gold hover:bg-gold hover:text-ink"
+            >
+              Load more work
+            </button>
+          </div>
+        )}
       </section>
 
       <section className="container-bl pb-20 sm:pb-28">

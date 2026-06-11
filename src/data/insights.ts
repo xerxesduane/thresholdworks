@@ -95,7 +95,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "We give you a fixed quote after a free 60-minute audit, so you only pay for what actually moves your business, and you own the domain, hosting, and code. No surprise invoices, no lock-in. If a simple page is all you need, we will tell you that. Book a free audit and we will map exactly what your site should do, and what it should cost.",
       },
     ],
-    relatedServices: ["web-development-dubai", "seo-dubai"],
+    relatedServices: ["web-development-dubai", "seo-dubai", "landing-page-design-dubai", "ecommerce-development-dubai"],
   },
   {
     slug: "crm-setup-mistakes-dubai",
@@ -144,7 +144,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "We set up CRM (often inside Odoo) so leads capture themselves, follow-ups send themselves, and you can see the whole pipeline at a glance. A free audit will show you exactly where leads are leaking today.",
       },
     ],
-    relatedServices: ["odoo-erp-dubai", "web-development-dubai"],
+    relatedServices: ["odoo-erp-dubai", "web-development-dubai", "crm-development-dubai", "custom-software-development-dubai"],
   },
   {
     slug: "odoo-enterprise-vs-community",
@@ -193,7 +193,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "We're not an official Odoo Partner, which means we have no incentive to push you toward Enterprise. In a free audit we'll tell you honestly which edition fits, and what it'll actually cost.",
       },
     ],
-    relatedServices: ["odoo-erp-dubai"],
+    relatedServices: ["odoo-erp-dubai", "custom-software-development-dubai"],
   },
   {
     slug: "choosing-a-web-developer-dubai",
@@ -242,7 +242,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "We quote fixed, build fast, and set everything up in your name, start to finish. If you're weighing up a web project, a free audit will tell you what's worth keeping and what isn't.",
       },
     ],
-    relatedServices: ["web-development-dubai", "seo-dubai"],
+    relatedServices: ["web-development-dubai", "seo-dubai", "landing-page-design-dubai", "mobile-app-development-dubai"],
   },
   {
     slug: "how-much-does-odoo-cost-dubai",
@@ -303,7 +303,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "Start with a free systems audit. We look at what you run today, tell you which Odoo edition fits, and give you a fixed-price plan for the implementation, before you commit to anything. You walk away with the numbers and a clear map, whether or not you hire us.",
       },
     ],
-    relatedServices: ["odoo-erp-dubai"],
+    relatedServices: ["odoo-erp-dubai", "custom-software-development-dubai"],
   },
   {
     slug: "odoo-vs-zoho-uae",
@@ -355,7 +355,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "We work hands-on with Odoo, so we'll tell you honestly when Zoho (or even a lighter setup) is the smarter fit for where you are. The audit exists to answer exactly this, before you spend a dirham on licenses.",
       },
     ],
-    relatedServices: ["odoo-erp-dubai"],
+    relatedServices: ["odoo-erp-dubai", "crm-development-dubai"],
   },
   {
     slug: "signs-outgrown-spreadsheets",
@@ -404,7 +404,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "If two or more of these sound familiar, a free systems audit will show you exactly where the time and money are leaking, and the fastest way to fix it.",
       },
     ],
-    relatedServices: ["odoo-erp-dubai", "ai-automation-dubai"],
+    relatedServices: ["odoo-erp-dubai", "ai-automation-dubai", "crm-development-dubai", "custom-software-development-dubai"],
   },
   {
     slug: "what-a-systems-audit-covers",
@@ -452,7 +452,7 @@ export const INSIGHTS: InsightPost[] = [
         text: "That's the whole thing. If it's useful, we'll talk about building it. If it's not, you still leave with a clearer picture than you came in with.",
       },
     ],
-    relatedServices: ["odoo-erp-dubai", "web-development-dubai", "ai-automation-dubai", "seo-dubai"],
+    relatedServices: ["odoo-erp-dubai", "web-development-dubai", "ai-automation-dubai", "seo-dubai", "crm-development-dubai", "custom-software-development-dubai"],
   },
 ];
 

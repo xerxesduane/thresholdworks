@@ -260,10 +260,15 @@ export const INDUSTRIES: Industry[] = [
 ];
 
 export interface CaseStudy {
+  slug: string;
   client: string;
   location: string;
   category: string;
   challenge: string;
+  summary: string;
+  approach: string[];
+  relatedServices: string[];
+  image?: string;
   /** Metric-based proof (ad campaigns). Mutually exclusive with `scope`. */
   stats?: { value: string; label: string }[];
   /** Scope-based proof (implementations) when there aren't vanity metrics. */
@@ -275,11 +280,22 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "blocktec-odoo-erp",
     client: "Blocktec Philippines",
     location: "Philippines · Construction Materials",
     category: "Odoo ERP",
     challenge:
       "A construction materials and AAC wall-systems company ran on disconnected spreadsheets, manual tracking, and fragmented communication between departments. The goal: one platform for the whole operation.",
+    summary:
+      "A connected Odoo operating system designed around the flow from first enquiry through quotation, purchasing, inventory, project delivery, and online sales.",
+    approach: [
+      "Mapped the existing handoffs and duplicate work before configuring any modules",
+      "Phased the rollout around the team's day-to-day operations",
+      "Connected commercial, inventory, purchasing, and project workflows",
+      "Built a foundation that can expand without replacing the system again",
+    ],
+    relatedServices: ["odoo-erp-dubai", "custom-software-development-dubai", "crm-development-dubai"],
+    image: "/brand/clients/blocktec.png",
     scope: [
       "CRM & lead management",
       "Sales & quotation workflows",
@@ -294,11 +310,21 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Customer inquiries, quotations, inventory, purchasing, and online operations, run from one unified Odoo platform.",
   },
   {
+    slug: "saladmaster-crm-web",
     client: "Saladmaster UAE",
     location: "UAE · Premium Cookware",
     category: "CRM & Web",
     challenge:
       "A premium cookware and direct-sales brand needed a smoother customer journey, from first inquiry through cooking demo to sale, with real visibility into follow-ups.",
+    summary:
+      "A clearer lead-to-demo journey, with customer information and follow-up activity organized around the way the sales team actually works.",
+    approach: [
+      "Mapped the journey from enquiry to cooking demo and sale",
+      "Structured lead capture and follow-up around real sales conversations",
+      "Connected the website and booking experience to customer management",
+      "Created clearer visibility for the team without adding admin overhead",
+    ],
+    relatedServices: ["crm-development-dubai", "web-development-dubai", "landing-page-design-dubai"],
     scope: [
       "Lead capture & inquiries",
       "Booking for cooking demos",
@@ -328,11 +354,22 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   */
   {
+    slug: "aya-home-spa-meta-ads",
     client: "AYA Home Spa",
     location: "Dubai · Wellness",
     category: "Meta Ads",
     challenge:
       "A growing Dubai wellness brand needed real digital visibility in a crowded market.",
+    summary:
+      "A focused paid-social campaign that translated strong creative into measurable reach, video attention, and customer conversations.",
+    approach: [
+      "Built campaign creative around the service experience rather than generic offers",
+      "Tested audience and message combinations against real response",
+      "Optimized toward conversations instead of vanity engagement",
+      "Used campaign learning to improve the next creative cycle",
+    ],
+    relatedServices: ["landing-page-design-dubai", "videography-photography-dubai", "video-editing-dubai"],
+    image: "/work/web/web-03-thumb.webp",
     stats: [
       { value: "54K", label: "People reached" },
       { value: "98K", label: "Video plays" },
@@ -343,11 +380,22 @@ export const CASE_STUDIES: CaseStudy[] = [
     url: "https://www.ayahomespa.ae/",
   },
   {
+    slug: "wellington-cash-for-cars-google-ads",
     client: "Wellington Cash for Cars",
     location: "New Zealand · Automotive",
     category: "Google Ads",
     challenge:
       "A vehicle-removal service needed to dominate a competitive search market while keeping cost-per-acquisition low.",
+    summary:
+      "A search campaign architecture built around high-intent queries, disciplined spend, and conversion visibility.",
+    approach: [
+      "Separated high-intent search themes to control budget and messaging",
+      "Aligned ads and landing-page intent for stronger conversion",
+      "Removed wasted spend through ongoing query and placement review",
+      "Managed performance remotely with clear reporting and decisions",
+    ],
+    relatedServices: ["landing-page-design-dubai", "seo-dubai", "answer-engine-optimization-dubai"],
+    image: "/brand/clients/wellington.png",
     stats: [
       { value: "1,530+", label: "Clicks" },
       { value: "610", label: "Conversions" },
