@@ -31,18 +31,18 @@ export default function Services() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="mt-14 grid gap-4 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,1.42fr)] lg:items-stretch"
+          className="mt-14 grid gap-4 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,1.42fr)] lg:items-start"
         >
           <m.article
             variants={scaleIn}
             data-cursor="view"
-            className="border-glow group relative flex min-h-[34rem] flex-col overflow-hidden rounded-[2rem] border border-gold/25 bg-cream text-ink shadow-[0_30px_120px_-70px_rgba(218,164,66,0.95)]"
+            className="border-glow group relative flex flex-col overflow-hidden rounded-[2rem] border border-gold/25 bg-cream text-ink shadow-[0_30px_120px_-70px_rgba(218,164,66,0.95)] lg:sticky lg:top-28"
           >
             <div
               aria-hidden
               className="absolute inset-0 bg-[linear-gradient(135deg,rgba(11,15,13,0.05)_0%,transparent_42%),radial-gradient(circle_at_85%_10%,rgba(218,164,66,0.34),transparent_34%)]"
             />
-            <div className="relative flex flex-1 flex-col p-7 sm:p-8 lg:p-9">
+            <div className="relative flex flex-1 flex-col p-6 sm:p-7 lg:p-8">
               <div className="flex items-start justify-between gap-5">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-ink text-gold shadow-[0_18px_45px_-24px_rgba(11,15,13,0.8)] transition-transform duration-300 group-hover:-translate-y-1">
                   <FeaturedIcon size={30} strokeWidth={1.6} />
@@ -52,7 +52,7 @@ export default function Services() {
                 </span>
               </div>
 
-              <div className="mt-14">
+              <div className="mt-8">
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold-deep">
                   {featured.tagline}
                 </p>
@@ -63,7 +63,7 @@ export default function Services() {
                   {featured.description}
                 </p>
 
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="mt-6 grid gap-2 sm:grid-cols-2">
                   {["Workflows", "Assistants", "Lead handling", "Team time back"].map(
                     (item) => (
                       <span
@@ -77,7 +77,7 @@ export default function Services() {
                   )}
                 </div>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   {featured.price && (
                     <p className="font-mono text-sm font-semibold text-ink">
                       {featured.price}
@@ -98,12 +98,6 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="mt-auto pt-10">
-                <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-ink/45">
-                  <span className="h-px w-8 bg-ink/20" />
-                  Built to connect with the rest
-                </span>
-              </div>
             </div>
           </m.article>
 
