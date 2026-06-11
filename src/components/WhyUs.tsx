@@ -6,7 +6,7 @@ import SectionHeading from "./ui/SectionHeading";
 
 export default function WhyUs() {
   return (
-    <section className="py-20 sm:py-28">
+    <section id="why" className="scroll-mt-24 py-20 sm:py-28">
       <div className="container-bl">
         <SectionHeading
           eyebrow="Why Threshold Works"
@@ -23,17 +23,14 @@ export default function WhyUs() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="mx-auto mt-14 max-w-3xl overflow-hidden rounded-3xl"
+          className="glass border-glow mx-auto mt-14 max-w-3xl overflow-hidden rounded-3xl"
         >
           {/* header row */}
-          <m.div
-            variants={fadeUp}
-            className="grid grid-cols-2 gap-px text-sm font-semibold"
-          >
-            <div className="bg-ink-deep/60 px-5 py-4 font-mono text-xs uppercase tracking-wider text-muted-dark">
+          <m.div variants={fadeUp} className="grid grid-cols-2 text-sm font-semibold">
+            <div className="px-5 py-4 font-mono text-xs uppercase tracking-wider text-muted-dark">
               Typical agency
             </div>
-            <div className="bg-gold/10 px-5 py-4 font-mono text-xs uppercase tracking-wider text-gold">
+            <div className="border-l border-gold/20 bg-gold/[0.07] px-5 py-4 font-mono text-xs uppercase tracking-wider text-gold">
               Threshold Works
             </div>
           </m.div>
@@ -42,14 +39,18 @@ export default function WhyUs() {
             <m.div
               variants={fadeUp}
               key={row.bayt}
-              className="grid grid-cols-2 gap-px border-t border-cream/5"
+              className="group grid grid-cols-2 border-t border-cream/5"
             >
-              <div className="flex items-start gap-2.5 bg-ink-surface/40 px-5 py-4 text-sm text-muted">
-                <X size={16} className="mt-0.5 shrink-0 text-muted-dark" />
+              <div className="flex items-start gap-3 px-5 py-4 text-sm text-muted">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cream/5 text-muted-dark">
+                  <X size={12} strokeWidth={2.2} />
+                </span>
                 {row.agency}
               </div>
-              <div className="flex items-start gap-2.5 bg-olive/10 px-5 py-4 text-sm text-cream">
-                <Check size={16} className="mt-0.5 shrink-0 text-gold" />
+              <div className="flex items-start gap-3 border-l border-gold/20 bg-gold/[0.07] px-5 py-4 text-sm text-cream transition-colors duration-300 group-hover:bg-gold/[0.11]">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                  <Check size={12} strokeWidth={2.4} />
+                </span>
                 {row.bayt}
               </div>
             </m.div>
