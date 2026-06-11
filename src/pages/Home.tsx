@@ -18,6 +18,7 @@ import FAQ from "../components/FAQ";
 import LeadMagnet from "../components/LeadMagnet";
 import Contact from "../components/Contact";
 import MidCTA from "../components/MidCTA";
+import WhoFor from "../components/WhoFor";
 
 /**
  * Section band — gives the long homepage rhythm. Alternating bands get a
@@ -80,6 +81,7 @@ export default function Home() {
 
       {/* How we work + who you work with */}
       <Band tint>
+        <WhoFor />
         <Industries />
         <Process />
       </Band>

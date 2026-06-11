@@ -1,12 +1,22 @@
 import { m } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { PACKAGES } from "../data/content";
 import { fadeUp, stagger, VIEWPORT } from "../lib/motion";
 import SectionHeading from "./ui/SectionHeading";
 
+const packageDetails = [
+  ["60-minute deep-dive", "Plain-English roadmap", "Priorities before spending"],
+  ["Defined scope", "Fixed quote", "Built and shipped"],
+  ["Ongoing support", "One trusted contact", "Monthly momentum"],
+];
+
 export default function Packages() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-24 -z-10 h-80 bg-[radial-gradient(ellipse_48%_48%_at_50%_50%,rgba(218,164,66,0.11),transparent_70%)]"
+      />
       <div className="container-bl">
         <SectionHeading
           eyebrow="Ways to work together"
@@ -23,49 +33,97 @@ export default function Packages() {
           initial="hidden"
           whileInView="show"
           viewport={VIEWPORT}
-          className="mt-14 grid gap-5 md:grid-cols-3"
+          className="relative mt-14 grid gap-3 md:grid-cols-3"
         >
-          {PACKAGES.map((p) => (
-            <m.div
+          <div
+            aria-hidden
+            className="absolute left-[16.66%] right-[16.66%] top-8 hidden h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent md:block"
+          />
+
+          {PACKAGES.map((p, index) => (
+            <m.article
               key={p.name}
               variants={fadeUp}
-              className={`glass glass-hover relative flex flex-col rounded-3xl p-7 ${
-                p.featured ? "border-glow" : ""
+              data-cursor="view"
+              className={`group relative flex flex-col overflow-hidden rounded-2xl border p-6 transition duration-300 hover:-translate-y-1 sm:p-7 ${
+                p.featured
+                  ? "border-gold/30 bg-cream text-ink shadow-[0_30px_100px_-65px_rgba(218,164,66,0.9)]"
+                  : "glass glass-hover border-cream/10"
               }`}
             >
-              {p.featured && (
-                <span className="absolute -top-3 left-7 rounded-full bg-gold px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink-deep">
-                  Most popular
+              <div className="flex items-center justify-between gap-4">
+                <span
+                  className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full font-mono text-xs font-semibold ${
+                    p.featured
+                      ? "bg-ink text-gold"
+                      : "bg-gold/10 text-gold ring-1 ring-gold/20"
+                  }`}
+                >
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-              )}
-              <span className="font-mono text-xs uppercase tracking-wider text-gold/80">
-                {p.pitch}
-              </span>
-              <h3 className="mt-3 font-display text-2xl text-cream">{p.name}</h3>
-              <div className="mt-4 flex items-baseline gap-2">
-                <span className="font-display text-3xl text-gold">{p.price}</span>
-                <span className="text-xs text-muted-dark">{p.note}</span>
+                {p.featured && (
+                  <span className="rounded-full border border-ink/10 bg-ink/[0.06] px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink/60">
+                    Start here
+                  </span>
+                )}
               </div>
-              <p className="mt-4 flex-1 text-sm text-muted">{p.body}</p>
+
+              <div className="mt-8">
+                <span
+                  className={`font-mono text-xs uppercase tracking-wider ${
+                    p.featured ? "text-gold-deep" : "text-gold/80"
+                  }`}
+                >
+                  {p.pitch}
+                </span>
+                <h3 className={`mt-3 text-2xl ${p.featured ? "!text-ink" : "text-cream"}`}>
+                  {p.name}
+                </h3>
+                <div className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className={`font-display text-3xl ${p.featured ? "text-ink" : "text-gold"}`}>
+                    {p.price}
+                  </span>
+                  <span className={`text-xs ${p.featured ? "text-ink/50" : "text-muted-dark"}`}>
+                    {p.note}
+                  </span>
+                </div>
+                <p className={`mt-5 text-sm leading-relaxed ${p.featured ? "text-ink/70" : "text-muted"}`}>
+                  {p.body}
+                </p>
+              </div>
+
+              <ul className={`mt-6 space-y-3 border-t pt-5 ${p.featured ? "border-ink/10" : "border-cream/8"}`}>
+                {packageDetails[index].map((detail) => (
+                  <li
+                    key={detail}
+                    className={`flex items-center gap-2.5 text-sm ${p.featured ? "text-ink/70" : "text-cream-dim"}`}
+                  >
+                    <Check size={15} className={p.featured ? "text-gold-deep" : "text-gold"} />
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+
               <a
                 href="#contact"
-                className={`mt-6 inline-flex items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-semibold transition duration-300 ${
+                data-cursor="link"
+                className={`mt-7 inline-flex items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-semibold transition duration-300 ${
                   p.featured
-                    ? "bg-gold text-ink-deep hover:bg-gold-soft"
+                    ? "bg-ink text-cream hover:bg-gold hover:text-ink"
                     : "border border-cream/15 text-cream hover:border-gold/50 hover:text-gold"
                 }`}
               >
                 {p.cta}
                 <ArrowUpRight size={15} strokeWidth={2.5} />
               </a>
-            </m.div>
+            </m.article>
           ))}
         </m.div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-dark">
+        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-cream/10 bg-cream/[0.04] px-5 py-4 text-center text-sm text-muted-dark">
           All prices are indicative starting points. You get one fixed quote
           after your free audit, no surprises and no lock-in.
-        </p>
+        </div>
       </div>
     </section>
   );
