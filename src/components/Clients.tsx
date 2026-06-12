@@ -22,13 +22,13 @@ function InstagramIcon() {
 
 export default function Clients() {
   return (
-    <section className="py-20 sm:py-28" aria-label="Clients we've worked with">
+    <section className="py-20 sm:py-28" aria-label="Clients I've worked with">
       <div className="container-bl">
         <SectionHeading
           eyebrow="Clients"
           title={
             <>
-              Brands we've helped <span className="text-gradient-gold">grow.</span>
+              Brands I've helped <span className="text-gradient-gold">grow.</span>
             </>
           }
           subtitle="Real businesses across the UAE, New Zealand, and beyond. Have a look at their work."

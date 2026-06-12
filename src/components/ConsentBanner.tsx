@@ -73,8 +73,8 @@ export default function ConsentBanner() {
     >
       <div className="nav-surface flex flex-col gap-3 rounded-2xl p-3.5 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] sm:p-4">
         <p className="text-xs leading-relaxed text-cream-dim sm:text-sm">
-          We use anonymous analytics to improve the site. Nothing is shared or
-          sold. See our{" "}
+          I use anonymous analytics to improve the site. Nothing is shared or
+          sold. See the{" "}
           <a href="/privacy" className="text-gold underline-offset-2 hover:underline">
             Privacy Policy
           </a>

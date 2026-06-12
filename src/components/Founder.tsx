@@ -4,10 +4,10 @@ import Reveal from "./ui/Reveal";
 import { fadeUp, stagger, VIEWPORT } from "../lib/motion";
 
 const VALUES = [
-  { title: "Honesty over upsells", body: "We'll tell you when you don't need us, even when it costs us the project." },
-  { title: "Relationships over transactions", body: "Our oldest client has been with us for years. Not because of a contract, because we pick up the phone." },
+  { title: "Honesty over upsells", body: "I'll tell you when you don't need me, even when it costs me the project." },
+  { title: "Relationships over transactions", body: "My oldest client has been with me for years. Not because of a contract, because I pick up the phone." },
   { title: "Systems over hacks", body: "No duct-tape fixes. Proper foundations, documented, so you're never locked in." },
-  { title: "People over tech", body: "Every line of code serves a person trying to grow. We never forget that." },
+  { title: "People over tech", body: "Every line of code serves a person trying to grow. I never forget that." },
 ];
 
 export default function Founder() {
@@ -87,7 +87,7 @@ export default function Founder() {
                 </p>
                 <p className="font-display text-base italic text-gold">
                   A threshold is the doorstep you cross into something new. That's
-                  where we meet you, and walk through with you.
+                  where I meet you, and walk through with you.
                 </p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function Founder() {
             <Reveal>
               <span className="eyebrow">
                 <span className="h-px w-6 bg-gold/60" aria-hidden />
-                What we stand for
+                What I stand for
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl">
                 Built on values, <span className="text-gradient-gold">not buzzwords.</span>

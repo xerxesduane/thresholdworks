@@ -29,8 +29,8 @@ export default function MidCTA() {
             <span className="text-gradient-gold">leaking time and money.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-muted sm:text-lg">
-            Book a free 60-minute audit. We map what you have, what's breaking,
-            and the highest-leverage fix, whether or not you ever hire us.
+            Book a free 60-minute audit. I map what you have, what's breaking,
+            and the highest-leverage fix, whether or not you ever hire me.
           </p>
           <div className="mt-9 flex justify-center">
             <Button href="#contact" className="px-7 py-3.5">

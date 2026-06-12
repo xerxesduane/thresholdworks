@@ -62,12 +62,12 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "Odoo & ERP · Dubai",
     h1Lead: "Run your whole business on one system,",
     h1Accent: "not five that don't talk.",
-    lede: "Odoo ERP implementation in Dubai, set up and run properly. We wire inventory, sales, purchasing, invoicing, and CRM into a single source of truth, then stay on to support it. No bloated rollout you can't use, no consultant who disappears after go-live.",
-    bulletsHeading: "What an Odoo build with us looks like",
+    lede: "Odoo ERP implementation in Dubai, set up and run properly. I wire inventory, sales, purchasing, invoicing, and CRM into a single source of truth, then stay on to support it. No bloated rollout you can't use, no consultant who disappears after go-live.",
+    bulletsHeading: "What an Odoo build with me looks like",
     bullets: [
       {
         title: "Scoped to how you actually work",
-        body: "We configure Odoo around your real workflow, not a generic template. Only the modules you need, switched on in the right order.",
+        body: "I configure Odoo around your real workflow, not a generic template. Only the modules you need, switched on in the right order.",
       },
       {
         title: "One source of truth",
@@ -75,11 +75,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         title: "Migrated without the chaos",
-        body: "We move your existing data in cleanly and test it before launch. Your team keeps working while we build in the background.",
+        body: "I move your existing data in cleanly and test it before launch. Your team keeps working while I build in the background.",
       },
       {
         title: "Run and supported, not abandoned",
-        body: "As your Odoo systems administrator, we handle updates, fixes, and new modules as you grow. One number to call, for years.",
+        body: "As your Odoo systems administrator, I handle updates, fixes, and new modules as you grow. One number to call, for years.",
       },
     ],
     forWhoHeading: "Who this is for",
@@ -93,19 +93,19 @@ export const SERVICE_PAGES: ServicePageData[] = [
     faqs: [
       {
         q: "How long does an Odoo implementation take?",
-        a: "A focused rollout of the core modules usually takes a few weeks. We phase it so your team keeps working while we build, and you see value before everything is switched on.",
+        a: "A focused rollout of the core modules usually takes a few weeks. I phase it so your team keeps working while I build, and you see value before everything is switched on.",
       },
       {
         q: "Do I need Odoo Enterprise, or is Community enough?",
-        a: "It depends on the modules you actually need. We'll tell you honestly which edition fits, so you're not paying for licenses you won't use.",
+        a: "It depends on the modules you actually need. I'll tell you honestly which edition fits, so you're not paying for licenses you won't use.",
       },
       {
         q: "Can you connect Odoo to tools I already use?",
-        a: "Yes. We integrate Odoo with your website, payment, and accounting tools so data flows automatically instead of being re-keyed by hand.",
+        a: "Yes. I integrate Odoo with your website, payment, and accounting tools so data flows automatically instead of being re-keyed by hand.",
       },
       {
         q: "I already started with Odoo and it's a mess. Can you help?",
-        a: "Very common. We audit what's there, fix the configuration, and clean up the data rather than forcing you to start from scratch.",
+        a: "Very common. I audit what's there, fix the configuration, and clean up the data rather than forcing you to start from scratch.",
       },
     ],
   },
@@ -123,7 +123,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     h1Lead: "A website that brings in customers,",
     h1Accent: "not one that just sits there.",
     lede: "Web development in Dubai for small businesses that need their site to do real work. Fast, mobile-first websites, custom web apps, and landing pages that load quickly, rank well, and turn visitors into booked enquiries, built honestly, by one trusted partner.",
-    bulletsHeading: "What we build",
+    bulletsHeading: "What I build",
     bullets: [
       {
         title: "Websites that convert",
@@ -160,7 +160,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you work with my existing website?",
-        a: "Often, yes. We keep what's worth keeping and rebuild what isn't, rather than forcing a full restart.",
+        a: "Often, yes. I keep what's worth keeping and rebuild what isn't, rather than forcing a full restart.",
       },
       {
         q: "Is the site mobile-first and built to be found?",
@@ -181,7 +181,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "AI & Automation · Dubai",
     h1Lead: "Let AI do the repetitive work,",
     h1Accent: "so you can do the real work.",
-    lede: "AI automation in Dubai, built around your business instead of bolted on for show. We design AI workflows, chatbots, and custom assistants that quietly run in the background, answering questions, qualifying leads, and giving you back the hours you've been losing.",
+    lede: "AI automation in Dubai, built around your business instead of bolted on for show. I design AI workflows, chatbots, and custom assistants that quietly run in the background, answering questions, qualifying leads, and giving you back the hours you've been losing.",
     bulletsHeading: "Where AI actually pays off",
     bullets: [
       {
@@ -198,7 +198,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         title: "Honest about what AI can't do",
-        body: "We'll tell you where AI helps and where it's hype. You get the advantage without paying for buzzwords.",
+        body: "I'll tell you where AI helps and where it's hype. You get the advantage without paying for buzzwords.",
       },
     ],
     forWhoHeading: "Who this is for",
@@ -211,7 +211,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     faqs: [
       {
         q: "Is AI automation actually worth it for a small business?",
-        a: "When it removes repetitive work or catches leads you'd otherwise miss, yes. We'll tell you where it pays off and where it's just hype.",
+        a: "When it removes repetitive work or catches leads you'd otherwise miss, yes. I'll tell you where it pays off and where it's just hype.",
       },
       {
         q: "Will AI replace my team?",
@@ -219,11 +219,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Is my data safe with AI tools?",
-        a: "We design around tools and configurations that keep your data private and in your control, and we explain exactly what gets sent where.",
+        a: "I design around tools and configurations that keep your data private and in your control, and I explain exactly what gets sent where.",
       },
       {
         q: "How do we start with automation?",
-        a: "We map your current workflows in the free audit, then automate the highest-impact, lowest-risk steps first.",
+        a: "I map your current workflows in the free audit, then automate the highest-impact, lowest-risk steps first.",
       },
     ],
   },
@@ -240,8 +240,8 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "SEO · Dubai",
     h1Lead: "Get found by people ready to buy,",
     h1Accent: "not just ready to browse.",
-    lede: "SEO in Dubai focused on the keywords that actually bring in customers. We fix the technical foundations, sharpen your local search presence, and build content that ranks, then show you, in plain numbers, what it's doing for the business.",
-    bulletsHeading: "How we approach SEO",
+    lede: "SEO in Dubai focused on the keywords that actually bring in customers. I fix the technical foundations, sharpen your local search presence, and build content that ranks, then show you, in plain numbers, what it's doing for the business.",
+    bulletsHeading: "How I approach SEO",
     bullets: [
       {
         title: "Technical foundations first",
@@ -253,7 +253,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         title: "Keywords that convert",
-        body: "We target search terms with real buying intent, the ones your competitors waste, instead of chasing traffic that never becomes a customer.",
+        body: "I target search terms with real buying intent, the ones your competitors waste, instead of chasing traffic that never becomes a customer.",
       },
       {
         title: "Reporting in plain English",
@@ -271,11 +271,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
     faqs: [
       {
         q: "How long until SEO shows results?",
-        a: "Technical fixes can help within weeks; competitive rankings typically build over a few months. We focus on keywords that convert, not vanity traffic.",
+        a: "Technical fixes can help within weeks; competitive rankings typically build over a few months. I focus on keywords that convert, not vanity traffic.",
       },
       {
         q: "Do you guarantee page-one rankings?",
-        a: "No one credible can guarantee rankings. We guarantee the right work, transparent reporting, and a focus on terms that actually bring customers.",
+        a: "No one credible can guarantee rankings. I guarantee the right work, transparent reporting, and a focus on terms that actually bring customers.",
       },
       {
         q: "What's included in your SEO work?",
@@ -283,7 +283,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you run Google Ads alongside SEO?",
-        a: "Yes. We run Google and Meta ads alongside SEO so you get traffic now and compounding organic growth over time.",
+        a: "Yes. I run Google and Meta ads alongside SEO so you get traffic now and compounding organic growth over time.",
       },
     ],
   },
@@ -300,24 +300,24 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "AEO · Dubai",
     h1Lead: "Be the answer customers hear,",
     h1Accent: "not the link they scroll past.",
-    lede: "Answer Engine Optimization (AEO) in Dubai: we structure your content so Google's AI Overviews, voice assistants, and featured snippets quote you directly, the moment someone asks a question your business can answer.",
-    bulletsHeading: "How we win the answer box",
+    lede: "Answer Engine Optimization (AEO) in Dubai: I structure your content so Google's AI Overviews, voice assistants, and featured snippets quote you directly, the moment someone asks a question your business can answer.",
+    bulletsHeading: "How I win the answer box",
     bullets: [
       {
         title: "Answer-first content",
-        body: "We reshape your key pages to answer real questions clearly and concisely, the exact format answer engines lift word-for-word.",
+        body: "I reshape your key pages to answer real questions clearly and concisely, the exact format answer engines lift word-for-word.",
       },
       {
         title: "Structured data & FAQ schema",
-        body: "We mark up your pages so search engines can understand, trust, and surface your answers, not just crawl them.",
+        body: "I mark up your pages so search engines can understand, trust, and surface your answers, not just crawl them.",
       },
       {
         title: "Topic & entity authority",
-        body: "We build the depth and internal links that make your site the obvious source on the questions that matter to your buyers.",
+        body: "I build the depth and internal links that make your site the obvious source on the questions that matter to your buyers.",
       },
       {
         title: "Win 'position zero'",
-        body: "We target the featured snippets and 'People Also Ask' boxes your competitors leave on the table.",
+        body: "I target the featured snippets and 'People Also Ask' boxes your competitors leave on the table.",
       },
     ],
     forWhoHeading: "Who this is for",
@@ -334,15 +334,15 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "How is AEO different from GEO?",
-        a: "AEO targets search answer features (snippets, voice, AI Overviews). GEO targets generative chatbots like ChatGPT and Perplexity. We often run both.",
+        a: "AEO targets search answer features (snippets, voice, AI Overviews). GEO targets generative chatbots like ChatGPT and Perplexity. I often run both.",
       },
       {
         q: "Do I need brand-new content for AEO?",
-        a: "Usually not. We reshape what you already have into clear, structured answers and add schema, rather than starting from scratch.",
+        a: "Usually not. I reshape what you already have into clear, structured answers and add schema, rather than starting from scratch.",
       },
       {
         q: "How do you measure AEO results?",
-        a: "We track snippet and 'People Also Ask' wins, Search Console impressions, and where your answers appear, all in plain reporting.",
+        a: "I track snippet and 'People Also Ask' wins, Search Console impressions, and where your answers appear, all in plain reporting.",
       },
     ],
   },
@@ -352,31 +352,31 @@ export const SERVICE_PAGES: ServicePageData[] = [
     icon: Sparkles,
     metaTitle: "Xerxes Duane | Generative Engine Optimization (GEO) in Dubai",
     metaDescription:
-      "GEO in Dubai: become the business ChatGPT, Gemini, and Perplexity recommend. We shape content, entities, and citations so AI engines surface and cite you. Book a free systems audit.",
+      "GEO in Dubai: become the business ChatGPT, Gemini, and Perplexity recommend. I shape content, entities, and citations so AI engines surface and cite you. Book a free systems audit.",
     ogTitle: "Generative Engine Optimization (GEO) in Dubai",
     jsonLdName: "Generative Engine Optimization (GEO)",
     price: "from AED 3,000/month",
     eyebrow: "GEO · Dubai",
     h1Lead: "Get recommended by the AI tools",
     h1Accent: "your customers now ask first.",
-    lede: "Generative Engine Optimization (GEO) in Dubai: more buyers now start with ChatGPT, Gemini, and Perplexity than a search box. We shape your content, entities, and citations so those engines surface, trust, and recommend your business by name.",
-    bulletsHeading: "How we get you cited by AI",
+    lede: "Generative Engine Optimization (GEO) in Dubai: more buyers now start with ChatGPT, Gemini, and Perplexity than a search box. I shape your content, entities, and citations so those engines surface, trust, and recommend your business by name.",
+    bulletsHeading: "How I get you cited by AI",
     bullets: [
       {
         title: "Citation-worthy content",
-        body: "We create the clear, factual, well-sourced content generative engines prefer to quote, with the specifics they need to recommend you.",
+        body: "I create the clear, factual, well-sourced content generative engines prefer to quote, with the specifics they need to recommend you.",
       },
       {
         title: "Entity & authority signals",
-        body: "We strengthen how AI models understand who you are, what you do, and why you're credible, across the web, not just your own site.",
+        body: "I strengthen how AI models understand who you are, what you do, and why you're credible, across the web, not just your own site.",
       },
       {
         title: "Presence where models read",
-        body: "We get your business represented in the directories, profiles, and sources these engines actually draw their answers from.",
+        body: "I get your business represented in the directories, profiles, and sources these engines actually draw their answers from.",
       },
       {
         title: "Prompt testing & monitoring",
-        body: "We test the prompts your buyers really use and track when and how the major AI engines mention you.",
+        body: "I test the prompts your buyers really use and track when and how the major AI engines mention you.",
       },
     ],
     forWhoHeading: "Who this is for",
@@ -389,7 +389,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     faqs: [
       {
         q: "Is GEO real, or just hype?",
-        a: "It's early but real: a growing share of buyers ask AI tools for recommendations before they ever Google. GEO makes sure you're in those answers. We're honest that it's an emerging channel, not a magic switch.",
+        a: "It's early but real: a growing share of buyers ask AI tools for recommendations before they ever Google. GEO makes sure you're in those answers. I'm honest that it's an emerging channel, not a magic switch.",
       },
       {
         q: "How is GEO different from SEO and AEO?",
@@ -397,11 +397,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you guarantee ChatGPT will recommend me?",
-        a: "No one credible can guarantee what a model outputs. What we can do is meaningfully improve how often and how accurately the major engines surface you, and report on it.",
+        a: "No one credible can guarantee what a model outputs. What I can do is meaningfully improve how often and how accurately the major engines surface you, and report on it.",
       },
       {
         q: "How do you measure GEO?",
-        a: "We test real buyer prompts across the major AI engines and track mentions, accuracy, and citations over time.",
+        a: "I test real buyer prompts across the major AI engines and track mentions, accuracy, and citations over time.",
       },
     ],
   },
@@ -418,7 +418,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "Custom Software · Dubai",
     h1Lead: "Software shaped around your business,",
     h1Accent: "not the other way around.",
-    lede: "Custom software development in Dubai for businesses that have outgrown generic tools. We build practical internal systems, client portals, workflow platforms, and integrations around how your team already operates, then keep them maintainable as you grow.",
+    lede: "Custom software development in Dubai for businesses that have outgrown generic tools. I build practical internal systems, client portals, workflow platforms, and integrations around how your team already operates, then keep them maintainable as you grow.",
     bulletsHeading: "What custom software can solve",
     bullets: [
       {
@@ -452,11 +452,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "How much does custom software development cost?",
-        a: "Focused internal tools start from AED 9,000. After the free audit, we define the smallest useful version and provide a fixed quote before development begins.",
+        a: "Focused internal tools start from AED 9,000. After the free audit, I define the smallest useful version and provide a fixed quote before development begins.",
       },
       {
         q: "Can you improve an existing custom system?",
-        a: "Yes. We first assess its code, hosting, security, and business fit, then recommend whether to repair, extend, or replace it.",
+        a: "Yes. I first assess its code, hosting, security, and business fit, then recommend whether to repair, extend, or replace it.",
       },
       {
         q: "Will I own the software?",
@@ -477,7 +477,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "CRM & Dashboards · Dubai",
     h1Lead: "Know every lead, customer, and next step,",
     h1Accent: "without chasing spreadsheets.",
-    lede: "CRM development and setup in Dubai for growing businesses that need a clear view of sales and customers. We organise your pipeline, connect your enquiry sources, automate follow-ups, and build dashboards your team will actually use.",
+    lede: "CRM development and setup in Dubai for growing businesses that need a clear view of sales and customers. I organise your pipeline, connect your enquiry sources, automate follow-ups, and build dashboards your team will actually use.",
     bulletsHeading: "What a useful CRM should give you",
     bullets: [
       {
@@ -507,15 +507,15 @@ export const SERVICE_PAGES: ServicePageData[] = [
     faqs: [
       {
         q: "Which CRM should my business use?",
-        a: "That depends on your workflow, team size, integrations, and budget. We assess the process first, then recommend whether Odoo, HubSpot, Zoho, or a focused custom solution fits best.",
+        a: "That depends on your workflow, team size, integrations, and budget. I assess the process first, then recommend whether Odoo, HubSpot, Zoho, or a focused custom solution fits best.",
       },
       {
         q: "Can you clean up our existing CRM?",
-        a: "Yes. We can remove duplicates, simplify stages, improve fields and permissions, reconnect lead sources, and make reporting useful again.",
+        a: "Yes. I can remove duplicates, simplify stages, improve fields and permissions, reconnect lead sources, and make reporting useful again.",
       },
       {
         q: "Can a CRM connect to WhatsApp and our website?",
-        a: "Usually, yes. The exact integration depends on your CRM and WhatsApp setup, but capturing website enquiries and recording conversations is a common part of our work.",
+        a: "Usually, yes. The exact integration depends on your CRM and WhatsApp setup, but capturing website enquiries and recording conversations is a common part of my work.",
       },
       {
         q: "How long does CRM setup take?",
@@ -536,12 +536,12 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "Mobile & Web Apps · Dubai",
     h1Lead: "An app people have a reason to use,",
     h1Accent: "built for the work it needs to do.",
-    lede: "Mobile and web app development in Dubai for businesses that need more than a website. We build booking platforms, customer portals, membership experiences, and internal apps with a focused first release and a clear path to grow.",
-    bulletsHeading: "What we build into the right app",
+    lede: "Mobile and web app development in Dubai for businesses that need more than a website. I build booking platforms, customer portals, membership experiences, and internal apps with a focused first release and a clear path to grow.",
+    bulletsHeading: "What I build into the right app",
     bullets: [
       {
         title: "A focused first release",
-        body: "We define the smallest version that solves a real problem, so you can launch, learn, and improve without funding unnecessary features.",
+        body: "I define the smallest version that solves a real problem, so you can launch, learn, and improve without funding unnecessary features.",
       },
       {
         title: "Simple, purposeful journeys",
@@ -553,7 +553,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         title: "A foundation ready to grow",
-        body: "We choose architecture and technology that fit the product, expected usage, and your ability to maintain it after launch.",
+        body: "I choose architecture and technology that fit the product, expected usage, and your ability to maintain it after launch.",
       },
     ],
     forWhoHeading: "Who this is for",
@@ -574,11 +574,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you help define the app before building it?",
-        a: "Yes. We map the users, core workflows, risks, and first-release features before development, so the project starts with a defensible scope.",
+        a: "Yes. I map the users, core workflows, risks, and first-release features before development, so the project starts with a defensible scope.",
       },
       {
         q: "Do you provide support after launch?",
-        a: "Yes. We can maintain, monitor, and improve the app after launch under a clear ongoing support arrangement.",
+        a: "Yes. I can maintain, monitor, and improve the app after launch under a clear ongoing support arrangement.",
       },
     ],
   },
@@ -595,7 +595,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "E-Commerce · Dubai",
     h1Lead: "An online store that makes buying easy,",
     h1Accent: "and running it manageable.",
-    lede: "E-commerce development in Dubai for businesses that need the storefront and the operations behind it to work together. We build fast customer journeys, connect payments and inventory, and reduce the manual work between order and delivery.",
+    lede: "E-commerce development in Dubai for businesses that need the storefront and the operations behind it to work together. I build fast customer journeys, connect payments and inventory, and reduce the manual work between order and delivery.",
     bulletsHeading: "What a strong online store needs",
     bullets: [
       {
@@ -604,7 +604,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         title: "UAE-ready payments and delivery",
-        body: "We configure suitable payment gateways, shipping rules, taxes, and customer communication around how you actually fulfil orders.",
+        body: "I configure suitable payment gateways, shipping rules, taxes, and customer communication around how you actually fulfil orders.",
       },
       {
         title: "Connected inventory and orders",
@@ -626,7 +626,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     faqs: [
       {
         q: "Which e-commerce platform should I use?",
-        a: "It depends on your catalogue, operations, integrations, and internal team. We recommend the platform after understanding the business, rather than forcing every store onto the same stack.",
+        a: "It depends on your catalogue, operations, integrations, and internal team. I recommend the platform after understanding the business, rather than forcing every store onto the same stack.",
       },
       {
         q: "Can you connect the store to inventory or accounting?",
@@ -634,7 +634,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you improve an existing e-commerce store?",
-        a: "Yes. We can audit its speed, user journey, analytics, checkout, product structure, and integrations before recommending focused improvements or a rebuild.",
+        a: "Yes. I can audit its speed, user journey, analytics, checkout, product structure, and integrations before recommending focused improvements or a rebuild.",
       },
       {
         q: "Will the store work well on mobile?",
@@ -655,7 +655,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "Landing Pages & Funnels · Dubai",
     h1Lead: "Turn campaign clicks into enquiries,",
     h1Accent: "not expensive exits.",
-    lede: "Landing page design in Dubai for campaigns that need a clear job and measurable result. We shape the offer, remove distractions, connect lead capture and analytics, and make the follow-up happen quickly.",
+    lede: "Landing page design in Dubai for campaigns that need a clear job and measurable result. I shape the offer, remove distractions, connect lead capture and analytics, and make the follow-up happen quickly.",
     bulletsHeading: "What makes the page convert",
     bullets: [
       {
@@ -689,7 +689,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you write the landing page copy?",
-        a: "Yes. We can shape the offer, structure the message, and refine the copy using your business knowledge, audience, and campaign intent.",
+        a: "Yes. I can shape the offer, structure the message, and refine the copy using your business knowledge, audience, and campaign intent.",
       },
       {
         q: "Can you connect it to my CRM or booking tool?",
@@ -697,7 +697,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you improve an existing landing page?",
-        a: "Yes. We review the offer, message hierarchy, mobile experience, speed, tracking, and follow-up before prioritising changes.",
+        a: "Yes. I review the offer, message hierarchy, mobile experience, speed, tracking, and follow-up before prioritising changes.",
       },
     ],
   },
@@ -714,7 +714,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "Branding & Graphic Design · Dubai",
     h1Lead: "Look as credible as the work",
     h1Accent: "you already deliver.",
-    lede: "Branding and graphic design in Dubai for businesses that need clarity and consistency, not decoration for its own sake. We build useful visual identities and everyday marketing assets that help people recognise, understand, and trust you.",
+    lede: "Branding and graphic design in Dubai for businesses that need clarity and consistency, not decoration for its own sake. I build useful visual identities and everyday marketing assets that help people recognise, understand, and trust you.",
     bulletsHeading: "Design that earns its place",
     bullets: [
       {
@@ -748,7 +748,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you work with our existing brand?",
-        a: "Yes. We can refine, extend, and organise an existing identity without replacing recognisable elements that still work.",
+        a: "Yes. I can refine, extend, and organise an existing identity without replacing recognisable elements that still work.",
       },
       {
         q: "What files will we receive?",
@@ -773,12 +773,12 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "Video & Photography · Dubai",
     h1Lead: "Create the visuals people need",
     h1Accent: "to understand and trust you.",
-    lede: "Videography and photography in Dubai for brands that need useful campaign assets, not footage without a plan. We shape the story, capture the right moments, and produce content around where and how it will actually be used.",
+    lede: "Videography and photography in Dubai for brands that need useful campaign assets, not footage without a plan. I shape the story, capture the right moments, and produce content around where and how it will actually be used.",
     bulletsHeading: "Production with a purpose",
     bullets: [
       {
         title: "Planned around the outcome",
-        body: "We define the audience, message, channels, and required deliverables before the shoot so every setup earns its time.",
+        body: "I define the audience, message, channels, and required deliverables before the shoot so every setup earns its time.",
       },
       {
         title: "Brand, product, and people",
@@ -786,7 +786,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         title: "Content captured for multiple channels",
-        body: "We plan framing, formats, and coverage so one production day can support websites, ads, social media, and presentations.",
+        body: "I plan framing, formats, and coverage so one production day can support websites, ads, social media, and presentations.",
       },
       {
         title: "Clean handoff into editing",
@@ -807,7 +807,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you create both photos and video in one shoot?",
-        a: "Often, yes. We plan the schedule and shot list carefully so both formats receive enough attention and the final assets remain useful.",
+        a: "Often, yes. I plan the schedule and shot list carefully so both formats receive enough attention and the final assets remain useful.",
       },
       {
         q: "Do you cover events?",
@@ -815,7 +815,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
       {
         q: "Can you help with the concept and script?",
-        a: "Yes. We can help shape the message, story, shot list, interview prompts, and channel-specific deliverables before production.",
+        a: "Yes. I can help shape the message, story, shot list, interview prompts, and channel-specific deliverables before production.",
       },
     ],
   },
@@ -832,12 +832,12 @@ export const SERVICE_PAGES: ServicePageData[] = [
     eyebrow: "Video Editing · Dubai",
     h1Lead: "Turn footage into something",
     h1Accent: "people keep watching.",
-    lede: "Video editing in Dubai for brands and teams that already have footage but need it shaped into clear, engaging content. We edit for attention, understanding, and the platform where the finished piece will live.",
+    lede: "Video editing in Dubai for brands and teams that already have footage but need it shaped into clear, engaging content. I edit for attention, understanding, and the platform where the finished piece will live.",
     bulletsHeading: "What happens in the edit",
     bullets: [
       {
         title: "The story gets clearer",
-        body: "We find the useful moments, remove what slows the piece down, and shape a sequence that makes the message easy to follow.",
+        body: "I find the useful moments, remove what slows the piece down, and shape a sequence that makes the message easy to follow.",
       },
       {
         title: "Pacing fits the platform",
@@ -862,7 +862,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     faqs: [
       {
         q: "Can you edit footage filmed by someone else?",
-        a: "Yes. We first review the footage quality, audio, available coverage, and intended deliverables, then confirm what can be produced well.",
+        a: "Yes. I first review the footage quality, audio, available coverage, and intended deliverables, then confirm what can be produced well.",
       },
       {
         q: "How are revisions handled?",

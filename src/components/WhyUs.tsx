@@ -9,11 +9,11 @@ export default function WhyUs() {
     <section id="why" className="scroll-mt-24 py-20 sm:py-28">
       <div className="container-bl">
         <SectionHeading
-          eyebrow="Why Xerxes Duane"
+          eyebrow="Why work with me"
           title={
             <>
               The difference is{" "}
-              <span className="text-gradient-gold">how we work.</span>
+              <span className="text-gradient-gold">how I work.</span>
             </>
           }
         />

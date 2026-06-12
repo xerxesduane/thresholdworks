@@ -5,7 +5,7 @@ import { AR_CHROME } from "../data/servicePagesAr";
 export default function WhatsAppButton({ locale = "en" }: { locale?: "en" | "ar" }) {
   const ar = locale === "ar";
   const href = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
-    ar ? "مرحبًا Xerxes Duane، أودّ معرفة المزيد." : "Hi Xerxes Duane, I'd like to learn more.",
+    ar ? "مرحبًا Xerxes، أودّ معرفة المزيد." : "Hi Xerxes, I'd like to learn more.",
   )}`;
 
   return (

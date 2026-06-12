@@ -12,7 +12,7 @@ export default function Testimonials() {
           eyebrow="In their words"
           title={
             <>
-              Trusted by the people <span className="text-gradient-gold">we've worked with.</span>
+              Trusted by the people <span className="text-gradient-gold">I've worked with.</span>
             </>
           }
           subtitle="No vanity metrics here, just what it's actually like to work together."

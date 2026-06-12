@@ -123,7 +123,7 @@ export const SERVICES: Service[] = [
     title: "GEO — Generative Engine Optimization",
     tagline: "Get cited by ChatGPT & Perplexity.",
     description:
-      "Make your business the source AI engines recommend. We shape your content, entities, and citations so ChatGPT, Gemini, and Perplexity surface and recommend you when buyers ask.",
+      "Make your business the source AI engines recommend. I shape your content, entities, and citations so ChatGPT, Gemini, and Perplexity surface and recommend you when buyers ask.",
     price: "from AED 3,000/month",
   },
   {
@@ -417,27 +417,27 @@ export const PROCESS: Step[] = [
   {
     no: "01",
     title: "Discover",
-    body: "We sit down and listen. What's working? What's broken? What's quietly costing you money? No pitching, just questions and clarity.",
+    body: "I sit down with you and listen. What's working? What's broken? What's quietly costing you money? No pitching, just questions and clarity.",
   },
   {
     no: "02",
     title: "Plan",
-    body: "We turn your goals into a real roadmap: what we'll build, in what order, with clear timelines and transparent pricing. No jargon.",
+    body: "I turn your goals into a real roadmap: what I'll build, in what order, with clear timelines and transparent pricing. No jargon.",
   },
   {
     no: "03",
     title: "Build",
-    body: "We design, develop, and integrate, with regular updates, working previews, and zero surprises. We move fast because we plan well.",
+    body: "I design, develop, and integrate, with regular updates, working previews, and zero surprises. I move fast because I plan well.",
   },
   {
     no: "04",
     title: "Test & Refine",
-    body: "We test everything, speed, security, mobile, integrations. Nothing ships until it's solid and you're the final word on 'ready'.",
+    body: "I test everything, speed, security, mobile, integrations. Nothing ships until it's solid and you're the final word on 'ready'.",
   },
   {
     no: "05",
     title: "Launch & Support",
-    body: "We deploy, train your team, and stick around. Launching is the start, not the end, we're one message away for years.",
+    body: "I deploy, train your team, and stick around. Launching is the start, not the end, I'm one message away for years.",
   },
 ];
 
@@ -445,7 +445,7 @@ export const COMPARISON: { agency: string; bayt: string }[] = [
   { agency: "Sells you tools", bayt: "Sells you clarity" },
   { agency: "Long-term lock-in contracts", bayt: "Month-to-month, cancel anytime" },
   { agency: "Disappears after launch", bayt: "Picks up the phone five years later" },
-  { agency: "Upsells everything", bayt: "Tells you when you don't need us" },
+  { agency: "Upsells everything", bayt: "Tells you when you don't need me" },
   { agency: "One service, one expert", bayt: "One studio, the whole stack" },
   { agency: "Hides pricing", bayt: 'Transparent "from AED X" pricing' },
 ];
@@ -465,10 +465,10 @@ export const PROMISE = {
     "Freelancers who disappear after the invoice",
   ],
   always: [
-    "Honest answers, even when they cost us money",
+    "Honest answers, even when they cost me money",
     "One trusted person who picks up the phone",
     "A real audit before any recommendation",
-    "We'll tell you when you don't need us, and we mean it",
+    "I'll tell you when you don't need me, and I mean it",
   ],
 };
 
@@ -487,7 +487,7 @@ export const PACKAGES = [
     price: "from AED 5,000",
     note: "project-based",
     pitch: "Fix what's broken",
-    body: "A defined-scope project. Website rebuild, CRM setup, automation, SEO overhaul, or a tech-stack consolidation. We scope it, build it, ship it.",
+    body: "A defined-scope project. Website rebuild, CRM setup, automation, SEO overhaul, or a tech-stack consolidation. I scope it, build it, ship it.",
     cta: "See if we're a fit",
     featured: false,
   },
@@ -496,8 +496,8 @@ export const PACKAGES = [
     price: "from AED 2,500",
     note: "per month",
     pitch: "Your long-term tech partner",
-    body: "We become your outsourced tech team. Ongoing IT, maintenance, SEO, ads, and automation, one trusted number to call for everything.",
-    cta: "Talk to us",
+    body: "I become your outsourced tech team. Ongoing IT, maintenance, SEO, ads, and automation, one trusted number to call for everything.",
+    cta: "Talk to me",
     featured: false,
   },
 ];
@@ -584,31 +584,31 @@ export const CLIENTS: Client[] = [
 export const FAQS: { q: string; a: string }[] = [
   {
     q: "Is the audit really free?",
-    a: "Yes, for now. We're keeping it free while we onboard our founding clients. Eventually it'll be AED 750–1,500, but you're early.",
+    a: "Yes, for now. I'm keeping it free while I onboard my founding clients. Eventually it'll be AED 750–1,500, but you're early.",
   },
   {
     q: "Do you sign long contracts?",
-    a: "No. The Partner retainer is month-to-month. Cancel anytime, no penalties. We earn your business every month, not just the first one.",
+    a: "No. The Partner retainer is month-to-month. Cancel anytime, no penalties. I earn your business every month, not just the first one.",
   },
   {
     q: "What if I just need IT support, not a whole rebuild?",
-    a: "Perfectly fine. Many clients start with simple IT support and grow into the full Partner retainer over time. We meet you where you are.",
+    a: "Perfectly fine. Many clients start with simple IT support and grow into the full Partner retainer over time. I meet you where you are.",
   },
   {
     q: "Do you work with very small businesses?",
-    a: "Yes. Most of our clients are 2–10 person teams. That's literally who we built this studio for.",
+    a: "Yes. Most of my clients are 2–10 person teams. That's literally who I built this studio for.",
   },
   {
     q: "Do you support Arabic-speaking clients or bilingual sites?",
-    a: "Yes. We work in English and deliver bilingual websites and content as needed.",
+    a: "Yes. I work in English and deliver bilingual websites and content as needed.",
   },
   {
     q: "What if I'm in a different country?",
-    a: "We've delivered for clients in Dubai, the wider GCC, New Zealand, and the Philippines. WhatsApp, Zoom, and the right tools make distance irrelevant.",
+    a: "I've delivered for clients in Dubai, the wider GCC, New Zealand, and the Philippines. WhatsApp, Zoom, and the right tools make distance irrelevant.",
   },
   {
     q: "Will you try to upsell me?",
-    a: "No. The audit is the audit. If you don't need us, we'll tell you, and we mean that.",
+    a: "No. The audit is the audit. If you don't need me, I'll tell you, and I mean that.",
   },
   {
     q: "How quickly can you start?",

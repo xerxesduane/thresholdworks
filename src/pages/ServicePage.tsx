@@ -95,7 +95,7 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-cream/15 px-7 py-3.5 text-sm font-semibold text-cream transition duration-300 hover:border-gold/50 hover:text-gold sm:w-auto"
               >
                 <ArrowLeft size={16} strokeWidth={2.2} />
-                Back to everything we do
+                Back to everything I do
               </a>
             </m.div>
           </m.div>

@@ -38,7 +38,7 @@ export default function WhoFor() {
               <span className="text-gradient-gold">holding it all together manually.</span>
             </>
           }
-          subtitle="We work best where the business is growing, the tools are multiplying, and someone needs to make the whole operation make sense."
+          subtitle="I work best where the business is growing, the tools are multiplying, and someone needs to make the whole operation make sense."
         />
 
         <m.div

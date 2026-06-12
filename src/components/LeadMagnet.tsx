@@ -30,7 +30,7 @@ export default function LeadMagnet() {
               </h2>
               <p className="mt-3 text-muted">
                 15 quick checks to spot where your business is leaking time, money,
-                and leads, the same things we look for in the audit.
+                and leads, the same things I look for in the audit.
               </p>
             </div>
 

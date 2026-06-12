@@ -92,7 +92,7 @@ export const INSIGHTS: InsightPost[] = [
       { type: "h2", text: "What it costs with Xerxes Duane" },
       {
         type: "p",
-        text: "We give you a fixed quote after a free 60-minute audit, so you only pay for what actually moves your business, and you own the domain, hosting, and code. No surprise invoices, no lock-in. If a simple page is all you need, we will tell you that. Book a free audit and we will map exactly what your site should do, and what it should cost.",
+        text: "I give you a fixed quote after a free 60-minute audit, so you only pay for what actually moves your business, and you own the domain, hosting, and code. No surprise invoices, no lock-in. If a simple page is all you need, I will tell you that. Book a free audit and I will map exactly what your site should do, and what it should cost.",
       },
     ],
     relatedServices: ["web-development-dubai", "seo-dubai", "landing-page-design-dubai", "ecommerce-development-dubai"],
@@ -101,7 +101,7 @@ export const INSIGHTS: InsightPost[] = [
     slug: "crm-setup-mistakes-dubai",
     title: "CRM setup mistakes that cost Dubai businesses leads",
     description:
-      "The CRM mistakes we see most often in Dubai small businesses, how each one quietly loses you leads, and what a CRM that actually works looks like.",
+      "The CRM mistakes I see most often in Dubai small businesses, how each one quietly loses you leads, and what a CRM that actually works looks like.",
     date: "2026-06-01",
     author: "Xerxes Duane",
     readingMinutes: 6,
@@ -141,7 +141,7 @@ export const INSIGHTS: InsightPost[] = [
       },
       {
         type: "p",
-        text: "We set up CRM (often inside Odoo) so leads capture themselves, follow-ups send themselves, and you can see the whole pipeline at a glance. A free audit will show you exactly where leads are leaking today.",
+        text: "I set up CRM (often inside Odoo) so leads capture themselves, follow-ups send themselves, and you can see the whole pipeline at a glance. A free audit will show you exactly where leads are leaking today.",
       },
     ],
     relatedServices: ["odoo-erp-dubai", "web-development-dubai", "crm-development-dubai", "custom-software-development-dubai"],
@@ -190,7 +190,7 @@ export const INSIGHTS: InsightPost[] = [
       },
       {
         type: "p",
-        text: "We're not an official Odoo Partner, which means we have no incentive to push you toward Enterprise. In a free audit we'll tell you honestly which edition fits, and what it'll actually cost.",
+        text: "I'm not an official Odoo Partner, which means I have no incentive to push you toward Enterprise. In a free audit I'll tell you honestly which edition fits, and what it'll actually cost.",
       },
     ],
     relatedServices: ["odoo-erp-dubai", "custom-software-development-dubai"],
@@ -239,7 +239,7 @@ export const INSIGHTS: InsightPost[] = [
       },
       {
         type: "p",
-        text: "We quote fixed, build fast, and set everything up in your name, start to finish. If you're weighing up a web project, a free audit will tell you what's worth keeping and what isn't.",
+        text: "I quote fixed, build fast, and set everything up in your name, start to finish. If you're weighing up a web project, a free audit will tell you what's worth keeping and what isn't.",
       },
     ],
     relatedServices: ["web-development-dubai", "seo-dubai", "landing-page-design-dubai", "mobile-app-development-dubai"],
@@ -277,7 +277,7 @@ export const INSIGHTS: InsightPost[] = [
       },
       {
         type: "quote",
-        text: "The cheapest license is the one that fits, not the one with the lowest sticker. We'll tell you which edition you actually need.",
+        text: "The cheapest license is the one that fits, not the one with the lowest sticker. I'll tell you which edition you actually need.",
       },
       { type: "h2", text: "2. Implementation: where the real range is" },
       {
@@ -286,7 +286,7 @@ export const INSIGHTS: InsightPost[] = [
       },
       {
         type: "p",
-        text: "We scope this as a fixed quote up front, phased so you see value before everything is switched on. No open-ended hourly meters.",
+        text: "I scope this as a fixed quote up front, phased so you see value before everything is switched on. No open-ended hourly meters.",
       },
       { type: "h2", text: "3. The hidden costs nobody quotes" },
       {
@@ -300,7 +300,7 @@ export const INSIGHTS: InsightPost[] = [
       { type: "h2", text: "So what should you budget?" },
       {
         type: "p",
-        text: "Start with a free systems audit. We look at what you run today, tell you which Odoo edition fits, and give you a fixed-price plan for the implementation, before you commit to anything. You walk away with the numbers and a clear map, whether or not you hire us.",
+        text: "Start with a free systems audit. I look at what you run today, tell you which Odoo edition fits, and give you a fixed-price plan for the implementation, before you commit to anything. You walk away with the numbers and a clear map, whether or not you hire me.",
       },
     ],
     relatedServices: ["odoo-erp-dubai", "custom-software-development-dubai"],
@@ -352,7 +352,7 @@ export const INSIGHTS: InsightPost[] = [
       },
       {
         type: "p",
-        text: "We work hands-on with Odoo, so we'll tell you honestly when Zoho (or even a lighter setup) is the smarter fit for where you are. The audit exists to answer exactly this, before you spend a dirham on licenses.",
+        text: "I work hands-on with Odoo, so I'll tell you honestly when Zoho (or even a lighter setup) is the smarter fit for where you are. The audit exists to answer exactly this, before you spend a dirham on licenses.",
       },
     ],
     relatedServices: ["odoo-erp-dubai", "crm-development-dubai"],
@@ -368,7 +368,7 @@ export const INSIGHTS: InsightPost[] = [
     body: [
       {
         type: "p",
-        text: "Spreadsheets are brilliant until they aren't. For most growing businesses, the moment they become the bottleneck creeps up quietly. Here are the five signs we see most often.",
+        text: "Spreadsheets are brilliant until they aren't. For most growing businesses, the moment they become the bottleneck creeps up quietly. Here are the five signs I see most often.",
       },
       { type: "h2", text: "1. The same number lives in three places" },
       {
@@ -417,12 +417,12 @@ export const INSIGHTS: InsightPost[] = [
     body: [
       {
         type: "p",
-        text: "Free audit can sound like code for a sales call. Ours isn't. Here's exactly what the 60 minutes covers and what you leave with, whether or not you ever hire us.",
+        text: "Free audit can sound like code for a sales call. Mine isn't. Here's exactly what the 60 minutes covers and what you leave with, whether or not you ever hire me.",
       },
       { type: "h2", text: "Before the call" },
       {
         type: "p",
-        text: "We confirm a time on WhatsApp and ask one question: what's the tech thing on your mind right now? That's it. No forms, no prep homework.",
+        text: "I confirm a time on WhatsApp and ask one question: what's the tech thing on your mind right now? That's it. No forms, no prep homework.",
       },
       { type: "h2", text: "During the 60 minutes" },
       {
@@ -431,7 +431,7 @@ export const INSIGHTS: InsightPost[] = [
           "A screen-share walk through your current website, tools, and workflow.",
           "Where your systems don't talk to each other, and what that's costing you.",
           "The quick wins you can action immediately, in order of impact.",
-          "Honest answers, including 'you don't need us for that' where it's true.",
+          "Honest answers, including 'you don't need me for that' where it's true.",
         ],
       },
       { type: "h2", text: "What you walk away with" },
@@ -440,7 +440,7 @@ export const INSIGHTS: InsightPost[] = [
         items: [
           "A plain-English map of how your systems connect (or don't).",
           "Your top three quick wins, prioritized.",
-          "A fixed-price plan, only if you want us to build it.",
+          "A fixed-price plan, only if you want me to build it.",
         ],
       },
       {

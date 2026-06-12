@@ -23,7 +23,7 @@ export default function Process() {
       <div className="container-bl relative">
         <SectionHeading
           tone="light"
-          eyebrow="How we work"
+          eyebrow="How I work"
           title={
             <>
               Listen deeply. Plan honestly.{" "}

@@ -15,7 +15,7 @@ export default function Layers() {
               Four layers, <span className="text-gradient-gold">built to work together.</span>
             </>
           }
-          subtitle="Most agencies sell you Layer 3. We build all four, because the marketing doesn't work if the foundation is broken."
+          subtitle="Most agencies sell you Layer 3. I build all four, because the marketing doesn't work if the foundation is broken."
         />
 
         <m.div

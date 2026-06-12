@@ -9,14 +9,14 @@ export default function Industries() {
     <section className="py-20 sm:py-28">
       <div className="container-bl">
         <SectionHeading
-          eyebrow="Industries we serve"
+          eyebrow="Industries I serve"
           title={
             <>
               Built for the businesses{" "}
-              <span className="text-gradient-gold">we believe in.</span>
+              <span className="text-gradient-gold">I believe in.</span>
             </>
           }
-          subtitle="We work best with small, owner-led businesses, where the founder still picks up the phone, and good tech can quietly change everything."
+          subtitle="I work best with small, owner-led businesses, where the founder still picks up the phone, and good tech can quietly change everything."
         />
 
         <m.div

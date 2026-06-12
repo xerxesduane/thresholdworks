@@ -8,7 +8,7 @@ import Reveal from "./ui/Reveal";
 import GoogleRating from "./GoogleRating";
 
 const STEPS = [
-  "We confirm your audit time on WhatsApp within a few hours.",
+  "I confirm your audit time on WhatsApp within a few hours.",
   "We meet for 60 minutes: call, Zoom, or in person if you prefer.",
   "Within 5 business days, you get your plain-English roadmap.",
 ];
@@ -37,7 +37,7 @@ export default function Contact() {
   }, [state.succeeded, source.page]);
 
   const whatsappMessage = [
-    `Hi Xerxes Duane, I'd like to book a free audit.`,
+    `Hi Xerxes, I'd like to book a free audit.`,
     ``,
     `Name: ${form.name}`,
     `Business: ${form.business}`,
@@ -63,7 +63,7 @@ export default function Contact() {
             </span>
             <h2 className="mt-4 text-3xl sm:text-4xl">
               Just curious what{" "}
-              <span className="text-gradient-gold">we'd say?</span>
+              <span className="text-gradient-gold">I'd say?</span>
             </h2>
             <p className="mt-4 max-w-md text-muted">
               60 minutes, zero pressure. You walk away with a clear map of your
@@ -127,7 +127,7 @@ export default function Contact() {
                 Got it, thank you.
               </h3>
               <p className="mt-3 text-muted">
-                Your request is in. We'll confirm your audit time within a few
+                Your request is in. I'll confirm your audit time within a few
                 hours. Want to skip ahead?
               </p>
               <a
@@ -231,7 +231,7 @@ export default function Contact() {
                 {!state.submitting && <ArrowUpRight size={17} strokeWidth={2.5} />}
               </button>
               <p className="text-center text-xs text-muted-dark">
-                We'll reply on WhatsApp within a few hours. No spam, ever.
+                I'll reply on WhatsApp within a few hours. No spam, ever.
               </p>
             </m.form>
           )}
