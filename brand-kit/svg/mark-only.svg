@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 36 36" fill="none">
+  <!-- Xerxes Duane master mark, "the Open X": two strokes crossing low and flaring
+       upward and outward (open arms, serve first), a gold spark cradled in the
+       opening, rooted on the gold foundation line. Transparent, dark backgrounds. -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 31 H31" stroke="#DAA442" stroke-width="2.6"/>
+    <path d="M23.8 30 C21 23, 14.5 13, 8.2 6.4" stroke="#DAA442" stroke-width="2.1"/>
+    <path d="M12.2 30 C15 23, 21.5 13, 27.8 6.4" stroke="#F3EFE6" stroke-width="2.3"/>
+    <circle cx="18" cy="5.6" r="1.9" fill="#DAA442"/>
+  </g>
+</svg>
