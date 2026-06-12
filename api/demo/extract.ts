@@ -2,7 +2,7 @@
 // typed JSON (the kind of thing that auto-files a lead into a CRM). Returns a
 // validated object via the AI SDK's generateObject + a Zod schema.
 import { generateObject } from "ai";
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { z } from "zod";
 import { MODEL_FAST, preflight, errorResponse, clamp, json } from "../_shared";
 
@@ -38,7 +38,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   try {
     const { object } = await generateObject({
-      model: anthropic(MODEL_FAST),
+      model: google(MODEL_FAST),
       schema: LeadSchema,
       maxOutputTokens: 500,
       prompt:

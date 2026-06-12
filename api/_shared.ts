@@ -1,16 +1,18 @@
 // Shared helpers for the live-AI demo endpoints (/api/demo/*).
 //
-// These run on Vercel's Edge runtime. The Anthropic call happens here, server
-// side, so the API key is never exposed to the browser. Everything is sized
-// for a PUBLIC, unauthenticated demo: tight output caps, short input caps, and
-// a per-IP rate limit. Pair this with a hard monthly spend cap in the Anthropic
-// console.
+// These run on Vercel's Edge runtime. The model call happens here, server side,
+// so the API key is never exposed to the browser. Everything is sized for a
+// PUBLIC, unauthenticated demo: tight output caps, short input caps, and a
+// per-IP rate limit.
+//
+// Provider: Google Gemini, on its free tier (no spend, generous rate limits).
+// Free key from https://aistudio.google.com — set GOOGLE_GENERATIVE_AI_API_KEY
+// in Vercel. The @ai-sdk/google provider reads that env var automatically.
 
-// All demos run on Opus 4.8 (the user's choice — highest quality). It's pricey
-// for a public endpoint, so the per-request token caps in each handler stay
-// tight. To cut cost, switch these to "claude-haiku-4-5" / "claude-sonnet-4-6".
-export const MODEL_FAST = "claude-opus-4-8";
-export const MODEL_SMART = "claude-opus-4-8";
+// Gemini Flash is fast and free. To switch back to Claude, restore the
+// @ai-sdk/anthropic imports in the handlers and use "claude-haiku-4-5" here.
+export const MODEL_FAST = "gemini-2.0-flash";
+export const MODEL_SMART = "gemini-2.0-flash";
 
 const WINDOW_MS = 60_000;
 const WINDOW_SEC = WINDOW_MS / 1000;
@@ -81,7 +83,7 @@ export function clientIp(req: Request): string {
 }
 
 export function hasKey(): boolean {
-  return Boolean(process.env.ANTHROPIC_API_KEY);
+  return Boolean(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
 }
 
 /** JSON response with no-store caching (demo responses must never be cached). */
@@ -101,7 +103,7 @@ export async function preflight(req: Request): Promise<Response | null> {
   if (req.method !== "POST") return errorResponse("Method not allowed.", 405);
   if (!hasKey()) {
     return errorResponse(
-      "This demo isn't configured yet — the site owner needs to add an ANTHROPIC_API_KEY.",
+      "This demo isn't configured yet — the site owner needs to add a GOOGLE_GENERATIVE_AI_API_KEY.",
       503,
     );
   }

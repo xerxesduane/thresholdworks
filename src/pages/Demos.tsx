@@ -64,7 +64,7 @@ export default function Demos() {
             </Kinetic>
             <m.p variants={fadeUp} className="mx-auto mt-6 max-w-2xl text-lg text-muted">
               These are real, working demos — the same kind of AI I build into client products. Powered by
-              Claude, running live. Type into them, they respond for real.
+              Google Gemini, running live. Type into them, they respond for real.
             </m.p>
             <m.p variants={fadeUp} className="mx-auto mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-dark">
               Nothing here is canned · No sign-up · Your input isn't stored

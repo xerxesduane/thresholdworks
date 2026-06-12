@@ -1,7 +1,7 @@
 // Arabic <-> English translator demo. On-brand for a bilingual Dubai audience.
 // Streams the translation back as plain text.
 import { streamText } from "ai";
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { MODEL_FAST, preflight, errorResponse, clamp } from "../_shared";
 
 export const config = { runtime: "edge" };
@@ -36,7 +36,7 @@ export default async function handler(req: Request): Promise<Response> {
   const system = SYSTEM[body.direction ?? "auto"] ?? SYSTEM.auto;
 
   const result = streamText({
-    model: anthropic(MODEL_FAST),
+    model: google(MODEL_FAST),
     system,
     messages: [{ role: "user", content: text }],
     maxOutputTokens: 700,

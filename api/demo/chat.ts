@@ -3,7 +3,7 @@
 //   "lead"      — a lead-qualifying assistant for Xerxes Duane
 // Streams plain text tokens back to the browser (see src/lib/demoClient.ts).
 import { streamText } from "ai";
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { MODEL_FAST, preflight, errorResponse, clamp } from "../_shared";
 
 export const config = { runtime: "edge" };
@@ -50,7 +50,7 @@ export default async function handler(req: Request): Promise<Response> {
   if (totalChars > 6000) return errorResponse("That conversation is too long for the demo.");
 
   const result = streamText({
-    model: anthropic(MODEL_FAST),
+    model: google(MODEL_FAST),
     system,
     messages,
     maxOutputTokens: 500,
