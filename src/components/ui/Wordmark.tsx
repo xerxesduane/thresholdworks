@@ -62,10 +62,11 @@ export default function Wordmark({
       {showText && (
         <span className="flex flex-col leading-none">
           <span
-            className="font-display font-semibold tracking-normal text-cream"
+            className="font-display font-semibold tracking-tight"
             style={{ fontSize: `${size * 0.62}px` }}
           >
-            Xerxes<span className="text-gold"> Duane</span>
+            <span className="text-gradient-gold">Xerxes</span>
+            <span className="font-medium text-cream/70"> Duane</span>
           </span>
         </span>
       )}
