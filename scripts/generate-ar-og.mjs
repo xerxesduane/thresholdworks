@@ -37,7 +37,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
       <path d="M12.2 30 C15 23, 21.5 13, 27.8 6.4" stroke="#F3EFE6" stroke-width="2.3"/>
       <circle cx="18" cy="5.6" r="1.9" fill="#DAA442" stroke="none"/>
     </g>
-    <text x="74" y="42" font-family="Georgia, serif" font-size="32" font-weight="600" fill="#F3EFE6">Xerxes <tspan fill="#DAA442">Duane</tspan></text>
+    <text x="74" y="42" font-family="Georgia, serif" font-size="32" font-weight="600"><tspan fill="url(#gold)">Xerxes</tspan> <tspan fill="#F3EFE6">Duane</tspan></text>
   </g>
   <text x="1100" y="300" text-anchor="end" direction="rtl" font-family="${AR}" font-size="70" font-weight="700" fill="#F3EFE6">${line1}</text>
   <text x="1100" y="390" text-anchor="end" direction="rtl" font-family="${AR}" font-size="70" font-weight="700" fill="url(#gold)">${line2}</text>
