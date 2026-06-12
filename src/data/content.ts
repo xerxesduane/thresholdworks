@@ -33,6 +33,7 @@ export const CONTACT = {
 
 export const NAV_LINKS = [
   { label: "Services", href: "/#services" },
+  { label: "AI Lab", href: "/demos" },
   { label: "Work", href: "/#work" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Showreel", href: "/showreel" },

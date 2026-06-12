@@ -129,6 +129,7 @@ export function allRoutes(): string[] {
     ...CASE_STUDIES.map((study) => `/case-studies/${study.slug}`),
     "/portfolio",
     "/showreel",
+    "/demos",
     "/insights",
     "/privacy",
     "/terms",
@@ -248,10 +249,21 @@ const SHOWREEL_META: PageMeta = {
   jsonLd: [breadcrumb([HOME_CRUMB, { name: "Showreel", url: `${SITE_ORIGIN}/showreel` }])],
 };
 
+const DEMOS_META: PageMeta = {
+  title: "Xerxes Duane | Live AI Demos — Try It Yourself",
+  description:
+    "Test real, live AI built by Xerxes Duane: a business chatbot, a lead-qualifying assistant, document Q&A, and structured data extraction. Powered by Claude, running live in Dubai.",
+  canonical: `${SITE_ORIGIN}/demos`,
+  ogTitle: "Xerxes Duane | Live AI Demos — Try It Yourself",
+  ogImage: `${SITE_ORIGIN}/brand/og/demos.png`,
+  jsonLd: [breadcrumb([HOME_CRUMB, { name: "Live AI Demos", url: `${SITE_ORIGIN}/demos` }])],
+};
+
 export function getPageMeta(path: string): PageMeta {
   const slug = pathToSlug(path);
   if (slug === "") return HOME_META;
   if (slug === "about") return ABOUT_META;
+  if (slug === "demos") return DEMOS_META;
   if (slug === "case-studies") return CASE_STUDIES_META;
   if (slug.startsWith("case-studies/")) {
     const study = CASE_STUDIES.find((item) => item.slug === slug.slice("case-studies/".length));

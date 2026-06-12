@@ -32,6 +32,7 @@ const Terms = lazy(() =>
 );
 const Showreel = lazy(() => import("./pages/Showreel"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
+const Demos = lazy(() => import("./pages/Demos"));
 import { getServicePage } from "./data/servicePages";
 import { getServicePageAr } from "./data/servicePagesAr";
 import { getInsight } from "./data/insights";
@@ -63,6 +64,7 @@ function Route({ path }: { path: string }) {
   if (slug === "terms") return <Terms />;
   if (slug === "showreel") return <Showreel />;
   if (slug === "portfolio") return <Portfolio />;
+  if (slug === "demos") return <Demos />;
   if (slug === "ar") return <HomeAr />;
 
   // Arabic service pages: /ar/<service-slug>
