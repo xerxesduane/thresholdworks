@@ -53,11 +53,26 @@ async function fetchUrlText(url: URL): Promise<string> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 7000);
   try {
-    const res = await fetch(url.toString(), {
-      signal: ctrl.signal,
-      redirect: "follow",
-      headers: { "user-agent": "XerxesDuaneDemoBot/1.0 (+https://www.xerxesduane.com/demos)" },
-    });
+    // Follow redirects MANUALLY, re-validating each hop against the SSRF
+    // allowlist — otherwise a public host could 30x-redirect us to an internal
+    // IP (169.254.169.254, 127.0.0.1, 10.x…) that the first check never saw.
+    let current = url;
+    let res: Response | undefined;
+    for (let hop = 0; hop < 5; hop++) {
+      res = await fetch(current.toString(), {
+        signal: ctrl.signal,
+        redirect: "manual",
+        headers: { "user-agent": "XerxesDuaneDemoBot/1.0 (+https://www.xerxesduane.com/demos)" },
+      });
+      if (res.status < 300 || res.status >= 400) break;
+      const loc = res.headers.get("location");
+      if (!loc) break;
+      const next = isFetchableUrl(new URL(loc, current).toString());
+      if (!next) throw new Error("it redirects somewhere that isn't allowed.");
+      current = next;
+    }
+    if (!res) throw new Error("no response.");
+    if (res.status >= 300 && res.status < 400) throw new Error("too many redirects.");
     if (!res.ok) throw new Error(`The page returned ${res.status}.`);
     const buf = await res.arrayBuffer();
     // Cap at ~400KB of raw HTML before stripping.
