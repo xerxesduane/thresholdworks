@@ -9,13 +9,13 @@ import { MODEL_STRUCTURED, preflight, errorResponse, clamp, json, logAiError } f
 export const config = { runtime: "edge" };
 
 const SeoSchema = z.object({
-  title: z.string().describe("SEO <title>, compelling and under 60 characters, includes the main keyword"),
-  metaDescription: z.string().describe("Meta description, 140-155 characters, benefit-led with a soft call to action"),
+  title: z.string().describe("A compelling, concise SEO title tag including the main keyword"),
+  metaDescription: z.string().describe("A benefit-led meta description of roughly one sentence with a soft call to action"),
   slug: z.string().describe("Short URL slug, lowercase words separated by hyphens, no stop words"),
-  keywords: z.array(z.string()).describe("4-6 target keywords / search phrases for this page"),
+  keywords: z.array(z.string()).describe("Four to six target keywords or search phrases for this page"),
   faqs: z
     .array(z.object({ question: z.string(), answer: z.string().describe("A concise 1-2 sentence answer") }))
-    .describe("Exactly 2 FAQ entries an answer engine could feature"),
+    .describe("Two FAQ entries an answer engine could feature"),
 });
 
 export default async function handler(req: Request): Promise<Response> {
@@ -37,10 +37,10 @@ export default async function handler(req: Request): Promise<Response> {
     const { object } = await generateObject({
       model: groq(MODEL_STRUCTURED),
       schema: SeoSchema,
-      maxOutputTokens: 700,
+      maxOutputTokens: 1300,
       prompt:
         "Generate search-engine metadata for a web page about the following. " +
-        "Keep the title under 60 characters and the meta description between 140 and 155 characters. " +
+        "Keep the title short (aim for a snippet that won't get truncated) and the meta description to about one punchy sentence. " +
         (hint ? `Prioritize these keywords if relevant: ${hint}.\n\n` : "\n") +
         `PAGE TOPIC:\n"""\n${topic}\n"""`,
     });
