@@ -565,13 +565,21 @@ export default function Demos() {
           </m.div>
 
           <Reveal>
-            <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-muted-dark">
-              Like one of these? I build them tuned to your business, your data, and your tone —
-              then wire them into the tools you already use.{" "}
-              <a href="/#contact" className="text-gold underline decoration-gold/50 underline-offset-2 hover:text-gold-soft">
-                Book your free audit →
+            <div className="mx-auto mt-12 max-w-2xl rounded-3xl border border-gold/20 bg-[linear-gradient(180deg,rgba(218,164,66,0.08),transparent)] p-8 text-center sm:p-10">
+              <h2 className="text-2xl text-cream sm:text-3xl">Like one of these? Let's build yours.</h2>
+              <p className="mx-auto mt-3 max-w-xl text-muted">
+                Every tool here is live and real — and I tune them to your business, your data, and your
+                tone, then wire them into what you already use.
+              </p>
+              <a
+                href="/#contact"
+                data-cursor="link"
+                className="group mt-7 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink-deep shadow-[0_14px_50px_-18px_rgba(218,164,66,0.8)] transition-colors hover:bg-gold-soft"
+              >
+                Book your free audit
+                <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
               </a>
-            </p>
+            </div>
           </Reveal>
         </div>
       </section>
