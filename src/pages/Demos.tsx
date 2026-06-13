@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { m } from "framer-motion";
-import { Bot, UserRoundCheck, FileSearch, Braces, Languages, Send, Star, Sparkles, CornerDownLeft, Search, ListChecks } from "lucide-react";
+import { Bot, UserRoundCheck, FileSearch, Braces, Languages, Send, Star, Sparkles, CornerDownLeft, Search, ListChecks, FileSpreadsheet, Inbox, ArrowRight, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import Kinetic from "../components/fx/Kinetic";
@@ -187,6 +187,63 @@ function DemoCard({ demo }: { demo: Demo }) {
   );
 }
 
+const PIPELINE: { icon: LucideIcon; title: string; text: string }[] = [
+  { icon: FileSpreadsheet, title: "Your leads", text: "Connect the Google Sheet, Excel, or CRM your contacts already live in — no migration." },
+  { icon: Sparkles, title: "AI personalizes", text: "Every lead gets a unique, on-brand opener with their name, interest and city woven in." },
+  { icon: Send, title: "Sent on WhatsApp", text: "Delivered through the official WhatsApp Business API with your pre-approved templates." },
+  { icon: Inbox, title: "Replies come back", text: "Two-way — responses route to your inbox or CRM, with delivery and read status synced." },
+];
+
+function ProductionPipeline() {
+  return (
+    <div className="relative mt-8 border-t border-cream/10 pt-7">
+      <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-gold/80">How it works in production</p>
+      <h3 className="mt-1.5 text-lg text-cream sm:text-xl">From your spreadsheet to their WhatsApp — on autopilot</h3>
+
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {PIPELINE.map((s, i) => {
+          const Icon = s.icon;
+          return (
+            <div key={s.title} className="relative rounded-2xl border border-cream/10 bg-ink-deep/40 p-4">
+              <div className="flex items-center justify-between">
+                <span className="grid h-9 w-9 place-items-center rounded-xl bg-gold/10 text-gold ring-1 ring-gold/20">
+                  <Icon size={17} strokeWidth={1.7} />
+                </span>
+                <span className="font-mono text-[11px] text-muted-dark">0{i + 1}</span>
+              </div>
+              <h4 className="mt-3 text-sm font-semibold text-cream">{s.title}</h4>
+              <p className="mt-1 text-[12.5px] leading-snug text-muted">{s.text}</p>
+              {i < PIPELINE.length - 1 && (
+                <ArrowRight
+                  size={16}
+                  aria-hidden
+                  className="absolute -right-[11px] top-1/2 hidden -translate-y-1/2 text-gold/50 lg:block"
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-5 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <p className="flex items-start gap-2 text-xs leading-relaxed text-muted-dark">
+          <ShieldCheck size={15} className="mt-px shrink-0 text-gold/70" />
+          Runs on the <span className="text-cream-dim">official WhatsApp Business Cloud API</span> — opt-in contacts,
+          Meta-approved templates, billed per conversation. Built for you in days, wired into the tools you already use.
+        </p>
+        <a
+          href="/#contact"
+          data-cursor="link"
+          className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink-deep transition-colors hover:bg-gold-soft"
+        >
+          Book a free automation audit
+          <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function FeaturedDemo({ demo }: { demo: Demo }) {
   const Icon = demo.icon;
   return (
@@ -207,6 +264,7 @@ function FeaturedDemo({ demo }: { demo: Demo }) {
           </div>
         </div>
         <div className="relative mt-7">{demo.node}</div>
+        <ProductionPipeline />
       </div>
     </Reveal>
   );
