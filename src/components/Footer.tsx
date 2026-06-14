@@ -137,6 +137,11 @@ export default function Footer({ locale = "en" }: { locale?: "en" | "ar" }) {
                   {CONTACT.email}
                 </a>
               </li>
+              <li>
+                <a href="/whatsapp-optin.html" className={linkCls}>
+                  {ar ? "تحديثات واتساب" : "Get WhatsApp updates"}
+                </a>
+              </li>
               <li className="text-muted">{ar ? "دبي، الإمارات" : CONTACT.location}</li>
             </ul>
           </div>
