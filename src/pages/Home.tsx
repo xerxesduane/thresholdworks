@@ -1,9 +1,12 @@
 import type { ReactNode } from "react";
 import Hero from "../components/Hero";
 import Marquee from "../components/Marquee";
+import ResultsBand from "../components/ResultsBand";
+import Testimonials from "../components/Testimonials";
 import Diagnosis from "../components/Diagnosis";
 import Services from "../components/Services";
 import Layers from "../components/Layers";
+import ConnectedSystems from "../components/ConnectedSystems";
 import Industries from "../components/Industries";
 import Work from "../components/Work";
 import SelectedWork from "../components/SelectedWork";
@@ -53,6 +56,11 @@ export default function Home() {
       <Hero />
       <Marquee />
 
+      {/* Proof leads: real, attributed outcome numbers right after the logo wall */}
+      <Band divide={false}>
+        <ResultsBand />
+      </Band>
+
       {/* The problem → what we do */}
       <Band divide={false}>
         <Diagnosis />
@@ -66,6 +74,9 @@ export default function Home() {
       <Band tint>
         <Layers />
       </Band>
+      <Band>
+        <ConnectedSystems />
+      </Band>
 
       {/* Proof: numbers, case studies, craft, words */}
       <Band tint>
@@ -77,6 +88,7 @@ export default function Home() {
       </Band>
       <Band tint>
         <ProofBand />
+        <Testimonials />
         <Clients />
       </Band>
 
