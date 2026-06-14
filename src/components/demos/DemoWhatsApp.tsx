@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { Play, RotateCcw, Check, CheckCheck, Phone, MoreVertical, Sheet, Upload, FileSpreadsheet } from "lucide-react";
+import { Play, RotateCcw, Check, CheckCheck, Phone, MoreVertical, Sheet, Upload, FileSpreadsheet, ShieldCheck } from "lucide-react";
 import { streamDemo } from "../../lib/demoClient";
 import { track } from "../../lib/analytics";
 
@@ -17,7 +17,17 @@ type Lead = {
   phone?: string;
   color: string;
   reply?: string;
+  // WhatsApp requires opt-in before any business message. Only consented
+  // contacts are ever messaged; the rest are shown but held back.
+  consent?: boolean;
 };
+
+/** Did this contact opt in? Truthy spreadsheet values only. */
+function isConsented(raw: string): boolean {
+  return ["yes", "y", "true", "1", "opted in", "opted-in", "opt-in", "subscribed", "agreed", "consented", "✓"].includes(
+    raw.trim().toLowerCase(),
+  );
+}
 
 type Status = "idle" | "writing" | "sent" | "delivered" | "read" | "replied" | "responding" | "booked";
 
@@ -31,18 +41,18 @@ const MAX_LIVE = 6;
 const COLORS = ["#C9A227", "#5B8DEF", "#3FB984", "#E8557E", "#9B59B6", "#FF7A45", "#19B5A3", "#F4A300"];
 
 const SAMPLE_LEADS: Lead[] = [
-  { id: 1, name: "Aisha Rahman", company: "Noor Interiors", interest: "a kitchen renovation quote", city: "Dubai", source: "Instagram ad", color: COLORS[0], reply: "Oh perfect timing — yes please, can you send pricing? 😍" },
-  { id: 2, name: "Daniel Okafor", company: "BrightPath Tutoring", interest: "the 1-on-1 SAT prep program", city: "Abu Dhabi", source: "website form", color: COLORS[1], reply: "Great — what slots do you have next week?" },
-  { id: 3, name: "Mei Lin Chen", company: "Lotus Wellness", interest: "the monthly membership", city: "Dubai", source: "a referral", color: COLORS[2] },
+  { id: 1, name: "Aisha Rahman", company: "Noor Interiors", interest: "a kitchen renovation quote", city: "Dubai", source: "Website enquiry", color: COLORS[0], consent: true, reply: "Oh perfect timing — yes please, can you send pricing? 😍" },
+  { id: 2, name: "Daniel Okafor", company: "BrightPath Tutoring", interest: "the 1-on-1 SAT prep program", city: "Abu Dhabi", source: "Booking form", color: COLORS[1], consent: true, reply: "Great — what slots do you have next week?" },
+  { id: 3, name: "Mei Lin Chen", company: "Lotus Wellness", interest: "the monthly membership", city: "Dubai", source: "Purchased list", color: COLORS[2], consent: false },
 ];
 
-const SAMPLE_CSV = `Name, Company, Interest, City, Source
-Omar Khalid, Khalid Motors, a full car detailing package, Sharjah, Instagram
-Lina Haddad, Bloom Florist, a weekly office flowers subscription, Dubai, website form
-Yusuf Ali, Peak Fitness, the 12-week personal training plan, Abu Dhabi, walk-in
-Fatima Noor, Noor Skin Clinic, a hydrafacial package, Dubai, referral`;
+const SAMPLE_CSV = `Name, Company, Interest, City, Source, Consent
+Omar Khalid, Khalid Motors, a full car detailing package, Sharjah, Booking form, yes
+Lina Haddad, Bloom Florist, a weekly office flowers subscription, Dubai, Website enquiry, yes
+Yusuf Ali, Peak Fitness, the 12-week personal training plan, Abu Dhabi, Referral, no
+Fatima Noor, Noor Skin Clinic, a hydrafacial package, Dubai, Past customer, yes`;
 
-const HEADER_HINTS = ["name", "phone", "company", "business", "interest", "want", "need", "city", "location", "source", "note"];
+const HEADER_HINTS = ["name", "phone", "company", "business", "interest", "want", "need", "city", "location", "source", "note", "consent", "opt"];
 
 function splitRow(line: string, delim: string): string[] {
   if (delim === "\t") return line.split("\t").map((c) => c.trim());
@@ -74,7 +84,7 @@ function parseLeads(text: string): Lead[] {
   const first = rows[0].map((c) => c.toLowerCase());
   const hasHeader = first.some((c) => HEADER_HINTS.some((h) => c.includes(h)));
 
-  let idx = { name: 0, company: 1, interest: 2, city: 3, source: 4, phone: -1 };
+  let idx = { name: 0, company: 1, interest: 2, city: 3, source: 4, phone: -1, consent: -1 };
   let dataRows = rows;
   if (hasHeader) {
     const find = (...keys: string[]) => first.findIndex((c) => keys.some((k) => c.includes(k)));
@@ -85,6 +95,7 @@ function parseLeads(text: string): Lead[] {
       city: find("city", "location", "area", "emirate"),
       source: find("source", "channel", "how did"),
       phone: find("phone", "mobile", "number", "whatsapp"),
+      consent: find("consent", "opt-in", "optin", "opt in", "opted", "permission", "subscribed"),
     };
     dataRows = rows.slice(1);
   }
@@ -99,6 +110,9 @@ function parseLeads(text: string): Lead[] {
     source: get(r, idx.source) || "your list",
     phone: get(r, idx.phone),
     color: COLORS[i % COLORS.length],
+    // No consent column → assume the list is already opted in (don't block);
+    // with a column, honour it so the demo shows the gate.
+    consent: idx.consent >= 0 ? isConsented(get(r, idx.consent)) : true,
   }));
 }
 
@@ -200,7 +214,8 @@ export default function DemoWhatsApp() {
 
   async function run() {
     if (running) return;
-    track("demo_run", { demo: "whatsapp", leads: imported ? "imported" : "sample", count: Math.min(leads.length, MAX_LIVE) });
+    const sendable = leads.filter((l) => l.consent !== false);
+    track("demo_run", { demo: "whatsapp", leads: imported ? "imported" : "sample", count: Math.min(sendable.length, MAX_LIVE) });
     setError("");
     setDone(false);
     setRunning(true);
@@ -209,7 +224,8 @@ export default function DemoWhatsApp() {
     setAgentReplies({});
     abort.current = new AbortController();
     try {
-      for (const lead of leads.slice(0, MAX_LIVE)) {
+      // Only ever message opted-in contacts.
+      for (const lead of sendable.slice(0, MAX_LIVE)) {
         await sendLead(lead);
         await sleep(450);
       }
@@ -234,7 +250,10 @@ export default function DemoWhatsApp() {
     setActiveId(leads[0]?.id ?? 1);
   }
 
-  const liveCount = Math.min(leads.length, MAX_LIVE);
+  const sendable = leads.filter((l) => l.consent !== false);
+  const optedIn = sendable.length;
+  const liveSet = new Set(sendable.slice(0, MAX_LIVE).map((l) => l.id));
+  const liveCount = Math.min(optedIn, MAX_LIVE);
   const vals = Object.values(status);
   const stats = {
     generated: vals.filter((s) => reached(s, "sent")).length,
@@ -249,10 +268,11 @@ export default function DemoWhatsApp() {
         <FileSpreadsheet size={18} className="text-gold" />
         <p className="text-sm text-cream-dim">
           {imported ? (
-            <><b className="text-cream">{leads.length}</b> leads imported from your sheet</>
+            <><b className="text-cream">{leads.length}</b> imported</>
           ) : (
-            <><b className="text-cream">3</b> sample leads loaded</>
-          )}
+            <><b className="text-cream">3</b> sample leads</>
+          )}{" "}
+          · <b className="text-[#3FB984]">{optedIn}</b> opted in
         </p>
         <div className="ml-auto flex items-center gap-2">
           {imported && (
@@ -285,13 +305,14 @@ export default function DemoWhatsApp() {
             <div className="flex flex-col gap-3 rounded-2xl border border-cream/10 bg-cream/[0.03] p-4">
               <p className="text-sm text-cream-dim">
                 Open your Google Sheet or Excel file, select your lead rows, and paste them here — or upload a CSV.
-                Columns are matched automatically (<span className="text-cream">Name, Company, Interest, City, Source</span>).
+                Columns are matched automatically (<span className="text-cream">Name, Company, Interest, City, Source, Consent</span>).
+                Add a <span className="text-cream">Consent</span> column (yes/no) and only opted-in contacts are messaged.
               </p>
               <textarea
                 value={raw}
                 onChange={(e) => setRaw(e.target.value)}
                 rows={5}
-                placeholder={"Paste rows from Google Sheets / Excel here…\nName, Company, Interest, City, Source"}
+                placeholder={"Paste rows from Google Sheets / Excel here…\nName, Company, Interest, City, Source, Consent"}
                 aria-label="Paste your leads"
                 className="w-full resize-none rounded-xl border border-cream/10 bg-ink-deep/50 px-4 py-3 font-mono text-[12.5px] text-cream placeholder:text-muted-dark focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/40"
               />
@@ -371,10 +392,11 @@ export default function DemoWhatsApp() {
             Contact leads · edit any interest, then run
           </p>
           <div className="flex max-h-[430px] flex-col gap-2.5 overflow-y-auto pr-1">
-            {leads.map((lead, i) => {
+            {leads.map((lead) => {
               const s = st(lead.id);
               const initials = lead.name.split(" ").map((p) => p[0]).join("").slice(0, 2);
-              const skipped = i >= MAX_LIVE;
+              const notOptedIn = lead.consent === false;
+              const skipped = !notOptedIn && !liveSet.has(lead.id);
               return (
                 <button
                   type="button"
@@ -382,7 +404,7 @@ export default function DemoWhatsApp() {
                   onClick={() => setActiveId(lead.id)}
                   className={`flex items-center gap-3 rounded-2xl border p-3 text-left transition ${
                     lead.id === activeId ? "border-gold/40 bg-cream/[0.06]" : "border-cream/10 bg-ink-deep/40 hover:border-cream/20"
-                  } ${skipped ? "opacity-50" : ""}`}
+                  } ${notOptedIn || skipped ? "opacity-50" : ""}`}
                 >
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-ink-deep"
@@ -393,7 +415,9 @@ export default function DemoWhatsApp() {
                   <span className="min-w-0 flex-1">
                     <span className="flex items-center justify-between gap-2">
                       <span className="truncate text-sm font-medium text-cream">{lead.name}</span>
-                      {skipped ? (
+                      {notOptedIn ? (
+                        <span className="shrink-0 rounded-full bg-gold/10 px-2 py-0.5 text-[10px] font-medium text-gold/90">Not opted in</span>
+                      ) : skipped ? (
                         <span className="shrink-0 rounded-full bg-cream/5 px-2 py-0.5 text-[10px] font-medium text-muted-dark">Queued (prod)</span>
                       ) : (
                         <StatusBadge status={s} />
@@ -426,11 +450,25 @@ export default function DemoWhatsApp() {
 
       {error && <p className="text-xs text-gold">{error}</p>}
 
-      <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-dark">
-        {leads.length > MAX_LIVE
-          ? `Openers + replies are written live by the AI for the first ${liveCount} · production runs all ${leads.length} through the WhatsApp Business API`
-          : "Openers AND replies are written live by the AI — it personalizes, then handles the conversation and books. Production runs through the WhatsApp Business API."}
-      </p>
+      <div className="flex flex-col gap-1.5">
+        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-dark">
+          {optedIn > MAX_LIVE
+            ? `Openers + replies written live by the AI for the first ${liveCount} · production runs all ${optedIn} opted-in through the WhatsApp Business API`
+            : "Openers AND replies are written live by the AI — it personalizes, then handles the conversation and books. Production runs through the WhatsApp Business API."}
+        </p>
+        <p className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-dark">
+          <ShieldCheck size={12} className="text-[#3FB984]" />
+          Only opted-in contacts are messaged — the compliant way.
+          <a
+            href="/whatsapp-optin.html"
+            target="_blank"
+            rel="noopener"
+            className="text-gold/90 underline decoration-gold/40 underline-offset-2 transition-colors hover:text-gold"
+          >
+            Collect opt-ins →
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
