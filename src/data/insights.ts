@@ -22,6 +22,353 @@ export interface InsightPost {
 
 export const INSIGHTS: InsightPost[] = [
   {
+    slug: "aeo-seo-geo-dubai",
+    title: "AEO vs SEO vs GEO: what actually gets you found in 2026 (Dubai)",
+    description:
+      "SEO, AEO, and GEO explained in plain English for Dubai businesses: how people actually search in 2026, what each one practically requires, where they overlap, and what an SME should do first.",
+    date: "2026-06-14",
+    author: "Xerxes Duane",
+    readingMinutes: 8,
+    relatedServices: ["seo-dubai", "answer-engine-optimization-dubai", "generative-engine-optimization-dubai"],
+    body: [
+      {
+        type: "p",
+        text: "For years, getting found online meant one thing: ranking on Google. In 2026 it means three. Your customers still type into Google, but they also read the AI summary at the top before they scroll, and a growing number of them skip Google entirely and ask ChatGPT, Gemini, or Perplexity instead. Three acronyms have grown up around this, SEO, AEO, and GEO, and most of the people selling them make it sound far more complicated than it is. Here is the plain-English version, and what a Dubai business should actually do about it.",
+      },
+      { type: "h2", text: "The three, in one sentence each" },
+      {
+        type: "p",
+        text: "Strip away the jargon and they are easy to tell apart. The difference is simply where you are trying to show up.",
+      },
+      {
+        type: "ul",
+        items: [
+          "SEO (Search Engine Optimization) is the classic one: ranking in the blue links on a Google or Bing results page, so someone clicks through to your site.",
+          "AEO (Answer Engine Optimization) is about being the answer rather than a link, getting quoted in Google's AI Overview, the featured snippet box, the 'people also ask' section, and voice assistants that read one answer aloud.",
+          "GEO (Generative Engine Optimization) is about being cited or recommended inside ChatGPT, Gemini, Perplexity, and Copilot, when someone asks the AI a question and never touches a search engine at all.",
+        ],
+      },
+      {
+        type: "p",
+        text: "SEO wants the click. AEO wants the quote. GEO wants the recommendation. Same business, same website, three different places your name needs to appear.",
+      },
+      { type: "h2", text: "Why search is fragmenting" },
+      {
+        type: "p",
+        text: "Ten years ago there was one front door: you typed a few words into Google, looked at the ten links, and clicked one. That front door still exists, but it is no longer the only one, and increasingly it is not even the first thing people see. Google now puts an AI-written summary above the links for a large share of searches. Plenty of people read that summary, get their answer, and never scroll, never click. That is the rise of the 'zero-click' search, and it is the reason ranking number one is not the guarantee it used to be.",
+      },
+      {
+        type: "p",
+        text: "At the same time, a real chunk of people have changed their first move entirely. When someone wants 'the best accounting software for a Dubai free zone company' or 'a reliable AC maintenance company in JLT', a growing number now ask an AI assistant before they ever open Google. The AI gives them a shortlist with a few names on it. If your business is on that shortlist, you get the lead. If it is not, you are invisible, and you will not even see it happen in your analytics, because there was no click to track.",
+      },
+      {
+        type: "quote",
+        text: "You used to compete to be the first link people clicked. Now you are also competing to be the answer they never have to click for, and the name an AI says out loud.",
+      },
+      { type: "h2", text: "What SEO still requires (and why it is the foundation)" },
+      {
+        type: "p",
+        text: "None of this means SEO is dead. The opposite, really: the AI summaries and the chatbots are pulling their answers from somewhere, and that somewhere is mostly the same web of pages that classic search ranks. If your site is fast, well-structured, and trusted enough to rank on Google, you have already done most of the work that makes the other two possible. SEO is the foundation the other two stand on.",
+      },
+      {
+        type: "p",
+        text: "The fundamentals have not changed much: pages that load fast and work on a phone, content that genuinely answers what people are searching for, a sensible site structure, and other reputable sites linking to you. For a Dubai business, local signals matter a lot, a properly filled-in Google Business Profile, consistent name-address-phone details, and real reviews. That groundwork is what gets you into the consideration set for everything that follows.",
+      },
+      { type: "h2", text: "What AEO requires: answer the question, and prove it in code" },
+      {
+        type: "p",
+        text: "Answer engines, the AI Overview, the snippet box, the voice assistant, are trying to lift a clean, correct answer straight off your page. So the practical work of AEO is making your answers easy to lift. That means writing answer-first: state the answer plainly in the first line or two, then explain. It means structuring content as real questions and direct answers, the way someone would actually ask. And it means giving Google machine-readable hints about what is on the page.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Answer-first content: lead with the short, direct answer, then add the detail underneath. Burying the answer in paragraph six gets you skipped.",
+          "FAQ and structured data (schema): code-level labels that tell search engines 'this is a question, this is its answer, this is a price, this is a review'. It is invisible to your visitors but very visible to the machines.",
+          "Genuine question-and-answer formatting: headings phrased as the questions people actually type or speak, with a tidy answer right beneath each.",
+          "Clarity over cleverness: short sentences, plain words, and specifics. Vague marketing copy does not get quoted; a clear factual answer does.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The honest catch with AEO is that getting quoted does not always get you a click, the whole point of an answer engine is to satisfy the person on the spot. But being named as the source still builds trust and recognition, and for many local searches the answer box is now the most valuable real estate on the page, more visible than the link in position one.",
+      },
+      { type: "h2", text: "What GEO requires: become a known entity the AI can cite" },
+      {
+        type: "p",
+        text: "GEO is the newest and the fuzziest, because nobody outside the AI labs sees the exact recipe. But the pattern is reasonably clear. Tools like ChatGPT, Gemini, and Perplexity recommend businesses they can find written about, consistently, across the web, with enough detail to be confident about. They are pattern-matching on reputation and clarity, not just keywords. So GEO is less about tricks and more about being a recognisable, well-described entity.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Be described clearly and consistently: who you are, where you operate (for us, that is Dubai and the UAE), and exactly what you do, repeated the same way across your site and your profiles.",
+          "Earn mentions and citations off your own site: directory listings, reputable local publications, and being referenced by others is what gives an AI the confidence to repeat your name.",
+          "Publish substance worth citing: genuinely useful, specific content, real prices, real comparisons, real how-tos, is the kind of thing these tools quote and link.",
+          "Keep your facts current and aligned everywhere, because the AI is stitching together what it finds, and contradictory details make it leave you out.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Notice there is no schema trick or settings toggle that 'turns on' GEO. You earn it by being clear, useful, and talked about, which is, conveniently, the same thing that has always made a business worth recommending.",
+      },
+      { type: "h2", text: "Where they overlap (this is the good news)" },
+      {
+        type: "p",
+        text: "Here is what the people selling three separate packages would rather you did not notice: these three things mostly want the same work. A fast, well-structured, trustworthy site with clear, answer-first content and clean structured data serves all three at once. Good SEO content is exactly what gets quoted by answer engines and cited by chatbots. There is no world where your SEO is strong but you are mysteriously invisible to AI, the same signals feed all of it.",
+      },
+      {
+        type: "quote",
+        text: "AEO and GEO are not a different job from SEO. They are what good SEO content looks like once you also write it to be quoted and cited, not just clicked.",
+      },
+      {
+        type: "p",
+        text: "So if a vendor quotes you three line items, 'SEO', 'AEO', and 'GEO', as if each were a separate project with a separate fee, be a little sceptical. There is overlap they should be charging you once for, not three times.",
+      },
+      { type: "h2", text: "What a Dubai SME should actually do first" },
+      {
+        type: "p",
+        text: "Do not try to chase all three at once, and do not let the new acronyms distract you from boring fundamentals that still do most of the work. Here is the order I would put them in for a small or mid-sized business in the UAE.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Get the foundation right first: a fast, mobile-first site, a complete Google Business Profile, consistent contact details, and real reviews. Skip this and the rest is built on sand.",
+          "Rewrite your key pages answer-first: open each important page and service with a clear, direct answer to the question that page is really about.",
+          "Add the basic structured data: FAQ schema on your service pages, organisation and local-business schema sitewide. It is a one-time technical job with lasting payoff.",
+          "Publish a handful of genuinely useful, specific pages, real prices in AED, honest comparisons, plain how-tos, that an answer engine would be happy to quote and a chatbot happy to cite.",
+          "Then check yourself: search your services on Google and look at the AI Overview, and ask ChatGPT and Perplexity the questions your customers ask. See whether you show up, and where the gaps are.",
+        ],
+      },
+      {
+        type: "p",
+        text: "That last step is worth doing today, for free. Open ChatGPT or Perplexity and ask it to recommend a business that does what you do in Dubai. If your name comes up, good. If a competitor's does and yours does not, you have just found a problem worth fixing, and you will understand these three acronyms better in five minutes of testing than in an hour of reading.",
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Search is not getting replaced, it is getting more places to show up. SEO gets you the click, AEO gets you quoted as the answer, and GEO gets you recommended by the AI, and the same honest, clear, well-structured work feeds all three. The businesses that win in 2026 are not the ones chasing every acronym; they are the ones that are genuinely clear about who they are and genuinely useful to the people asking.",
+      },
+      {
+        type: "p",
+        text: "If you are not sure where your business currently stands across Google, the AI Overviews, and the chatbots, that is exactly what a free audit covers, I will run the real searches, show you where you appear and where you do not, and tell you the few fixes that matter most. You can also see how I think about answer-first content and AI search in practice over at the live AI Lab at /ai-lab. No jargon, no three-package upsell, just an honest picture of how findable you actually are.",
+      },
+    ],
+  },
+  {
+    slug: "get-cited-by-chatgpt-perplexity-dubai",
+    title: "How to get your business recommended by ChatGPT and Perplexity",
+    description:
+      "A practical, no-hype guide to how AI engines like ChatGPT and Perplexity decide what to cite, the concrete steps a Dubai business can take to get recommended, how to check if you're already showing up, and why you can't bribe your way in.",
+    date: "2026-06-13",
+    author: "Xerxes Duane",
+    readingMinutes: 8,
+    body: [
+      {
+        type: "p",
+        text: "More people in Dubai are asking ChatGPT and Perplexity questions they used to type into Google. \"Best accountant for a free zone company.\" \"Who does Odoo setup in Dubai.\" \"Reliable AC maintenance in JLT.\" The answer they get back names a handful of businesses, and the rest are invisible. This is a practical guide to how those engines decide who gets named, what you can actually do about it as a Dubai business, and where the honest limits are.",
+      },
+      { type: "h2", text: "How a generative engine actually picks who to cite" },
+      {
+        type: "p",
+        text: "It helps to drop the magic. When someone asks ChatGPT or Perplexity a question, the engine usually runs a search behind the scenes, pulls a set of pages it trusts, reads them, and writes an answer that stitches together the clearest, most consistent information it found. It is not ranking ten blue links. It is choosing which sources to believe and quote. So the question is not \"how do I rank number one\" but \"how do I become one of the sources the model trusts enough to name.\"",
+      },
+      {
+        type: "p",
+        text: "In practice, the businesses that get cited tend to share a few traits. The engine can tell exactly who they are. Their details match everywhere it looks. Other websites mention them. Their pages answer the question directly instead of burying it. None of this is a trick. It is the same thing a careful human would do before recommending you to a friend.",
+      },
+      { type: "h2", text: "Be a clear entity the model can recognise" },
+      {
+        type: "p",
+        text: "An \"entity\" just means a thing the engine can identify with confidence, your business as a distinct, named thing in the world. If a model is unsure whether \"Threshold Works,\" \"Threshold Works LLC,\" and \"thresholdworks.ae\" are the same company, it gets nervous about naming you, because it cannot be sure the good things it read apply to the right business. Vagueness is the enemy.",
+      },
+      {
+        type: "p",
+        text: "You make yourself a clear entity by being boringly consistent about who you are and what you do. One business name, used the same way everywhere. A plain description of what you offer and who you serve. A real address and contact details. A few authoritative places that confirm you exist, your own site, your Google Business Profile, your LinkedIn, a directory or two. The model is connecting dots; your job is to make the dots line up.",
+      },
+      { type: "h2", text: "Keep your name, address and phone identical everywhere" },
+      {
+        type: "p",
+        text: "This is the least glamorous tip and one of the most important, especially in the UAE where it is easy to drift. Your name, address and phone number, what people in SEO call NAP, should be byte-for-byte identical across your website, Google Business Profile, social pages, and any directory you appear in. \"Office 1203\" in one place and \"Suite 1203\" in another, a +971 50 number here and a landline there, an old trade-name from before you rebranded, every mismatch makes the engine less sure it is looking at one business.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pick one exact spelling of your business name and one address format, and use them everywhere.",
+          "Use one primary phone number consistently; pick a single international format and stick to it.",
+          "Clean up old listings from a previous name, location, or freezone before you registered the new one.",
+          "Make sure your Google Business Profile is claimed, verified, and matches your website exactly.",
+          "If you operate in both English and Arabic, keep the core details consistent across both.",
+        ],
+      },
+      { type: "h2", text: "Third-party mentions are what build trust" },
+      {
+        type: "p",
+        text: "Here is the part many Dubai businesses miss. Saying you are the best on your own website counts for very little, because everyone says that. What moves an engine is other sites saying it for you. A mention in a local publication, an honest review on Google, a credible directory listing, a partner who links to you, a podcast or interview where you are named, all of these tell the model that your reputation exists outside your own marketing. The engine is effectively asking, \"who else vouches for this business,\" and reading the room.",
+      },
+      {
+        type: "p",
+        text: "You do not need hundreds of these. You need a handful of genuine, relevant ones. A few real reviews from real clients, a profile on a respected local directory, and being mentioned somewhere that talks about your industry will do more than a wall of self-praise on your homepage.",
+      },
+      {
+        type: "quote",
+        text: "An AI engine recommends you for the same reason a person does: not because you told it you are good, but because enough independent sources agree that you are.",
+      },
+      { type: "h2", text: "Write the clearest answer on the page" },
+      {
+        type: "p",
+        text: "Engines quote pages that answer the question directly. If someone asks \"how much does a website cost in Dubai\" and your page opens with three paragraphs of marketing fluff before getting to a number, the model skips you for the site that gives a clear range in the first line. Structure helps too: plain headings that match real questions, short direct answers underneath, lists where lists make sense, and a real address and contact details the engine can lift. You are making it easy to be quoted.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Answer the actual question in the first sentence or two, then explain.",
+          "Use headings that mirror how people phrase questions, not clever wordplay.",
+          "Give concrete specifics, real AED ranges, real timelines, real steps, not vague claims.",
+          "Add basic structured data and a clear contact block so the facts are machine-readable.",
+          "Keep one definitive page per topic instead of five thin, overlapping ones.",
+        ],
+      },
+      { type: "h2", text: "How to check whether you are already being cited" },
+      {
+        type: "p",
+        text: "You do not have to guess. Open ChatGPT and Perplexity and ask them the questions your customers would actually ask, the way they would phrase them. \"Who does CRM setup in Dubai.\" \"Best web developer for a small business in Dubai.\" Then read what comes back honestly. Are you named? Is a competitor named instead? Is the information about you correct, or is it pulling an old address or a service you no longer offer? Perplexity is especially useful here because it shows its sources, so you can see exactly which pages it trusted.",
+      },
+      {
+        type: "p",
+        text: "Run the same question a few times and on both tools, because answers vary. What you are looking for is a pattern: consistently named, occasionally named, or never named. If you are never named for questions you should clearly own, that is the gap to work on. If you are named but the details are wrong, that is a consistency problem you can fix faster than you would expect.",
+      },
+      { type: "h2", text: "The honest limits: you cannot bribe your way in" },
+      {
+        type: "p",
+        text: "Now the part nobody selling \"AI SEO packages\" wants to say out loud. There is no paid slot inside a ChatGPT or Perplexity answer the way there is with Google Ads. You cannot pay the model to recommend you. You cannot guarantee placement, because the engines change, the answers shift between runs, and no one controls them from the outside. Anyone promising you a fixed spot in an AI answer is either confused or selling you something that does not exist.",
+      },
+      {
+        type: "p",
+        text: "What you can do is make yourself the obvious, well-documented, trustworthy choice, and then be patient. This work compounds rather than spikes. It is closer to building a reputation than buying an ad, which is exactly why it is durable once it lands. The flip side is that it does not happen overnight, and any honest person will tell you that up front.",
+      },
+      {
+        type: "ul",
+        items: [
+          "No, you cannot pay for a citation; there is no ad slot inside the answer.",
+          "No, results are not guaranteed or fixed; the same question can return different answers.",
+          "Yes, clear identity, consistent details, real third-party mentions, and direct content genuinely move the needle.",
+          "Yes, it takes time, and that is the cost of it being hard to fake.",
+        ],
+      },
+      {
+        type: "p",
+        text: "If you want to know where you stand today, the quickest start is to ask ChatGPT and Perplexity the questions your customers ask and see who they name. If you would rather I do it with you, I offer a free audit where I check whether you are being cited, find the consistency and content gaps holding you back, and tell you honestly what is worth fixing first, no package, no padding. You can also try the live AI Lab at /ai-lab to see this kind of thing working in practice before you commit to anything.",
+      },
+    ],
+    relatedServices: ["generative-engine-optimization-dubai", "answer-engine-optimization-dubai", "seo-dubai"],
+  },
+  {
+    slug: "whatsapp-automation-not-spam-dubai",
+    title: "WhatsApp lead automation that doesn't feel like spam",
+    description:
+      "In Dubai, WhatsApp is where business actually happens. Here's the honest difference between blasting people and genuinely helpful automation: the compliant Cloud API setup, what to automate, what not to, and how AI keeps it human.",
+    date: "2026-06-12",
+    author: "Xerxes Duane",
+    readingMinutes: 8,
+    relatedServices: ["ai-automation-dubai", "crm-development-dubai"],
+    body: [
+      {
+        type: "p",
+        text: "In Dubai, WhatsApp is not a side channel. It is the channel. People reply to a WhatsApp message in minutes when they would leave an email for three days and never pick up an unknown call. So the temptation is obvious: automate it, send a few thousand messages, watch the leads roll in. The problem is that the lazy version of this is exactly what gets your number flagged, blocked, and reported, and it teaches your future customers to ignore you. There is a better way, and the gap between the two is mostly about respect, not technology.",
+      },
+      { type: "h2", text: "Why WhatsApp is the channel in the UAE" },
+      {
+        type: "p",
+        text: "Almost everyone here lives in WhatsApp. It is how the building handyman, the school, the clinic, and your accountant all reach you. For a small business that means a customer is far more likely to be sitting inside WhatsApp at the moment they're deciding whether to book you. An email lands in a pile. A WhatsApp message lands in the same place as messages from their family. That is a privilege, and it is also the exact reason a bad automated message feels so intrusive: you've walked into a personal space uninvited.",
+      },
+      {
+        type: "p",
+        text: "So the bar is higher here, not lower. The same automated message that feels mildly annoying as an email feels like a genuine violation as a WhatsApp from a number nobody recognises. Get it right and WhatsApp is the fastest, warmest channel you have. Get it wrong and it's the fastest way to become the number people screenshot and warn their friends about.",
+      },
+      { type: "h2", text: "Blasting versus helping: the actual difference" },
+      {
+        type: "p",
+        text: "Blasting is sending the same message to a list of people who never asked to hear from you, hoping a small percentage bite. Helping is responding faster and more usefully to people who already raised their hand. Both can be automated. Only one builds a business you'd be proud of. The honest test is simple: would the person on the other end be glad this message arrived, or annoyed? If you can't answer that confidently, you're blasting.",
+      },
+      {
+        type: "p",
+        text: "Here's the same situation, two ways. A blast: a cold contact gets 'Hi, we offer the best cleaning services in Dubai, reply YES for 20% off.' A helpful automation: someone fills in your website form asking about a deep clean, and ninety seconds later gets 'Hi Sara, thanks for your enquiry about a deep clean for a 2-bedroom in JLT. I've got two slots this week, Wednesday morning or Friday afternoon, which suits you better?' The second one isn't spam because it's a timely, relevant reply to a question she actually asked. That's the whole game.",
+      },
+      { type: "h2", text: "The compliant way: Cloud API, opt-in, approved templates" },
+      {
+        type: "p",
+        text: "If you're doing this properly, you use the official WhatsApp Business Platform (the Cloud API), not a grey-market tool that automates a phone in someone's drawer. The unofficial route works until it doesn't, and when it stops, you lose the number and the conversations with it. The official platform costs a little more and asks you to follow rules, but those rules are the same ones that keep you out of the spam pile.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Opt-in is the foundation. You can only message people who agreed to hear from you, a website form, a checkbox, a 'message us on WhatsApp' button, or a reply to your number. No bought lists, no scraped contacts.",
+          "Inside the 24-hour window, after a customer messages you, you can reply freely with normal messages for 24 hours. This is where almost all genuinely helpful automation lives.",
+          "Outside that window you need an approved template. To start a conversation or follow up later, you send a pre-written 'template' message that Meta has reviewed. This is the guardrail that stops random promotional blasts.",
+          "Quality rating is real. Meta tracks how often people block or report your number. Behave like a spammer and your limits get throttled, then cut. Behave well and your sending limits actually go up over time.",
+        ],
+      },
+      {
+        type: "p",
+        text: "None of this is hard to set up correctly the first time. It's much harder to recover a number you've already burned, so it's worth doing properly from day one.",
+      },
+      { type: "h2", text: "What's worth automating" },
+      {
+        type: "p",
+        text: "The best automations remove waiting and admin, not human judgement. They make sure nobody who reached out gets left on read, and they handle the boring, repetitive parts so you can spend your attention on the conversations that need a person.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Instant, personalised first reply. When a lead comes in from your site, Instagram, or a WhatsApp button, an immediate message that uses their name and references what they actually asked about, then hands off to you.",
+          "Light qualifying. A couple of natural questions, what they need, where they are, roughly when, so that by the time you pick up the conversation you already know if it's a fit.",
+          "Booking and rescheduling. Offer real available slots, confirm the time, and let people change it without a phone call.",
+          "Reminders and confirmations. A friendly nudge the day before an appointment, which quietly kills no-shows, plus order or payment confirmations people genuinely want.",
+          "Routing to the right person. Send the enquiry, with context, straight into your CRM and to whoever should handle it, so nothing lives in one person's phone.",
+        ],
+      },
+      { type: "h2", text: "What you should never automate" },
+      {
+        type: "p",
+        text: "Some things should stay manual, or shouldn't happen at all. The line is roughly: if it pretends to be human attention when there isn't any, or it reaches people who never asked, don't do it.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Cold outreach to people who never opted in. This is the one that gets you blocked, reported, and eventually banned. It also rarely works.",
+          "Mass promotional blasts to your whole list 'because we can'. Even with opt-in, hammering everyone with offers trains people to mute you.",
+          "Pretending a bot is you. If someone asks a real, emotional, or high-stakes question, they should reach a human quickly, and never be strung along by a bot impersonating one.",
+          "Complaints, refunds, and anything sensitive. Automate the acknowledgement, then get a person on it. An automated reply to a frustrated customer makes things worse, fast.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Good WhatsApp automation isn't about sending more messages. It's about making sure the right person gets the right reply at the right moment, and that a human is one tap away the second they need one.",
+      },
+      { type: "h2", text: "How AI keeps it human" },
+      {
+        type: "p",
+        text: "The old version of automation was a rigid menu: reply 1 for sales, 2 for support, 3 to go in circles. People hate it because it forces them to think like a machine. The newer approach uses AI to read what someone actually wrote, in plain Arabic or English, understand it, and respond in normal language, the way you would if you had time to answer every message in ninety seconds. Used well, it makes automation feel less robotic, not more.",
+      },
+      {
+        type: "p",
+        text: "The key word is 'used well'. AI should draft and personalise, then know its limits. It can write a warm, specific opener that references the exact thing someone asked about. It can answer the same five questions you get every day. What it should not do is bluff. A good setup has the AI hand off the moment it's unsure, when the question is about pricing for an unusual job, a complaint, or anything where being wrong is expensive. The goal is a conversation that feels human because a human is genuinely in the loop, not one that imitates a human to avoid having one.",
+      },
+      {
+        type: "p",
+        text: "Done this way, the customer often can't tell where the automation ended and you began, and that's the point. They got a fast, relevant, friendly reply. Whether the first sentence was drafted by a model or typed by you matters far less than whether it actually helped them.",
+      },
+      { type: "h2", text: "Try it before you trust it" },
+      {
+        type: "p",
+        text: "You don't have to take my word for any of this. I've put the WhatsApp tools I actually use into the live AI Lab on this site, at /ai-lab, so you can see a personalised opener get written, watch a qualifying flow run, and judge for yourself whether it reads like spam or like a helpful reply. Play with it, try to break it, see where it would hand off to a human.",
+      },
+      {
+        type: "p",
+        text: "And if you want this set up properly for your own business, on the official Cloud API, wired into your CRM, with opt-in and approved templates done right so you never burn your number, that's exactly what a free 60-minute audit is for. I'll look at where your enquiries come from today, show you what's worth automating and what genuinely isn't, and give you an honest plan, whether or not you ever hire me. No blasting, no lock-in, and no pretending a bot is a person.",
+      },
+    ],
+  },
+  {
     slug: "website-cost-dubai",
     title: "How much does a website really cost in Dubai? (2026)",
     description:
