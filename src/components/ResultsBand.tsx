@@ -7,6 +7,9 @@ import SectionHeading from "./ui/SectionHeading";
 // named client, rendered as a large gold Space Mono numeral. Figures that need
 // Xerxes' sign-off render as visibly-marked placeholders — never as fake claims.
 export default function ResultsBand() {
+  // Only ever render real, attributable figures — the [ADD] placeholders are
+  // hidden in production until Xerxes fills them with real numbers.
+  const items = RESULTS.filter((r) => !r.placeholder);
   return (
     <section className="py-20 sm:py-28" aria-label="Real results from real projects">
       <div className="container-bl">
@@ -27,7 +30,7 @@ export default function ResultsBand() {
           viewport={VIEWPORT}
           className="mx-auto mt-12 grid max-w-content grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3"
         >
-          {RESULTS.map((r, i) => (
+          {items.map((r, i) => (
             <m.div
               key={i}
               variants={fadeUp}

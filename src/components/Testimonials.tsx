@@ -8,6 +8,10 @@ import SectionHeading from "./ui/SectionHeading";
 // was missing. These render from TESTIMONIALS; until Xerxes drops in real,
 // attributable quotes they show as visibly-marked placeholders (no invented words).
 export default function Testimonials() {
+  // Only render real, attributable quotes. Until they exist the section hides
+  // itself — no invented or placeholder testimonials ship to production.
+  const items = TESTIMONIALS.filter((t) => !t.placeholder);
+  if (items.length === 0) return null;
   return (
     <section className="py-20 sm:py-28" aria-label="What clients say">
       <div className="container-bl">
@@ -27,7 +31,7 @@ export default function Testimonials() {
           viewport={VIEWPORT}
           className="mx-auto mt-12 grid max-w-content gap-4 sm:gap-5 md:grid-cols-3"
         >
-          {TESTIMONIALS.map((t, i) => (
+          {items.map((t, i) => (
             <m.figure
               key={i}
               variants={fadeUp}
